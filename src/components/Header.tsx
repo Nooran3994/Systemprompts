@@ -23,6 +23,31 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
     onLogoClick();
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    
+    // Check if we're already on the home page
+    if (window.location.pathname === '/') {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page first, then scroll
+      navigate('/');
+      onLogoClick(); // Reset any selected prompt
+      // Wait for the page to fully render
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    }
+  };
+
   // Close dropdown when clicking outside
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -126,13 +151,13 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#browse" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
+            <a href="#browse" onClick={(e) => handleNavClick(e, 'browse')} className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               Categories
             </a>
-            <a href="#why-prompts" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
+            <a href="#why-prompts" onClick={(e) => handleNavClick(e, 'why-prompts')} className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               About
             </a>
-            <a href="#get-started" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
+            <a href="#get-started" onClick={(e) => handleNavClick(e, 'get-started')} className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               Contact
             </a>
           </nav>
@@ -205,6 +230,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
           {/* Subscribe Button */}
           <a 
             href="#subscribe"
+            onClick={(e) => handleNavClick(e, 'subscribe')}
             className="hidden md:block px-6 py-2 bg-[#007BFF] text-white rounded-[85px] hover:bg-[#0056b3] transition-colors shadow-md hover:shadow-lg transform hover:scale-105 transition-transform"
             aria-label="Subscribe for updates"
           >
@@ -233,30 +259,30 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
             <nav className="flex flex-col space-y-3">
               <a 
                 href="#browse" 
+                onClick={(e) => handleNavClick(e, 'browse')}
                 className="text-[#343A40] hover:text-[#007BFF] transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 Categories
               </a>
               <a 
                 href="#why-prompts" 
+                onClick={(e) => handleNavClick(e, 'why-prompts')}
                 className="text-[#343A40] hover:text-[#007BFF] transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </a>
               <a 
                 href="#get-started" 
+                onClick={(e) => handleNavClick(e, 'get-started')}
                 className="text-[#343A40] hover:text-[#007BFF] transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
               </a>
               <a 
                 href="#subscribe"
+                onClick={(e) => handleNavClick(e, 'subscribe')}
                 className="w-full px-6 py-2 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-colors shadow-md text-left block"
                 aria-label="Subscribe for updates"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 Subscribe
               </a>

@@ -2,19 +2,40 @@ import React from 'react';
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-export function Footer() {
+interface FooterProps {
+  onNavigateHome?: () => void;
+}
+
+export function Footer({ onNavigateHome }: FooterProps = {}) {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
-    navigate('/');
-    setTimeout(() => {
+    
+    // Reset detail view if callback is provided
+    if (onNavigateHome) {
+      onNavigateHome();
+    }
+    
+    // Check if we're already on the home page
+    if (window.location.pathname === '/') {
+      // Already on home page, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100);
+    } else {
+      // Navigate to home page first, then scroll
+      navigate('/');
+      // Wait longer for the page to fully render
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    }
   };
 
   return (

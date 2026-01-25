@@ -23,14 +23,6 @@ function App() {
       price: '$2'
     },
     {
-      id: '2',
-      title: 'Customer Service Agent',
-      description: 'An intelligent agent system for handling customer inquiries with empathy, context awareness, and escalation protocols.',
-      category: 'Agents',
-      thumbnail: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop',
-      price: '$39'
-    },
-    {
       id: '3',
       title: 'Social Media Content Generator',
       description: 'Automated content creation system for social platforms with brand voice consistency, hashtag optimization, and engagement strategies.',
@@ -71,14 +63,6 @@ function App() {
       price: '$49'
     },
     {
-      id: '8',
-      title: 'Language Tutor System',
-      description: 'Comprehensive language learning system with conversational practice, grammar explanations, and cultural context.',
-      category: 'Learning Systems',
-      thumbnail: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&h=600&fit=crop',
-      price: '$32'
-    },
-    {
       id: '9',
       title: 'Email Marketing Assistant',
       description: 'AI system for crafting compelling email campaigns with A/B testing suggestions and conversion optimization.',
@@ -99,8 +83,14 @@ function App() {
   };
 
   const handleDownload = (id: string) => {
-    // Placeholder for download functionality
-    alert(`Download initiated for prompt ID: ${id}\n\nIn a production environment, this would provide a secure download link.`);
+    // Check if this is the Python Learning Guardrail System
+    if (id === '1') {
+      // Placeholder for download functionality
+      alert(`Download initiated for prompt ID: ${id}\n\nIn a production environment, this would provide a secure download link.`);
+    } else {
+      // Coming soon message for other prompts
+      alert('Coming Soon!\n\nThis prompt will be available for download soon. Stay tuned!');
+    }
   };
 
   const handleBackToHome = () => {
@@ -128,7 +118,7 @@ function App() {
             onDownload={handleDownload}
           />
         </div>
-        <Footer />
+        <Footer onNavigateHome={handleBackToHome} />
       </Router>
     );
   }

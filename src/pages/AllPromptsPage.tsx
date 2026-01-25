@@ -66,7 +66,7 @@ export function AllPromptsPage({ prompts, searchQuery, onViewDocs, onDownload }:
           className="text-[#343A40] mb-2" 
           style={{ fontFamily: 'Poppins, sans-serif' }}
         >
-          All System Prompts
+          System Prompts
         </h1>
         <p className="text-gray-600" style={{ fontFamily: 'Inter, sans-serif' }}>
           Browse our complete collection of expert-crafted AI system prompts

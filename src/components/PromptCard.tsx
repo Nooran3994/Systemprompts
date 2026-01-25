@@ -27,6 +27,9 @@ export function PromptCard({ prompt, onViewDocs, onDownload }: PromptCardProps) 
     return colors[category] || '#6C757D';
   };
 
+  // Check if this is the Python Learning Guardrail System (available for download)
+  const isAvailable = prompt.id === '1';
+
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group border border-gray-100">
       {/* Thumbnail */}
@@ -74,7 +77,7 @@ export function PromptCard({ prompt, onViewDocs, onDownload }: PromptCardProps) 
             className="flex-1 px-4 py-2 bg-[#28A745] text-white rounded-lg hover:bg-[#1e7e34] transition-colors text-sm font-medium"
             aria-label={`Download ${prompt.title}`}
           >
-            Download {prompt.price && `• ${prompt.price}`}
+            {isAvailable ? `Download • ${prompt.price}` : 'Coming Soon'}
           </button>
         </div>
       </div>

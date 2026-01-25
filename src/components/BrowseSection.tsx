@@ -69,7 +69,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, re
         <div className="flex justify-between items-center mb-8">
           <div>
             <h2 className="text-[#343A40]" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              {selectedCategory === 'All' ? 'All System Prompts' : selectedCategory}
+              {selectedCategory === 'All' ? 'System Prompts' : selectedCategory}
             </h2>
             <p className="text-gray-600 mt-2">
               {filteredPrompts.length} {filteredPrompts.length === 1 ? 'prompt' : 'prompts'} available
