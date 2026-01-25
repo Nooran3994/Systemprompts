@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface HeroSectionProps {
   onBrowseClick: () => void;
@@ -29,81 +30,156 @@ export function HeroSection({ onBrowseClick }: HeroSectionProps) {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 md:p-12 lg:p-16">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="py-6 md:py-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             {/* Left Column - Text Content */}
-            <div className="text-center md:text-left">
-              {/* Decorative Small Star */}
-              <div className="mb-6 inline-block">
-                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M50 0L52 48H50L48 48L50 0Z" fill="#FFC107"/>
-                  <path d="M50 100L52 52H50L48 52L50 100Z" fill="#FFC107"/>
-                  <path d="M0 50L48 52V50V48L0 50Z" fill="#FFC107"/>
-                  <path d="M100 50L52 52V50V48L100 50Z" fill="#FFC107"/>
-                  <path d="M14.64 14.64L48.59 48.59L50 50L51.41 48.59L14.64 14.64Z" fill="#FFC107"/>
-                  <path d="M85.36 85.36L51.41 51.41L50 50L48.59 51.41L85.36 85.36Z" fill="#FFC107"/>
-                  <path d="M85.36 14.64L51.41 48.59L50 50L48.59 48.59L85.36 14.64Z" fill="#FFC107"/>
-                  <path d="M14.64 85.36L48.59 51.41L50 50L51.41 51.41L14.64 85.36Z" fill="#FFC107"/>
-                </svg>
-              </div>
-
+            <motion.div 
+              className="text-center md:text-left"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               {/* Main Heading */}
-              <h1 className="text-white mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Empower Your AI with Professional System Prompts
+              <h1 className="text-white mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', lineHeight: '1.2' }}>
+                Expert System Prompts for Your AI
               </h1>
 
-              {/* Tagline */}
-              <p className="text-lg md:text-xl text-white/90 mb-4">
-                Unlock AI Potential with Expert System Prompts
-              </p>
-
               {/* Subheading */}
-              <p className="text-base md:text-lg text-white/80 mb-10">
-                Discover, Download, and Deploy Ready-Made Prompts for Learning, Agents, Social Media, and More
+              <p className="text-base md:text-lg text-white/85 mb-6">
+                Ready-made prompts for Learning, Agents, Social Media & More
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <button
+              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start mb-6">
+                <motion.button
                   onClick={onBrowseClick}
-                  className="inline-flex items-center justify-center px-8 py-3 bg-white text-[#007BFF] rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-7 py-3 bg-white text-[#007BFF] rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
                   aria-label="Browse available prompts"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   Browse Prompts
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                </button>
+                </motion.button>
               </div>
-            </div>
 
-            {/* Right Column - Image with Badge */}
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm p-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1769069919748-0706d1556c0c?w=800&q=80"
-                  alt="Professional working with AI technology"
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
+              {/* Quick Stats - Inline */}
+              <div className="flex gap-6 justify-center md:justify-start text-white/90">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#FFC107] rounded-full"></div>
+                  <span className="text-sm font-medium">5+ Categories</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#28A745] rounded-full"></div>
+                  <span className="text-sm font-medium">800+ Users</span>
+                </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 pt-12 md:pt-16 border-t border-white/20">
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#FFFFFF' }}>5+</p>
-              <p className="text-sm md:text-base text-white/80">Categories</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#FFFFFF' }}>800+</p>
-              <p className="text-sm md:text-base text-white/80">Happy Users</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#FFFFFF' }}>50K+</p>
-              <p className="text-sm md:text-base text-white/80">Downloads</p>
-            </div>
+            {/* Right Column - Interactive Image Card */}
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* AI Platforms Grid */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm p-6">
+                <div className="text-center mb-4">
+                  <p className="text-white/90 text-sm font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    Compatible with All Major AI Platforms
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3">
+                  {/* ChatGPT */}
+                  <motion.div 
+                    className="bg-[#10A37F] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>ChatGPT</span>
+                  </motion.div>
+
+                  {/* Gemini */}
+                  <motion.div 
+                    className="bg-gradient-to-br from-[#4285F4] via-[#9C27B0] to-[#EA4335] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Gemini</span>
+                  </motion.div>
+
+                  {/* GitHub Copilot */}
+                  <motion.div 
+                    className="bg-[#24292E] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Copilot</span>
+                  </motion.div>
+
+                  {/* Cursor */}
+                  <motion.div 
+                    className="bg-black rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Cursor</span>
+                  </motion.div>
+
+                  {/* Perplexity */}
+                  <motion.div 
+                    className="bg-[#20808D] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Perplexity</span>
+                  </motion.div>
+
+                  {/* Grok */}
+                  <motion.div 
+                    className="bg-black rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Grok</span>
+                  </motion.div>
+
+                  {/* Claude */}
+                  <motion.div 
+                    className="bg-[#D97757] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Claude</span>
+                  </motion.div>
+
+                  {/* DeepSeek */}
+                  <motion.div 
+                    className="bg-gradient-to-br from-[#0066FF] to-[#00D4FF] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>DeepSeek</span>
+                  </motion.div>
+                </div>
+
+                {/* Floating Badge */}
+                <motion.div 
+                  className="absolute top-4 right-4 bg-[#28A745] text-white px-3 py-1.5 rounded-full shadow-lg text-xs font-semibold"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  ✨ Universal
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

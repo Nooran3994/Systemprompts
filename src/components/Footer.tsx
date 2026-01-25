@@ -1,8 +1,21 @@
 import React from 'react';
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   return (
     <footer className="bg-[#343A40] text-white py-12">
@@ -49,22 +62,17 @@ export function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-[#007BFF] transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#categories" className="text-gray-300 hover:text-[#007BFF] transition-colors">
+                <a href="#browse" onClick={(e) => handleNavClick(e, 'browse')} className="text-gray-300 hover:text-[#007BFF] transition-colors">
                   Categories
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-[#007BFF] transition-colors">
+                <a href="#why-prompts" onClick={(e) => handleNavClick(e, 'why-prompts')} className="text-gray-300 hover:text-[#007BFF] transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-[#007BFF] transition-colors">
+                <a href="#get-started" onClick={(e) => handleNavClick(e, 'get-started')} className="text-gray-300 hover:text-[#007BFF] transition-colors">
                   Contact
                 </a>
               </li>

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { Header } from './components/Header';
-import { HeroSection } from './components/HeroSection';
-import { VisionMissionSection } from './components/VisionMissionSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { BrowseSection } from './components/BrowseSection';
-import { CustomOptimizationSection } from './components/CustomOptimizationSection';
-import { SubscriptionSection } from './components/SubscriptionSection';
 import { Footer } from './components/Footer';
 import { DetailPage } from './components/DetailPage';
+import { HomePage } from './pages/HomePage';
+import { AllPromptsPage } from './pages/AllPromptsPage';
 import { PromptCardData } from './components/PromptCard';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
@@ -22,8 +19,8 @@ function App() {
       title: 'Python Learning Guardrail System',
       description: 'A stateful AI engine for guided Python mastery, following a comprehensive roadmap with prompts, validations, and project integration.',
       category: 'Learning Systems',
-      thumbnail: pythonRoadmap,
-      price: '$29'
+      thumbnail: 'https://images.unsplash.com/photo-1667372531881-6f975b1c86db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxweXRob24lMjBwcm9ncmFtbWluZyUyMGNvZGV8ZW58MXx8fHwxNzY5MzQyMzgzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+      price: '$2'
     },
     {
       id: '2',
@@ -91,13 +88,6 @@ function App() {
     }
   ];
 
-  const handleBrowseClick = () => {
-    const categoriesSection = document.getElementById('categories');
-    if (categoriesSection) {
-      categoriesSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const handleLogoClick = () => {
     setSelectedPromptId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -123,11 +113,13 @@ function App() {
   // Detail page view
   if (selectedPromptId) {
     return (
-      <>
+      <Router>
         <Header 
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
           onLogoClick={handleLogoClick}
+          prompts={prompts}
+          onPromptClick={handleViewDocs}
         />
         <div className="pt-16 md:pt-20">
           <DetailPage
@@ -137,35 +129,50 @@ function App() {
           />
         </div>
         <Footer />
-      </>
+      </Router>
     );
   }
 
-  // Landing page view
+  // Main routing
   return (
-    <div className="min-h-screen">
-      <Header 
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        onLogoClick={handleLogoClick}
-      />
-      
-      <main>
-        <HeroSection onBrowseClick={handleBrowseClick} />
-        <VisionMissionSection />
-        <TestimonialsSection />
-        <BrowseSection
-          prompts={prompts}
+    <Router>
+      <div className="min-h-screen">
+        <Header 
           searchQuery={searchQuery}
-          onViewDocs={handleViewDocs}
-          onDownload={handleDownload}
+          onSearchChange={setSearchQuery}
+          onLogoClick={handleLogoClick}
+          prompts={prompts}
+          onPromptClick={handleViewDocs}
         />
-        <CustomOptimizationSection />
-        <SubscriptionSection />
-      </main>
+        
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <HomePage 
+                prompts={prompts}
+                searchQuery={searchQuery}
+                onViewDocs={handleViewDocs}
+                onDownload={handleDownload}
+              />
+            } 
+          />
+          <Route 
+            path="/prompts" 
+            element={
+              <AllPromptsPage 
+                prompts={prompts}
+                searchQuery={searchQuery}
+                onViewDocs={handleViewDocs}
+                onDownload={handleDownload}
+              />
+            } 
+          />
+        </Routes>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

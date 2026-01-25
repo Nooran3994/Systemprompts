@@ -71,7 +71,7 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
               >
                 <Download className="w-5 h-5 mr-2" />
-                Download Now {prompt.price && `• ${prompt.price}`}
+                Download Now • $2
               </button>
             </div>
 

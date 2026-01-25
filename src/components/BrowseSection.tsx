@@ -9,12 +9,21 @@ interface BrowseSectionProps {
   searchQuery: string;
   onViewDocs: (id: string) => void;
   onDownload: (id: string) => void;
+  resetCategoryTrigger?: number;
 }
 
-export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload }: BrowseSectionProps) {
+export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, resetCategoryTrigger }: BrowseSectionProps) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showMasonry, setShowMasonry] = useState(false);
   const [expandedView, setExpandedView] = useState(false);
+
+  // Reset category to 'All' and expand view when Browse Prompts is clicked
+  React.useEffect(() => {
+    if (resetCategoryTrigger && resetCategoryTrigger > 0) {
+      setSelectedCategory('All');
+      setExpandedView(true);
+    }
+  }, [resetCategoryTrigger]);
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -139,7 +148,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload }: 
               className="px-8 py-3 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-all shadow-md hover:shadow-lg transform hover:scale-105"
               style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
             >
-              See More ({filteredPrompts.length - 6} more)
+              See More
             </button>
           </div>
         )}

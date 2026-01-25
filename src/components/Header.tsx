@@ -1,14 +1,93 @@
 import React from 'react';
 import { Search, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { PromptCardData } from './PromptCard';
 
 interface HeaderProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onLogoClick: () => void;
+  prompts: PromptCardData[];
+  onPromptClick: (id: string) => void;
 }
 
-export function Header({ searchQuery, onSearchChange, onLogoClick }: HeaderProps) {
+export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPromptClick }: HeaderProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [showSearchDropdown, setShowSearchDropdown] = React.useState(false);
+  const searchRef = React.useRef<HTMLDivElement>(null);
+
+  const handleLogoClickInternal = () => {
+    navigate('/');
+    onLogoClick();
+  };
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSearchDropdown(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Show dropdown when typing
+  React.useEffect(() => {
+    if (searchQuery.trim().length > 0) {
+      setShowSearchDropdown(true);
+    } else {
+      setShowSearchDropdown(false);
+    }
+  }, [searchQuery]);
+
+  // Filter prompts based on search query
+  const filterPrompts = (query: string) => {
+    const lowerQuery = query.toLowerCase().trim();
+    if (!lowerQuery) return [];
+
+    return prompts.filter((prompt) => {
+      // Search in title
+      if (prompt.title.toLowerCase().includes(lowerQuery)) return true;
+      
+      // Search in description
+      if (prompt.description.toLowerCase().includes(lowerQuery)) return true;
+      
+      // Search in category
+      if (prompt.category.toLowerCase().includes(lowerQuery)) return true;
+      
+      // Search for common keywords
+      const keywords = [
+        'python', 'javascript', 'react', 'java', 'code', 'programming',
+        'learning', 'education', 'tutorial', 'social', 'media', 'marketing',
+        'agent', 'ai', 'automation', 'productivity', 'writing', 'content',
+        'data', 'analysis', 'research', 'customer', 'service', 'email'
+      ];
+      
+      // Check if query matches any keyword relevant to the prompt
+      return keywords.some(keyword => {
+        if (lowerQuery.includes(keyword)) {
+          // Check if the prompt content relates to this keyword
+          const promptContent = `${prompt.title} ${prompt.description} ${prompt.category}`.toLowerCase();
+          return promptContent.includes(keyword);
+        }
+        return false;
+      });
+    });
+  };
+
+  const filteredPrompts = filterPrompts(searchQuery);
+
+  const handlePromptSelect = (id: string) => {
+    setShowSearchDropdown(false);
+    onSearchChange(''); // Clear search
+    onPromptClick(id);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50 shadow-sm">
@@ -16,7 +95,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick }: HeaderProps
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <button 
-            onClick={onLogoClick}
+            onClick={handleLogoClickInternal}
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity mr-4 md:mr-8"
             aria-label="Home"
           >
@@ -59,9 +138,9 @@ export function Header({ searchQuery, onSearchChange, onLogoClick }: HeaderProps
           </nav>
 
           {/* Search Bar - Desktop */}
-          <div className="hidden lg:flex items-center flex-1 max-w-md mx-8">
+          <div className="hidden lg:flex items-center flex-1 max-w-md mx-8" ref={searchRef}>
             <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 z-10" />
               <input
                 type="text"
                 placeholder="Search for system prompts..."
@@ -70,6 +149,56 @@ export function Header({ searchQuery, onSearchChange, onLogoClick }: HeaderProps
                 className="w-full pl-10 pr-4 py-2 bg-[#F8F9FA] border border-gray-200 rounded-[88px] focus:outline-none focus:ring-2 focus:ring-[#007BFF] focus:border-transparent transition-all"
                 aria-label="Search system prompts"
               />
+              
+              {/* Search Dropdown */}
+              {showSearchDropdown && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl max-h-[500px] overflow-y-auto z-50">
+                  {filteredPrompts.length > 0 ? (
+                    <div className="p-2">
+                      {filteredPrompts.map((prompt) => (
+                        <div
+                          key={prompt.id}
+                          onClick={() => handlePromptSelect(prompt.id)}
+                          className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors group"
+                        >
+                          {/* Thumbnail */}
+                          <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-gray-100">
+                            <img
+                              src={prompt.thumbnail}
+                              alt={prompt.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            />
+                          </div>
+                          
+                          {/* Content */}
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-semibold text-sm text-gray-900 mb-1 line-clamp-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                              {prompt.title}
+                            </h4>
+                            <p className="text-xs text-gray-600 line-clamp-2 mb-1">
+                              {prompt.description}
+                            </p>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs px-2 py-0.5 bg-[#007BFF]/10 text-[#007BFF] rounded-full">
+                                {prompt.category}
+                              </span>
+                              <span className="text-xs font-semibold text-[#28A745]">
+                                {prompt.price}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="p-6 text-center text-gray-500">
+                      <Search className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                      <p className="text-sm">No prompts found for "{searchQuery}"</p>
+                      <p className="text-xs mt-1">Try searching for keywords like "python", "social media", or "learning"</p>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
