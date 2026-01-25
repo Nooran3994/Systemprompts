@@ -93,7 +93,7 @@ export function HeroSection({ onBrowseClick }: HeroSectionProps) {
           {/* Stats Section */}
           <div className="grid grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 pt-12 md:pt-16 border-t border-white/20">
             <div className="text-center">
-              <p className="text-3xl md:text-4xl mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#FFFFFF' }}>4</p>
+              <p className="text-3xl md:text-4xl mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#FFFFFF' }}>5+</p>
               <p className="text-sm md:text-base text-white/80">Categories</p>
             </div>
             <div className="text-center">

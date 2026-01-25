@@ -16,7 +16,7 @@ export function SubscriptionSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#F8F9FA]">
+    <section id="subscribe" className="py-16 md:py-24 bg-[#F8F9FA]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
           {/* Icon */}

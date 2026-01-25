@@ -47,13 +47,13 @@ export function Header({ searchQuery, onSearchChange, onLogoClick }: HeaderProps
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#categories" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
+            <a href="#browse" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               Categories
             </a>
-            <a href="#about" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
+            <a href="#why-prompts" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               About
             </a>
-            <a href="#contact" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
+            <a href="#get-started" className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               Contact
             </a>
           </nav>
@@ -74,12 +74,13 @@ export function Header({ searchQuery, onSearchChange, onLogoClick }: HeaderProps
           </div>
 
           {/* Subscribe Button */}
-          <button 
+          <a 
+            href="#subscribe"
             className="hidden md:block px-6 py-2 bg-[#007BFF] text-white rounded-[85px] hover:bg-[#0056b3] transition-colors shadow-md hover:shadow-lg transform hover:scale-105 transition-transform"
             aria-label="Subscribe for updates"
           >
             Subscribe
-          </button>
+          </a>
 
           {/* Mobile Menu Button */}
           <button 
@@ -102,33 +103,34 @@ export function Header({ searchQuery, onSearchChange, onLogoClick }: HeaderProps
           <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <nav className="flex flex-col space-y-3">
               <a 
-                href="#categories" 
+                href="#browse" 
                 className="text-[#343A40] hover:text-[#007BFF] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Categories
               </a>
               <a 
-                href="#about" 
+                href="#why-prompts" 
                 className="text-[#343A40] hover:text-[#007BFF] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </a>
               <a 
-                href="#contact" 
+                href="#get-started" 
                 className="text-[#343A40] hover:text-[#007BFF] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
               </a>
-              <button 
-                className="w-full px-6 py-2 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-colors shadow-md text-left"
+              <a 
+                href="#subscribe"
+                className="w-full px-6 py-2 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-colors shadow-md text-left block"
                 aria-label="Subscribe for updates"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Subscribe
-              </button>
+              </a>
             </nav>
           </div>
         )}

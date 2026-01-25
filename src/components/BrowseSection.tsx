@@ -47,7 +47,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload }: 
   };
 
   return (
-    <section id="categories" className="py-16 bg-[#F8F9FA] min-h-screen">
+    <section id="browse" className="py-16 bg-[#F8F9FA] min-h-screen">
       {/* Category Filter Bar */}
       <CategoryBar
         categories={categories}

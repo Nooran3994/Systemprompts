@@ -18,7 +18,7 @@ export function CustomOptimizationSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <section id="get-started" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-green-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
