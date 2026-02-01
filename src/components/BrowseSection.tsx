@@ -3,6 +3,7 @@ import { PromptCard, PromptCardData } from './PromptCard';
 import { CategoryBar } from './CategoryBar';
 import { ChevronLeft, LayoutGrid, LayoutList } from 'lucide-react';
 import Masonry from 'react-responsive-masonry';
+import { useNavigate } from 'react-router-dom';
 
 interface BrowseSectionProps {
   prompts: PromptCardData[];
@@ -54,6 +55,8 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, re
   const handleSeeMore = () => {
     setExpandedView(true);
   };
+
+  const navigate = useNavigate();
 
   return (
     <section id="browse" className="py-16 bg-[#F8F9FA] min-h-screen">
@@ -144,7 +147,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, re
         {!expandedView && filteredPrompts.length > 6 && (
           <div className="text-center mt-12">
             <button
-              onClick={handleSeeMore}
+              onClick={() => navigate('/prompts')}
               className="px-8 py-3 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-all shadow-md hover:shadow-lg transform hover:scale-105"
               style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
             >

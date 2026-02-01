@@ -167,17 +167,6 @@ export function HeroSection({ onBrowseClick }: HeroSectionProps) {
                     <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>DeepSeek</span>
                   </motion.div>
                 </div>
-
-                {/* Floating Badge */}
-                <motion.div 
-                  className="absolute top-4 right-4 bg-[#28A745] text-white px-3 py-1.5 rounded-full shadow-lg text-xs font-semibold"
-                  style={{ fontFamily: 'Poppins, sans-serif' }}
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  ✨ Universal
-                </motion.div>
               </div>
             </motion.div>
           </div>
