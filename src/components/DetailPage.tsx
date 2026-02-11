@@ -386,43 +386,43 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-16 md:py-24">
+      <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-12 md:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <a
             href="#browse"
             onClick={onBack}
-            className="inline-flex items-center text-white/90 hover:text-white mb-8 transition-colors cursor-pointer"
+            className="inline-flex items-center text-white/90 hover:text-white mb-6 md:mb-8 transition-colors cursor-pointer"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-2" />
             Back to Browse
           </a>
 
           <div className="text-center max-w-4xl mx-auto">
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Python Learning Guardrail System
             </h1>
             <p
-              className="text-xl md:text-2xl text-white/95 mb-4"
+              className="text-lg sm:text-xl md:text-2xl text-white/95 mb-3 md:mb-4"
               style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 500 }}
             >
               A Structured AI-Powered Platform for Mastering Python from Beginner to Pro
             </p>
-            <p className="text-white/90 text-lg leading-relaxed max-w-3xl mx-auto">
+            <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
               An AI platform guiding users through a comprehensive roadmap with interactive prompts, hands-on projects, 
               and rigorous validation. Powered by GEMINI.md and Python_prompts_guardrail.md for a stateful, 
               personalized learning experience.
             </p>
-            <div className="mt-8">
+            <div className="mt-6 md:mt-8">
               <button
                 onClick={() => onDownload(prompt.id)}
-                className="inline-flex items-center px-8 py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
                 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
               >
-                <Download className="w-5 h-5 mr-2" />
+                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                 Download Now • $2
               </button>
             </div>
@@ -431,25 +431,25 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
         
         {/* Roadmap Overview Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
+        <section className="mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-8 md:mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Comprehensive Learning Roadmap
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">
               Follow a carefully structured path from Python basics to advanced professional concepts, 
               covering everything you need to become a proficient Python developer.
             </p>
           </div>
 
           {/* Roadmap Image */}
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl bg-white border border-gray-100">
+          <div className="mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden shadow-2xl bg-white border border-gray-100">
             <video
               src="https://i.imgur.com/vw2DYIH.mp4"
               className="w-full h-auto"
@@ -462,18 +462,18 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
           </div>
 
           {/* Roadmap Stages Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {roadmapStages.map((stage, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all"
+                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                <div className="flex items-center gap-3 mb-3 md:mb-4">
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm">
                     {index + 1}
                   </div>
                   <h3
-                    className="font-bold text-[#343A40] text-lg"
+                    className="font-bold text-[#343A40] text-base md:text-lg"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     {stage.title}
@@ -481,7 +481,7 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                 </div>
                 <ul className="space-y-2">
                   {stage.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-2 text-gray-700 text-sm">
+                    <li key={itemIndex} className="flex items-start gap-2 text-gray-700 text-xs md:text-sm">
                       <span className="text-[#28A745] mt-1">▸</span>
                       <span>{item}</span>
                     </li>
@@ -491,8 +491,8 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
             ))}
           </div>
 
-          <div className="mt-8 p-4 bg-blue-50 border-l-4 border-[#007BFF] rounded-r-lg">
-            <p className="text-gray-700">
+          <div className="mt-6 md:mt-8 p-4 bg-blue-50 border-l-4 border-[#007BFF] rounded-r-lg">
+            <p className="text-gray-700 text-sm md:text-base">
               <strong className="text-[#007BFF]">Note:</strong> This roadmap aligns with Beginner, Intermediate, 
               and Advanced learning stages, ensuring a smooth progression through Python mastery.
             </p>
@@ -500,40 +500,40 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
         </section>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 mb-20"></div>
+        <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
 
         {/* System Components Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
+        <section className="mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-8 md:mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               System Components
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-base md:text-lg px-4">
               Key files and structure powering your learning experience
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
             {systemComponents.map((component, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all"
+                className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-[#007BFF]/10 rounded-lg flex items-center justify-center flex-shrink-0 text-[#007BFF]">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-[#007BFF]/10 rounded-lg flex items-center justify-center flex-shrink-0 text-[#007BFF]">
                     {component.icon}
                   </div>
                   <div className="flex-1">
                     <h3
-                      className="font-bold text-[#343A40] mb-2 text-lg"
+                      className="font-bold text-[#343A40] mb-2 text-base md:text-lg"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       {component.name}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
                       {component.description}
                     </p>
                   </div>
@@ -544,36 +544,36 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
         </section>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 mb-20"></div>
+        <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
 
         {/* How It Works Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
+        <section className="mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-8 md:mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               How It Works
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-base md:text-lg px-4">
               A powerful, stateful learning system designed for mastery
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
             {howItWorksSteps.map((step, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all"
+                className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all"
               >
-                <div className="mb-4">{step.icon}</div>
+                <div className="mb-3 md:mb-4">{step.icon}</div>
                 <h3
-                  className="font-bold text-[#343A40] mb-2"
+                  className="font-bold text-[#343A40] mb-2 text-base md:text-lg"
                   style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -581,14 +581,15 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
           </div>
 
           {/* Learning Flow */}
-          <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8 border border-gray-200">
+          <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-200">
             <h3
-              className="font-bold text-[#343A40] mb-6 text-xl text-center"
+              className="font-bold text-[#343A40] mb-6 text-lg md:text-xl text-center"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Learning Flow
             </h3>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-center">
+            {/* Desktop Flow */}
+            <div className="hidden md:flex flex-wrap items-center justify-center gap-4 text-center">
               <div className="flex items-center gap-4">
                 <div className="bg-white rounded-lg p-4 shadow-md">
                   <BookOpen className="w-8 h-8 text-[#007BFF] mx-auto mb-2" />
@@ -611,97 +612,118 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                 </div>
               </div>
             </div>
+            {/* Mobile Flow - Stacked */}
+            <div className="md:hidden flex flex-col items-center gap-3">
+              <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-[200px]">
+                <BookOpen className="w-8 h-8 text-[#007BFF] mx-auto mb-2" />
+                <p className="font-semibold text-sm text-[#343A40] text-center">Teach</p>
+              </div>
+              <div className="text-2xl text-[#28A745]">↓</div>
+              <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-[200px]">
+                <Code className="w-8 h-8 text-[#28A745] mx-auto mb-2" />
+                <p className="font-semibold text-sm text-[#343A40] text-center">Practice</p>
+              </div>
+              <div className="text-2xl text-[#28A745]">↓</div>
+              <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-[200px]">
+                <CheckCircle className="w-8 h-8 text-[#FFC107] mx-auto mb-2" />
+                <p className="font-semibold text-sm text-[#343A40] text-center">Validate</p>
+              </div>
+              <div className="text-2xl text-[#28A745]">↓</div>
+              <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-[200px]">
+                <Rocket className="w-8 h-8 text-[#007BFF] mx-auto mb-2" />
+                <p className="font-semibold text-sm text-[#343A40] text-center">Advance</p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 mb-20"></div>
+        <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
 
         {/* Setup and Usage Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
+        <section className="mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-8 md:mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Setup & Usage
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-base md:text-lg px-4">
               Get started in minutes with these simple steps
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {setupSteps.map((step) => (
               <div
                 key={step.number}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all"
+                className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-bold text-lg md:text-xl flex-shrink-0">
                     {step.number}
                   </div>
                   <div className="flex-1">
                     <h3
-                      className="font-bold text-[#343A40] mb-2 text-lg"
+                      className="font-bold text-[#343A40] mb-2 text-base md:text-lg"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                       {step.description}
                     </p>
                   </div>
-                  <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[#28A745] flex-shrink-0 mt-1 hidden sm:block" />
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 p-6 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl border border-gray-200 flex items-start gap-4">
+          <div className="mt-6 md:mt-8 p-4 md:p-6 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl border border-gray-200 flex flex-col sm:flex-row items-start gap-3 md:gap-4">
             <Terminal className="w-6 h-6 text-[#007BFF] flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="font-bold text-[#343A40] mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <div className="flex-1">
+              <h4 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Running Your Code
               </h4>
-              <p className="text-gray-700 mb-2">
+              <p className="text-gray-700 mb-2 text-sm md:text-base">
                 Use the integrated terminal in VSCode to run your Python files:
               </p>
-              <code className="bg-white px-3 py-2 rounded border border-gray-300 inline-block text-sm font-mono">
+              <code className="bg-white px-3 py-2 rounded border border-gray-300 inline-block text-xs md:text-sm font-mono">
                 python main.py
               </code>
-              <p className="text-gray-600 text-sm mt-2">
-                Install dependencies as needed using pip throughout your learning journey.
+              <p className="text-gray-600 text-xs md:text-sm mt-2">\n                Install dependencies as needed using pip throughout your learning journey.
               </p>
             </div>
           </div>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 mb-20"></div>
+        <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
 
         {/* Best Practices Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
+        <section className="mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-8 md:mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Best Practices
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-base md:text-lg px-4">
               Maximize your learning effectiveness
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 border border-gray-200">
-            <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-200">
+            <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
               {bestPractices.map((practice, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-[#28A745] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Lightbulb className="w-4 h-4" />
+                    <Lightbulb className="w-3 h-3 md:w-4 md:h-4" />
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{practice}</p>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">{practice}</p>
                 </div>
               ))}
             </div>
@@ -709,23 +731,23 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
         </section>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 mb-20"></div>
+        <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
 
         {/* FAQ Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
+        <section className="mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-8 md:mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-base md:text-lg px-4">
               Everything you need to know
             </p>
           </div>
 
-          <div className="space-y-4 max-w-4xl mx-auto">
+          <div className="space-y-3 md:space-y-4 max-w-4xl mx-auto">
             {faqs.map((faq, index) => (
               <div
                 key={index}
@@ -733,22 +755,22 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                  className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
                 >
                   <h3
-                    className="font-semibold text-[#343A40] pr-4"
+                    className="font-semibold text-[#343A40] pr-4 text-sm md:text-base"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     {faq.question}
                   </h3>
                   {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-[#007BFF] flex-shrink-0" />
+                    <ChevronUp className="w-4 h-4 md:w-5 md:h-5 text-[#007BFF] flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0" />
                   )}
                 </button>
                 {openFaq === index && (
-                  <div className="px-6 pb-4 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                  <div className="px-4 md:px-6 pb-3 md:pb-4 text-gray-600 leading-relaxed border-t border-gray-100 pt-3 md:pt-4 text-sm md:text-base">
                     {faq.answer}
                   </div>
                 )}
@@ -758,26 +780,26 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
         </section>
 
         {/* Final CTA Section */}
-        <section className="bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-2xl p-8 md:p-12 text-center text-white">
-          <Rocket className="w-16 h-16 mx-auto mb-6 text-white" />
+        <section className="bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-xl md:rounded-2xl p-6 md:p-12 text-center text-white">
+          <Rocket className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-white" />
           <h3
-            className="text-3xl font-bold mb-4"
+            className="text-2xl md:text-3xl font-bold mb-3 md:mb-4"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Ready to Master Python?
           </h3>
-          <p className="text-white/90 mb-2 text-lg max-w-2xl mx-auto">
+          <p className="text-white/90 mb-2 text-base md:text-lg max-w-2xl mx-auto px-4">
             Start your structured learning journey today with the Python Learning Guardrail System.
           </p>
-          <p className="text-white/80 mb-8 text-sm">
+          <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
             Support available through Gemini chat or repository issues. Happy learning! 🚀
           </p>
           <button
             onClick={() => onDownload(prompt.id)}
-            className="inline-flex items-center px-8 py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+            className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
             style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
           >
-            <Download className="w-5 h-5 mr-2" />
+            <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
             Download Now • $2
           </button>
         </section>
