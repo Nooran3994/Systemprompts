@@ -24,12 +24,12 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
   if (prompt.id !== '1') {
     // Default view for other prompts
     const features = [
-      'Comprehensive system instructions',
-      'Pre-validated and tested prompts',
-      'Easy integration with any AI model',
-      'Regular updates and improvements',
-      'Full documentation included',
-      'Commercial usage license'
+      'Compatible with ChatGPT, Claude, Gemini, GPT-4 & all major AI models',
+      'Pre-validated and tested across multiple platforms',
+      'Easy integration with any AI assistant or API',
+      'Regular updates for new model versions',
+      'Full documentation with model-specific tips',
+      'Commercial usage license included'
     ];
 
     const files = [
@@ -126,7 +126,7 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                 className="text-[#343A40] mb-4"
                 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '20px' }}
               >
-                How to Use
+                How to Use with Any AI Model
               </h3>
               <ol className="space-y-4 text-gray-700">
                 <li className="flex gap-3">
@@ -135,7 +135,7 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                   </span>
                   <div>
                     <strong>Download the package:</strong> After purchase, you'll receive a secure download link 
-                    containing all files.
+                    containing all files compatible with ChatGPT, Claude, Gemini, and more.
                   </div>
                 </li>
                 <li className="flex gap-3">
@@ -143,8 +143,8 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                     2
                   </span>
                   <div>
-                    <strong>Review the documentation:</strong> Read the README.md file for complete setup 
-                    instructions and best practices.
+                    <strong>Review the documentation:</strong> Read the README.md file for setup instructions 
+                    and platform-specific integration tips for each AI model.
                   </div>
                 </li>
                 <li className="flex gap-3">
@@ -152,8 +152,8 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                     3
                   </span>
                   <div>
-                    <strong>Integrate with your AI:</strong> Copy the system prompt into your AI application's 
-                    configuration or API calls.
+                    <strong>Integrate with your AI:</strong> Copy the system prompt into your preferred AI model's 
+                    settings, API configuration, or chat interface (works with OpenAI, Anthropic, Google, and more).
                   </div>
                 </li>
                 <li className="flex gap-3">
@@ -161,8 +161,8 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                     4
                   </span>
                   <div>
-                    <strong>Customize as needed:</strong> Adjust parameters and settings based on your 
-                    specific requirements.
+                    <strong>Customize as needed:</strong> Adjust parameters and settings to optimize performance 
+                    for your specific AI model and use case.
                   </div>
                 </li>
               </ol>

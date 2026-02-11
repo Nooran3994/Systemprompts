@@ -110,6 +110,7 @@ function App() {
           onLogoClick={handleLogoClick}
           prompts={prompts}
           onPromptClick={handleViewDocs}
+          isDetailView={true}
         />
         <div className="pt-16 md:pt-20">
           <DetailPage

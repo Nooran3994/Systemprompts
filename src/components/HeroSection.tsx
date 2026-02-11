@@ -86,87 +86,13 @@ export function HeroSection({ onBrowseClick }: HeroSectionProps) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* AI Platforms Grid */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm p-6">
-                <div className="text-center mb-4">
-                  <p className="text-white/90 text-sm font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    Compatible with All Major AI Platforms
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-3">
-                  {/* ChatGPT */}
-                  <motion.div 
-                    className="bg-[#10A37F] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>ChatGPT</span>
-                  </motion.div>
-
-                  {/* Gemini */}
-                  <motion.div 
-                    className="bg-gradient-to-br from-[#4285F4] via-[#9C27B0] to-[#EA4335] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Gemini</span>
-                  </motion.div>
-
-                  {/* GitHub Copilot */}
-                  <motion.div 
-                    className="bg-[#24292E] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Copilot</span>
-                  </motion.div>
-
-                  {/* Cursor */}
-                  <motion.div 
-                    className="bg-black rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Cursor</span>
-                  </motion.div>
-
-                  {/* Perplexity */}
-                  <motion.div 
-                    className="bg-[#20808D] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Perplexity</span>
-                  </motion.div>
-
-                  {/* Grok */}
-                  <motion.div 
-                    className="bg-black rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Grok</span>
-                  </motion.div>
-
-                  {/* Claude */}
-                  <motion.div 
-                    className="bg-[#D97757] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>Claude</span>
-                  </motion.div>
-
-                  {/* DeepSeek */}
-                  <motion.div 
-                    className="bg-gradient-to-br from-[#0066FF] to-[#00D4FF] rounded-xl p-4 flex items-center justify-center hover:scale-105 transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white font-bold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>DeepSeek</span>
-                  </motion.div>
-                </div>
+              {/* Hero Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1629787155650-9ce3697dcb38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHRlY2hub2xvZ3klMjB3b3Jrc3BhY2UlMjBjb2RpbmclMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODQwMDE5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  alt="AI Technology"
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
           </div>

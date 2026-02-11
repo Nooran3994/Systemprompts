@@ -9,9 +9,10 @@ interface HeaderProps {
   onLogoClick: () => void;
   prompts: PromptCardData[];
   onPromptClick: (id: string) => void;
+  isDetailView?: boolean;
 }
 
-export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPromptClick }: HeaderProps) {
+export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPromptClick, isDetailView }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
@@ -29,24 +30,24 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
     e.preventDefault();
     setMobileMenuOpen(false);
     
-    // Check if we're already on the home page
-    if (window.location.pathname === '/') {
-      // Already on home page, just scroll
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Navigate to home page first, then scroll
-      navigate('/');
+    // If we're on detail view or not on home page, navigate to home first
+    if (isDetailView || window.location.pathname !== '/') {
+      // Navigate to home page and reset state
       onLogoClick(); // Reset any selected prompt
-      // Wait for the page to fully render
+      navigate('/');
+      // Wait for the page to fully render, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 300);
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
