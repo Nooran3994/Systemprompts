@@ -1,7 +1,7 @@
 
-  # Systemprompts.com
+  # Systemprompts.site
 
-  This is a code bundle for Systemprompts.com. The original project is available at https://www.figma.com/design/xVLSQZQocRNDlqOsgCIFQN/Systemprompts.com.
+  This is a code bundle for Systemprompts.site. The original project is available at https://www.figma.com/design/xVLSQZQocRNDlqOsgCIFQN/Systemprompts.site.
 
   ## Running the code
 
