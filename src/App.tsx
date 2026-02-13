@@ -87,8 +87,8 @@ function App() {
   const handleDownload = (id: string) => {
     // Check if this is the Python Learning Guardrail System
     if (id === '1') {
-      // Placeholder for download functionality
-      alert(`Download initiated for prompt ID: ${id}\n\nIn a production environment, this would provide a secure download link.`);
+      // Redirect to Payhip download page
+      window.open('https://payhip.com/b/V5PBw', '_blank');
     } else {
       // Coming soon message for other prompts
       alert('Coming Soon!\n\nThis prompt will be available for download soon. Stay tuned!');
