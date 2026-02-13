@@ -20,8 +20,501 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
     );
   }
 
-  // Show the comprehensive page only for Python Learning Guardrail System
-  if (prompt.id !== '1') {
+  // Show the comprehensive page for Python Learning Guardrail System or Data/Analyst System
+  if (prompt.id === '7') {
+    // Data/Analyst System comprehensive page
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-12 md:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Back Button */}
+            <a
+              href="#browse"
+              onClick={onBack}
+              className="inline-flex items-center text-white/90 hover:text-white mb-6 md:mb-8 transition-colors cursor-pointer"
+            >
+              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+              Back to Browse
+            </a>
+
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
+                Free System • No Sign-up Required
+              </div>
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Data/Analyst System
+              </h1>
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-white/95 mb-3 md:mb-4"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 500 }}
+              >
+                High-Autonomy Interrogation Engine for Strategic Intelligence
+              </p>
+              <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8">
+                Transform raw artifacts into immediate strategic intelligence with visual-first methodology. 
+                Zero configuration, zero friction — just upload and get insights.
+              </p>
+              <button
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Access Free System
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+          
+          {/* System Overview */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                System Overview
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">
+                Unlike traditional analytical tools that require manual configuration, this system 
+                utilizes a Visual-First methodology to deliver immediate insights.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              <div className="bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-xl p-4 md:p-6">
+                <div className="w-12 h-12 bg-[#007BFF] rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Visual Dominance
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  Prioritize graphical representation to reveal the "story" of the data immediately with 3-5 high-density charts.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-white border border-gray-200 rounded-xl p-4 md:p-6">
+                <div className="w-12 h-12 bg-[#28A745] rounded-lg flex items-center justify-center mb-4">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Direct Intelligence
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  BLUF (Bottom Line Up Front) framework for rapid executive decision-making with no fluff.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-yellow-50 to-white border border-gray-200 rounded-xl p-4 md:p-6">
+                <div className="w-12 h-12 bg-[#FFC107] rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Grounded Clarity
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  Translate complex statistics into plain, professional English without metaphors or jargon.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Video Demonstration */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                See It In Action
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">
+                Watch how the Data/Analyst System transforms raw data into strategic insights instantly
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto">
+              <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border-4 border-[#007BFF]/20">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  className="w-full h-auto"
+                  poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=675&fit=crop"
+                >
+                  <source src="https://i.imgur.com/FZSfUI7.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p className="text-center text-sm text-gray-500 mt-4 px-4">
+                Live demonstration of the visual-first interrogation workflow
+              </p>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* The Interrogation Loop */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                The Interrogation Loop
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4">
+                Automatic workflow upon receiving any artifact (CSV, XLSX, JSON, PDF, or Source Code)
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* Step 1: Integrity Audit */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    A
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-[#343A40] mb-3 text-lg md:text-xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Integrity Audit
+                    </h3>
+                    <p className="text-gray-600 mb-4">Silent diagnostic to assess data reliability:</p>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#28A745] mt-1">▸</span>
+                        <span><strong>Health Score:</strong> $[0-100]$ metric based on completeness and consistency</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#28A745] mt-1">▸</span>
+                        <span><strong>Anomalies:</strong> Identification of statistical outliers and missing values</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#28A745] mt-1">▸</span>
+                        <span><strong>Distribution:</strong> Analysis of data skewness and variance</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 2: Adaptive Visual Gallery */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#28A745] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    B
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-[#343A40] mb-3 text-lg md:text-xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Adaptive Visual Gallery
+                    </h3>
+                    <p className="text-gray-600 mb-4">Automatic selection of optimal visualizations:</p>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      <div className="bg-blue-50 rounded-lg p-3">
+                        <p className="font-semibold text-sm text-[#007BFF] mb-1">High-Volume/Log Data</p>
+                        <p className="text-xs text-gray-600">Heatmaps, Frequency Histograms</p>
+                      </div>
+                      <div className="bg-green-50 rounded-lg p-3">
+                        <p className="font-semibold text-sm text-[#28A745] mb-1">Comparison/Categories</p>
+                        <p className="text-xs text-gray-600">Treemaps, Grouped Box Plots</p>
+                      </div>
+                      <div className="bg-yellow-50 rounded-lg p-3">
+                        <p className="font-semibold text-sm text-[#FFC107] mb-1">Trends/Time-Series</p>
+                        <p className="text-xs text-gray-600">Area Charts, Regression Plots</p>
+                      </div>
+                      <div className="bg-purple-50 rounded-lg p-3">
+                        <p className="font-semibold text-sm text-[#6F42C1] mb-1">Distribution</p>
+                        <p className="text-xs text-gray-600">Violin Plots, Ridge Plots</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 3: Strategic Synthesis */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#FFC107] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    C
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-[#343A40] mb-3 text-lg md:text-xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Strategic Synthesis
+                    </h3>
+                    <p className="text-gray-600 mb-4">Direct, point-form structure for findings:</p>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#28A745] mt-1">▸</span>
+                        <span><strong>BLUF Statement:</strong> Single most impactful discovery</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#28A745] mt-1">▸</span>
+                        <span><strong>Key Insights:</strong> Targeted bullets explaining the "So What"</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#28A745] mt-1">▸</span>
+                        <span><strong>Grounded Explanations:</strong> Real-world facts (e.g., "Retention is down 5%")</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* User Interaction Model */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Interrogation Styles
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4">
+                Choose your analysis approach with one-click tiles
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+              <div className="bg-white border-2 border-[#007BFF] rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-[#007BFF] rounded-lg flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-[#343A40] text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    Visual Audit
+                  </h3>
+                </div>
+                <p className="text-gray-600 text-sm">
+                  Full interrogation with focus on graphical storytelling
+                </p>
+              </div>
+
+              <div className="bg-white border-2 border-[#28A745] rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-[#28A745] rounded-lg flex items-center justify-center">
+                    <GitBranch className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-[#343A40] text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    Trend Interrogation
+                  </h3>
+                </div>
+                <p className="text-gray-600 text-sm">
+                  Focus on long-term signals and correlations
+                </p>
+              </div>
+
+              <div className="bg-white border-2 border-[#FFC107] rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-[#FFC107] rounded-lg flex items-center justify-center">
+                    <Lightbulb className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-[#343A40] text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    Anomaly Detection
+                  </h3>
+                </div>
+                <p className="text-gray-600 text-sm">
+                  Targeted search for risks and statistical "weirdness"
+                </p>
+              </div>
+
+              <div className="bg-white border-2 border-[#6F42C1] rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-[#6F42C1] rounded-lg flex items-center justify-center">
+                    <FileText className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-[#343A40] text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    Executive Summary
+                  </h3>
+                </div>
+                <p className="text-gray-600 text-sm">
+                  Condensed report focusing on bottom line and data health
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Output Architecture */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Output Architecture
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4">
+                Standardized, scannable structure for every response
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 md:p-8 overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-[#007BFF]">
+                    <th className="pb-3 pr-4 text-[#007BFF] font-bold" style={{ fontFamily: 'Poppins, sans-serif' }}>Section</th>
+                    <th className="pb-3 text-[#007BFF] font-bold" style={{ fontFamily: 'Poppins, sans-serif' }}>Content</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-gray-700">Visual Gallery</td>
+                    <td className="py-3 text-gray-600">3–5 high-density charts tailored to the data type</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-gray-700">The Bottom Line</td>
+                    <td className="py-3 text-gray-600">One bold sentence summarizing the primary discovery</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-gray-700">Analysis Points</td>
+                    <td className="py-3 text-gray-600">3–5 direct, professional bullet points on findings</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-gray-700">Health Matrix</td>
+                    <td className="py-3 text-gray-600">Markdown table detailing technical audit and metadata</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-gray-700">Next Steps</td>
+                    <td className="py-3 text-gray-600">Three clickable, high-value prompts for deeper exploration</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Key Constraints */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                System Constraints & Privacy
+              </h2>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-4">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">No Code Display</p>
+                  <p className="text-sm text-gray-600">Python logic executed internally for clean interface</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-4">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">No Metaphors</p>
+                  <p className="text-sm text-gray-600">Strictly business/data domain communication</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-4">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Data Privacy</p>
+                  <p className="text-sm text-gray-600">Silent PII redaction (names, emails, phone numbers)</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-4">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Computational Rigor</p>
+                  <p className="text-sm text-gray-600">Python interpreter derived results, never estimates</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Best Practices */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Best Practices for Users
+              </h2>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-6 md:p-8 border border-gray-200">
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#007BFF] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    1
+                  </div>
+                  <p className="text-gray-700"><strong>Upload First:</strong> For best experience, upload your file before typing instructions</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#28A745] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    2
+                  </div>
+                  <p className="text-gray-700"><strong>Specific Artifacts:</strong> System performs best with structured tabular data or semi-structured logs</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#FFC107] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    3
+                  </div>
+                  <p className="text-gray-700"><strong>Clickable Prompts:</strong> Use "Recommended Next Steps" to drill down without re-typing queries</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-xl md:rounded-2xl p-6 md:p-12 text-center text-white">
+            <Rocket className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-white" />
+            <h3
+              className="text-2xl md:text-3xl font-bold mb-3 md:mb-4"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Ready to Transform Your Data?
+            </h3>
+            <p className="text-white/90 mb-2 text-base md:text-lg max-w-2xl mx-auto px-4">
+              Access the Data/Analyst System now — completely free, no sign-up required.
+            </p>
+            <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
+              Upload your data and get instant strategic insights with zero friction. 🚀
+            </p>
+            <button
+              onClick={() => onDownload(prompt.id)}
+              className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+            >
+              <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+              Access Free System
+            </button>
+          </section>
+        </div>
+      </div>
+    );
+  } else if (prompt.id !== '1') {
     // Default view for other prompts
     const features = [
       'Compatible with ChatGPT, Claude, Gemini, GPT-4 & all major AI models',

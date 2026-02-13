@@ -58,11 +58,11 @@ function App() {
     },
     {
       id: '7',
-      title: 'Data Analysis Agent',
-      description: 'Intelligent system for analyzing datasets, generating visualizations, and providing actionable insights from complex data.',
+      title: 'Data/Analyst System',
+      description: 'High-autonomy interrogation engine that transforms raw data into strategic intelligence with visual-first methodology and zero-friction analysis.',
       category: 'Agents',
-      thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      price: '$49'
+      thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzJTIwZGFzaGJvYXJkJTIwY2hhcnRzJTIwZ3JhcGhzfGVufDF8fHx8MTc3MDk3MDI4NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      price: 'Free'
     },
     {
       id: '9',
@@ -89,6 +89,9 @@ function App() {
     if (id === '1') {
       // Redirect to Payhip download page
       window.open('https://payhip.com/b/V5PBw', '_blank');
+    } else if (id === '7') {
+      // Redirect to Gemini Gem for Data/Analyst System
+      window.open('https://gemini.google.com/gem/1-RRD545WaOHgM_jmjDaxsAwrbtnIawqG?usp=sharing', '_blank');
     } else {
       // Coming soon message for other prompts
       alert('Coming Soon!\n\nThis prompt will be available for download soon. Stay tuned!');

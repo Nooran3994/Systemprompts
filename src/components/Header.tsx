@@ -218,7 +218,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                                 {prompt.category}
                               </span>
                               <span className="text-xs font-semibold text-[#28A745]">
-                                {prompt.id === '1' ? prompt.price : 'Coming Soon'}
+                                {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : 'Coming Soon'}
                               </span>
                             </div>
                           </div>
@@ -346,7 +346,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                               {prompt.category}
                             </span>
                             <span className="text-xs font-semibold text-[#28A745]">
-                              {prompt.id === '1' ? prompt.price : 'Coming Soon'}
+                              {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : 'Coming Soon'}
                             </span>
                           </div>
                         </div>
