@@ -1,0 +1,44 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#007BFF"/>
+  
+  <!-- Gradient Overlay -->
+  <rect width="1200" height="630" fill="url(#gradient)" opacity="0.3"/>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#007BFF"/>
+      <stop offset="100%" stop-color="#0056b3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo Icon (centered left) -->
+  <g transform="translate(150, 215)">
+    <rect width="200" height="200" rx="32" fill="white" fill-opacity="0.15"/>
+    <path 
+      d="M66.67 93.33C66.67 93.33 83.33 76.67 100 76.67C116.67 76.67 133.33 93.33 133.33 93.33M100 76.67V143.33M100 143.33L66.67 176.67M100 143.33L133.33 176.67" 
+      stroke="white" 
+      stroke-width="16.67" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+    />
+    <path 
+      d="M150 126.67V160C150 169.2 142.53 176.67 133.33 176.67H66.67C57.47 176.67 50 169.2 50 160V126.67" 
+      stroke="white" 
+      stroke-width="16.67" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+    />
+  </g>
+  
+  <!-- Text Content -->
+  <text x="420" y="280" font-family="Poppins, sans-serif" font-size="72" font-weight="700" fill="white">
+    SystemPrompts
+  </text>
+  <text x="420" y="340" font-family="Inter, sans-serif" font-size="32" font-weight="400" fill="white" fill-opacity="0.9">
+    Premium AI System Prompts Marketplace
+  </text>
+  <text x="420" y="395" font-family="Inter, sans-serif" font-size="24" font-weight="400" fill="white" fill-opacity="0.75">
+    For ChatGPT, Claude, Gemini, Copilot &amp; More
+  </text>
+</svg>

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { DetailPage } from './components/DetailPage';
 import { HomePage } from './pages/HomePage';
 import { AllPromptsPage } from './pages/AllPromptsPage';
 import { PromptCardData } from './components/PromptCard';
+import { SEO } from './components/SEO';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
 function App() {
@@ -103,67 +105,76 @@ function App() {
   // Detail page view
   if (selectedPromptId) {
     return (
-      <Router>
-        <Header 
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          onLogoClick={handleLogoClick}
-          prompts={prompts}
-          onPromptClick={handleViewDocs}
-          isDetailView={true}
-        />
-        <div className="pt-16 md:pt-20">
-          <DetailPage
-            prompt={selectedPrompt}
-            onBack={handleBackToHome}
-            onDownload={handleDownload}
+      <HelmetProvider>
+        <Router>
+          <SEO 
+            title={`${selectedPrompt?.title} - SystemPrompts`}
+            description={selectedPrompt?.description}
           />
-        </div>
-        <Footer onNavigateHome={handleBackToHome} />
-      </Router>
+          <Header 
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            onLogoClick={handleLogoClick}
+            prompts={prompts}
+            onPromptClick={handleViewDocs}
+            isDetailView={true}
+          />
+          <div className="pt-16 md:pt-20">
+            <DetailPage
+              prompt={selectedPrompt}
+              onBack={handleBackToHome}
+              onDownload={handleDownload}
+            />
+          </div>
+          <Footer onNavigateHome={handleBackToHome} />
+        </Router>
+      </HelmetProvider>
     );
   }
 
   // Main routing
   return (
-    <Router>
-      <div className="min-h-screen">
-        <Header 
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          onLogoClick={handleLogoClick}
-          prompts={prompts}
-          onPromptClick={handleViewDocs}
-        />
-        
-        <Routes>
-          <Route 
-            path="/" 
-            element={
-              <HomePage 
-                prompts={prompts}
-                searchQuery={searchQuery}
-                onViewDocs={handleViewDocs}
-                onDownload={handleDownload}
-              />
-            } 
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen">
+          <SEO />
+          <Header 
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            onLogoClick={handleLogoClick}
+            prompts={prompts}
+            onPromptClick={handleViewDocs}
           />
-          <Route 
-            path="/prompts" 
-            element={
-              <AllPromptsPage 
-                prompts={prompts}
-                searchQuery={searchQuery}
-                onViewDocs={handleViewDocs}
-                onDownload={handleDownload}
-              />
-            } 
-          />
-        </Routes>
+          
+          <Routes>
+            <Route 
+              path="/" 
+              element={
+                <HomePage 
+                  prompts={prompts}
+                  searchQuery={searchQuery}
+                  onViewDocs={handleViewDocs}
+                  onDownload={handleDownload}
+                />
+              } 
+            />
+            <Route 
+              path="/prompts" 
+              element={
+                <AllPromptsPage 
+                  prompts={prompts}
+                  searchQuery={searchQuery}
+                  onViewDocs={handleViewDocs}
+                  onDownload={handleDownload}
+                />
+              } 
+            />
+          </Routes>
 
-        <Footer />
-      </div>
-    </Router>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 
