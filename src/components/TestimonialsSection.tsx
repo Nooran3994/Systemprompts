@@ -22,10 +22,10 @@ export function TestimonialsSection() {
     },
     {
       id: 3,
-      name: 'Emily Watson',
+      name: 'Sarah Mitchell',
       role: 'Content Strategist',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop',
-      quote: 'SystemPrompts.com is a game-changer for social media automation. The quality and documentation are outstanding!',
+      quote: 'SystemPrompts.site is a game-changer for social media automation. The quality and documentation are outstanding!',
       rating: 5
     },
     {

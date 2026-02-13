@@ -128,7 +128,7 @@ export function Footer({ onNavigateHome }: FooterProps = {}) {
         {/* Social Links */}
         <div className="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} SystemPrompts.com. All Rights Reserved.
+            © {currentYear} SystemPrompts.site. All Rights Reserved.
           </p>
 
           <div className="flex gap-4">
