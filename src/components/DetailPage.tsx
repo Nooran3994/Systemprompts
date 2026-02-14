@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Search } from 'lucide-react';
 import { PromptCardData } from './PromptCard';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
@@ -509,6 +509,635 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
             >
               <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
               Access Free System
+            </button>
+          </section>
+        </div>
+      </div>
+    );
+  } else if (prompt.id === '8') {
+    // FullStack Security Sentinel comprehensive page
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-12 md:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Back Button */}
+            <a
+              href="#browse"
+              onClick={onBack}
+              className="inline-flex items-center text-white/90 hover:text-white mb-6 md:mb-8 transition-colors cursor-pointer"
+            >
+              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+              Back to Browse
+            </a>
+
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
+                Premium System • $3 One-Time Purchase
+              </div>
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                FullStack Security Sentinel
+              </h1>
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-white/95 mb-3 md:mb-4"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 500 }}
+              >
+                The Code Safety & Repair Expert
+              </p>
+              <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8">
+                AI-powered security auditor that scans code for 35+ vulnerability types, generates professional reports, and provides non-breaking fixes that preserve original functionality.
+              </p>
+              <button
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Get System for $3
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+          
+          {/* Core Principles */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Core Principles
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">
+                Professional security auditing that preserves code functionality while eliminating vulnerabilities
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              <div className="bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-xl p-4 md:p-6">
+                <div className="w-12 h-12 bg-[#007BFF] rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Systematic Approach
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  Addresses risks one at a time to avoid overwhelming changes while noting interdependencies.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-white border border-gray-200 rounded-xl p-4 md:p-6">
+                <div className="w-12 h-12 bg-[#28A745] rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Assume Good Intent
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  Treats code as functional but potentially insecure—no assumptions of intentional flaws.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-yellow-50 to-white border border-gray-200 rounded-xl p-4 md:p-6">
+                <div className="w-12 h-12 bg-[#FFC107] rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Professional Output
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  Formal language, markdown formatting, and precise location references (file:line).
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-red-50 to-white border border-gray-200 rounded-xl p-4 md:p-6">
+                <div className="w-12 h-12 bg-[#DC3545] rounded-lg flex items-center justify-center mb-4">
+                  <Lock className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-[#343A40] mb-2 text-base md:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Non-Breaking Fixes
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  All fixes preserve original behavior, performance, and workability—security only.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Video Demonstration */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                See It In Action
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">
+                Watch how the Security Sentinel analyzes code for vulnerabilities and generates professional security reports
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto">
+              <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border-4 border-[#007BFF]/20">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  className="w-full h-auto"
+                  poster="https://images.unsplash.com/photo-1610758758876-0680d8c2247c?w=1200&h=675&fit=crop"
+                >
+                  <source src="https://i.imgur.com/e9W9cgI.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p className="text-center text-sm text-gray-500 mt-4 px-4">
+                Live demonstration of the security audit workflow and code remediation process
+              </p>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Security Risks Scanned */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                35+ Security Risks Scanned
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                Comprehensive scanning for OWASP Top 10 and beyond, with severity ratings and precise location tracking
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
+              {/* Critical Risks */}
+              <div className="bg-white border-2 border-red-200 rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-red-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <AlertTriangle className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-red-600 mb-2 text-lg md:text-xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Critical Vulnerabilities
+                    </h3>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">●</span>
+                    <span>Hardcoded API keys, passwords, and sensitive data</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">●</span>
+                    <span>SQL injection via unvalidated inputs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">●</span>
+                    <span>Missing HTTPS/TLS encryption in production</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">●</span>
+                    <span>Weak password hashing (MD5, plain text)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">●</span>
+                    <span>Insecure deserialization (pickle, etc.)</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* High-Priority Risks */}
+              <div className="bg-white border-2 border-orange-200 rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <Shield className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-orange-600 mb-2 text-lg md:text-xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      High-Priority Security
+                    </h3>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-500 mt-1">●</span>
+                    <span>XSS (Cross-Site Scripting) vulnerabilities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-500 mt-1">●</span>
+                    <span>CSRF (Cross-Site Request Forgery) tokens missing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-500 mt-1">●</span>
+                    <span>Unsanitized file uploads allowing execution</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-500 mt-1">●</span>
+                    <span>Exposed debug modes or error logs in production</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-500 mt-1">●</span>
+                    <span>Missing rate limiting on APIs (DDoS risk)</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Medium-Priority Risks */}
+              <div className="bg-white border-2 border-yellow-200 rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <Search className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-yellow-700 mb-2 text-lg md:text-xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Configuration & Access
+                    </h3>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-yellow-600 mt-1">●</span>
+                    <span>Weak or default encryption algorithms</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-yellow-600 mt-1">●</span>
+                    <span>Insecure session management (cookies)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-yellow-600 mt-1">●</span>
+                    <span>Missing CORS policies in web applications</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-yellow-600 mt-1">●</span>
+                    <span>Unrestricted file paths in includes/requires</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-yellow-600 mt-1">●</span>
+                    <span>Exposed internal endpoints publicly</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Modern Security Risks */}
+              <div className="bg-white border-2 border-blue-200 rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <Code className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-blue-600 mb-2 text-lg md:text-xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Modern Threats
+                    </h3>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">●</span>
+                    <span>Supply-chain attacks in npm/PyPI dependencies</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">●</span>
+                    <span>Outdated libraries with known CVEs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">●</span>
+                    <span>Prototype pollution in JavaScript objects</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">●</span>
+                    <span>JWTs stored in localStorage (XSS risk)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">●</span>
+                    <span>Missing security headers (helmet.js)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-6 md:p-8 border border-gray-200">
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-8 h-8 text-[#28A745] flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    Comprehensive Coverage
+                  </h4>
+                  <p className="text-gray-700 text-sm md:text-base">
+                    Scans for all OWASP Top 10 vulnerabilities plus 25+ additional modern security risks. Each finding includes severity rating, evidence, precise file/line location, and step-by-step fix prompts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Response Structure */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Structured Response Format
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                Every security scan generates professional, actionable reports with precise location tracking
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="bg-white border-l-4 border-[#007BFF] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-[#007BFF] text-white rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Initial Scan Report
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-2">
+                      Table summarizing all risks with columns for: Risk Number/Name, Description, Severity (Low/Medium/High/Critical), Evidence (code snippet), Location (file:line:folder)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border-l-4 border-[#28A745] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-[#28A745] text-white rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Detailed Explanations
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-2">
+                      One comprehensive analysis per risk including: Error/Issue explanation, potential exploits and impact, ASCII flow diagrams showing the risk in context, precise location references
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border-l-4 border-[#FFC107] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-[#FFC107] text-white rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Recommendations Report
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-2">
+                      High-level mitigations with pros/cons analysis, alternative approaches, compliance references (OWASP, GDPR), and prioritization guidance
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border-l-4 border-[#6F42C1] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-[#6F42C1] text-white rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+                    4
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Fix Prompts (1-3 per risk)
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-2">
+                      Step-by-step implementation guides focusing on one risk at a time, includes pseudocode/examples, specifies exact locations to modify, emphasizes testing for non-breaking changes
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Key Features */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Key Features
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4">
+                Professional security auditing designed for real-world codebases
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Visual Aids & Diagrams</p>
+                  <p className="text-sm text-gray-600">ASCII art and PlantUML-like syntax for system flows showing vulnerabilities in context</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Precise Location Tracking</p>
+                  <p className="text-sm text-gray-600">Exact file paths, line numbers, and folder references (e.g., src/auth.py:Line 42)</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Non-Breaking Fixes</p>
+                  <p className="text-sm text-gray-600">All solutions preserve original behavior, performance, and functionality—security-only changes</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">OWASP & GDPR Compliant</p>
+                  <p className="text-sm text-gray-600">Aligned with industry standards and best practices for ethical security fixes</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Language Agnostic</p>
+                  <p className="text-sm text-gray-600">Works with Python, JavaScript, Java, C#, PHP, Ruby, and more—requests clarification if needed</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Markdown Formatted Reports</p>
+                  <p className="text-sm text-gray-600">Professional reports with tables, code blocks, headings, and structured formatting</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Severity Ratings</p>
+                  <p className="text-sm text-gray-600">Clear Low/Medium/High/Critical classifications for prioritizing remediation efforts</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Step-by-Step Fix Prompts</p>
+                  <p className="text-sm text-gray-600">Detailed implementation guides with pseudocode and examples for each vulnerability</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* What It Accepts */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                What It Accepts
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                Flexible input options for comprehensive security analysis
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3 bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-lg p-4 md:p-6">
+                <Code className="w-8 h-8 text-[#007BFF] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-2 text-lg">Code Snippets</p>
+                  <p className="text-sm text-gray-600">Paste individual functions, classes, or modules for targeted analysis</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-gradient-to-br from-green-50 to-white border border-gray-200 rounded-lg p-4 md:p-6">
+                <FolderTree className="w-8 h-8 text-[#28A745] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-2 text-lg">Full Codebase</p>
+                  <p className="text-sm text-gray-600">Provide complete file structures with folders, files, and languages specified</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-gradient-to-br from-yellow-50 to-white border border-gray-200 rounded-lg p-4 md:p-6">
+                <FileText className="w-8 h-8 text-[#FFC107] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-2 text-lg">System Descriptions</p>
+                  <p className="text-sm text-gray-600">Textual architecture descriptions for high-level security assessments</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-white border border-gray-200 rounded-lg p-4 md:p-6">
+                <Search className="w-8 h-8 text-[#6F42C1] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-2 text-lg">Hypothetical Scenarios</p>
+                  <p className="text-sm text-gray-600">Query about specific risks or security patterns for educational purposes</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Usage Guidelines */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Usage Guidelines
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                Get the most out of your security audits
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-6 md:p-8 border border-gray-200">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#007BFF] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    1
+                  </div>
+                  <p className="text-gray-700"><strong>Provide Context:</strong> Include file names, folder structures, and language/framework details for accurate location referencing</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#28A745] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    2
+                  </div>
+                  <p className="text-gray-700"><strong>One Risk at a Time:</strong> Focus on implementing fixes systematically rather than all at once to avoid breaking changes</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#FFC107] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    3
+                  </div>
+                  <p className="text-gray-700"><strong>Test After Each Fix:</strong> Always verify that original functionality works after applying security patches</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#DC3545] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    4
+                  </div>
+                  <p className="text-gray-700"><strong>Review Recommendations:</strong> Consider pros/cons and alternatives before implementing—one size doesn't fit all</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#6F42C1] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    5
+                  </div>
+                  <p className="text-gray-700"><strong>Use for Learning:</strong> Treat reports as educational resources to understand security best practices and improve coding skills</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-xl md:rounded-2xl p-6 md:p-12 text-center text-white">
+            <Shield className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-white" />
+            <h3
+              className="text-2xl md:text-3xl font-bold mb-3 md:mb-4"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Secure Your Code Today
+            </h3>
+            <p className="text-white/90 mb-2 text-base md:text-lg max-w-2xl mx-auto px-4">
+              Get the FullStack Security Sentinel for just $3 and start scanning for 35+ vulnerability types instantly.
+            </p>
+            <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
+              Professional security reports with non-breaking fixes that preserve your code's functionality. 🔒
+            </p>
+            <button
+              onClick={() => onDownload(prompt.id)}
+              className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+            >
+              <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+              Get for $3
             </button>
           </section>
         </div>
