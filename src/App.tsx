@@ -65,6 +65,14 @@ function App() {
       price: 'Free'
     },
     {
+      id: '8',
+      title: 'FullStack Security Sentinel: The Code Safety & Repair Expert',
+      description: 'Expert security auditor and code remediation specialist that analyzes code for 35+ vulnerabilities, generates professional reports, and provides non-breaking fixes.',
+      category: 'Agents',
+      thumbnail: 'https://images.unsplash.com/photo-1610758758876-0680d8c2247c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZyUyMGNvZGUlMjBzZWN1cml0eSUyMHZ1bG5lcmFiaWxpdHklMjBhdWRpdCUyMHNjcmVlbnxlbnwxfHx8fDE3NzExMDIyMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      price: '$3'
+    },
+    {
       id: '9',
       title: 'Email Marketing Assistant',
       description: 'AI system for crafting compelling email campaigns with A/B testing suggestions and conversion optimization.',
@@ -92,6 +100,9 @@ function App() {
     } else if (id === '7') {
       // Redirect to Gemini Gem for Data/Analyst System
       window.open('https://gemini.google.com/gem/1-RRD545WaOHgM_jmjDaxsAwrbtnIawqG?usp=sharing', '_blank');
+    } else if (id === '8') {
+      // Redirect to Payhip for FullStack Security Sentinel
+      window.open('https://payhip.com/b/WP4Om', '_blank');
     } else {
       // Coming soon message for other prompts
       alert('Coming Soon!\n\nThis prompt will be available for download soon. Stay tuned!');
