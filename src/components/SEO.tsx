@@ -21,10 +21,10 @@ export function SEO({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       
-      {/* Favicon */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg" />
-      <link rel="shortcut icon" href="/favicon.svg" />
+      {/* Favicon - Multiple formats for browser compatibility */}
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
       <meta name="theme-color" content="#007BFF" />
       
       {/* Open Graph / Facebook */}
