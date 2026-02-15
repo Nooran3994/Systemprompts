@@ -14,6 +14,9 @@ export function SEO({
   image = 'https://systemprompts.site/og-image.png',
   url = 'https://systemprompts.site'
 }: SEOProps) {
+  // Cache busting for favicons
+  const cacheBust = '?v=2';
+  
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -22,9 +25,9 @@ export function SEO({
       <meta name="description" content={description} />
       
       {/* Favicon - Multiple formats for browser compatibility */}
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+      <link rel="icon" href={`/favicon.ico${cacheBust}`} sizes="any" />
+      <link rel="icon" href={`/favicon.svg${cacheBust}`} type="image/svg+xml" />
+      <link rel="apple-touch-icon" href={`/apple-touch-icon.svg${cacheBust}`} />
       <meta name="theme-color" content="#007BFF" />
       
       {/* Open Graph / Facebook */}
