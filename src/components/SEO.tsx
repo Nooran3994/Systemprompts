@@ -14,8 +14,17 @@ export function SEO({
   image = 'https://systemprompts.site/og-image.png',
   url = 'https://systemprompts.site'
 }: SEOProps) {
-  // Cache busting for favicons
-  const cacheBust = '?v=2';
+  // Inline SVG favicon as data URI - bypasses static file serving issues
+  const faviconSvg = `data:image/svg+xml,${encodeURIComponent(
+    `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="6" fill="#007BFF"/>
+      <path d="M10.67 9.33C10.67 9.33 13.33 6.67 16 6.67C18.67 6.67 21.33 9.33 21.33 9.33M16 6.67V18.67M16 18.67L10.67 24M16 18.67L21.33 24" stroke="white" stroke-width="2.67" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M24 16V25.33C24 26.8 22.8 28 21.33 28H10.67C9.2 28 8 26.8 8 25.33V16" stroke="white" stroke-width="2.67" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`
+  )}`;
+
+  // Inline ICO as data URI for older browser support
+  const faviconIco = 'data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwABP8cAAT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAAAAAAAAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAAAAAAB4ABv8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/AAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x4ABv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
   
   return (
     <Helmet>
@@ -24,10 +33,10 @@ export function SEO({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       
-      {/* Favicon - Multiple formats for browser compatibility */}
-      <link rel="icon" href={`/favicon.ico${cacheBust}`} sizes="any" />
-      <link rel="icon" href={`/favicon.svg${cacheBust}`} type="image/svg+xml" />
-      <link rel="apple-touch-icon" href={`/apple-touch-icon.svg${cacheBust}`} />
+      {/* Favicon - Inline data URIs for guaranteed display across all browsers */}
+      <link rel="icon" href={faviconIco} sizes="any" />
+      <link rel="icon" href={faviconSvg} type="image/svg+xml" />
+      <link rel="apple-touch-icon" href={faviconSvg} />
       <meta name="theme-color" content="#007BFF" />
       
       {/* Open Graph / Facebook */}
