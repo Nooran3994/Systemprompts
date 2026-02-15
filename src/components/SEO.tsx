@@ -23,7 +23,9 @@ export function SEO({
       
       {/* Favicon */}
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg" />
+      <link rel="shortcut icon" href="/favicon.svg" />
+      <meta name="theme-color" content="#007BFF" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
