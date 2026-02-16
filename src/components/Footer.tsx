@@ -26,16 +26,20 @@ export function Footer({ onNavigateHome }: FooterProps = {}) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Navigate to home page first, then scroll
+      // Navigate to home page first
       navigate('/');
-      // Wait longer for the page to fully render
+      // Wait for the page to render, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 300);
+      }, 100);
     }
+  };
+
+  const handleBlogClick = () => {
+    navigate('/blog');
   };
 
   return (

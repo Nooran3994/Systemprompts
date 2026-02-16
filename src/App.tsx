@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { DetailPage } from './components/DetailPage';
 import { HomePage } from './pages/HomePage';
 import { AllPromptsPage } from './pages/AllPromptsPage';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import { PromptCardData } from './components/PromptCard';
 import { SEO } from './components/SEO';
+import { ScrollToTop } from './components/ScrollToTop';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
 function App() {
@@ -150,6 +153,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen">
           <SEO />
           <Header 
@@ -181,6 +185,18 @@ function App() {
                   onViewDocs={handleViewDocs}
                   onDownload={handleDownload}
                 />
+              } 
+            />
+            <Route 
+              path="/blog" 
+              element={
+                <Blog />
+              } 
+            />
+            <Route 
+              path="/blog/:slug" 
+              element={
+                <BlogPost />
               } 
             />
           </Routes>
