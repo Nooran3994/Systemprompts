@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router';
 import { SEO } from '../components/SEO';
 import { motion } from 'motion/react';
 import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
+import { blogPostContent } from './BlogPostContent';
 
 interface BlogPostData {
   slug: string;
@@ -18,81 +19,16 @@ interface BlogPostData {
 
 // Sample blog post data - replace with real content when you write articles
 const blogPosts: Record<string, BlogPostData> = {
-  'complete-guide-ai-system-prompts-2025': {
-    slug: 'complete-guide-ai-system-prompts-2025',
-    title: 'The Complete Guide to AI System Prompts in 2025',
+  'complete-guide-ai-system-prompts-2026': {
+    slug: 'complete-guide-ai-system-prompts-2026',
+    title: 'The Complete Guide to AI System Prompts in 2026',
     excerpt: 'Everything you need to know about system prompts for ChatGPT, Claude, Gemini, and other AI platforms. Learn best practices, common mistakes, and advanced techniques.',
-    date: '2025-02-16',
+    date: '2026-02-16',
     readTime: '8 min read',
     category: 'Guide',
     author: 'SystemPrompts Team',
     keywords: 'AI system prompts, ChatGPT prompts, Claude prompts, prompt engineering guide, AI best practices',
-    content: `
-      <h2>What Are AI System Prompts?</h2>
-      <p>AI system prompts are instructions that define how an AI assistant should behave, respond, and interact with users. They're the foundation of customizing AI behavior to match your specific needs.</p>
-
-      <h2>Why System Prompts Matter</h2>
-      <p>System prompts allow you to:</p>
-      <ul>
-        <li>Control the AI's personality and tone</li>
-        <li>Define specific expertise areas</li>
-        <li>Set output formats and structures</li>
-        <li>Establish boundaries and guidelines</li>
-        <li>Optimize responses for your use case</li>
-      </ul>
-
-      <h2>Best Practices for Writing System Prompts</h2>
-      <p>Follow these proven strategies to create effective system prompts:</p>
-      
-      <h3>1. Be Specific and Clear</h3>
-      <p>Vague prompts lead to inconsistent results. Instead of "Help me code," use "Act as a senior Python developer specializing in data science. Provide clean, well-documented code following PEP 8 standards."</p>
-
-      <h3>2. Define the Role</h3>
-      <p>Give the AI a clear identity: "You are an expert marketing strategist with 15 years of experience in B2B SaaS companies."</p>
-
-      <h3>3. Set Output Format</h3>
-      <p>Specify exactly how you want responses structured. For example: "Always provide answers in this format: 1) Summary, 2) Detailed explanation, 3) Examples, 4) Next steps."</p>
-
-      <h3>4. Include Constraints</h3>
-      <p>Tell the AI what NOT to do: "Never use jargon without explanation. Avoid overly technical terms. Keep responses under 200 words unless asked for more detail."</p>
-
-      <h2>Platform-Specific Considerations</h2>
-      
-      <h3>ChatGPT</h3>
-      <p>ChatGPT responds well to conversational, detailed prompts. Use natural language and provide context.</p>
-
-      <h3>Claude</h3>
-      <p>Claude excels with structured prompts. Use clear sections and explicit instructions.</p>
-
-      <h3>GitHub Copilot</h3>
-      <p>Focus on code-specific instructions. Define coding standards, comment styles, and architectural patterns.</p>
-
-      <h3>Cursor AI</h3>
-      <p>Cursor benefits from project-wide context. Include information about your codebase structure and conventions.</p>
-
-      <h2>Common Mistakes to Avoid</h2>
-      <ul>
-        <li>Being too vague or generic</li>
-        <li>Overloading with too many instructions</li>
-        <li>Not testing and iterating</li>
-        <li>Forgetting to update prompts as needs change</li>
-        <li>Not documenting what works</li>
-      </ul>
-
-      <h2>Advanced Techniques</h2>
-      
-      <h3>Chain of Thought</h3>
-      <p>Ask the AI to show its reasoning: "Before providing an answer, explain your thought process step-by-step."</p>
-
-      <h3>Few-Shot Learning</h3>
-      <p>Provide examples of desired outputs to guide the AI's responses.</p>
-
-      <h3>Context Management</h3>
-      <p>Structure prompts to maintain relevant context across multiple interactions.</p>
-
-      <h2>Get Started Today</h2>
-      <p>Ready to level up your AI interactions? Check out our <a href="/prompts">premium system prompts</a> designed by experts for specific use cases.</p>
-    `
+    content: blogPostContent['complete-guide-ai-system-prompts-2026']
   },
   '10-chatgpt-prompts-10x-productivity': {
     slug: '10-chatgpt-prompts-10x-productivity',

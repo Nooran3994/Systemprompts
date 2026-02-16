@@ -18,12 +18,12 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'The Complete Guide to AI System Prompts in 2025',
+    title: 'The Complete Guide to AI System Prompts in 2026',
     excerpt: 'Everything you need to know about system prompts for ChatGPT, Claude, Gemini, and other AI platforms. Learn best practices, common mistakes, and advanced techniques.',
-    date: '2025-02-16',
+    date: '2026-02-16',
     readTime: '8 min read',
     category: 'Guide',
-    slug: 'complete-guide-ai-system-prompts-2025'
+    slug: 'complete-guide-ai-system-prompts-2026'
   },
   {
     id: '2',
