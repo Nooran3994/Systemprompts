@@ -292,22 +292,22 @@ Avoid marketing jargon and buzzwords.
       <h2 style="font-size: 1.875rem; font-weight: 600; color: #1F2937; margin-top: 3rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">Professional Prompt Resources</h2>
 
       <p style="line-height: 1.8; color: #4B5563; margin-bottom: 1.5rem;">
-        For production-ready system prompts optimized for specific use cases, explore our <a href="/prompts" style="color: #007BFF; text-decoration: none; font-weight: 500;">curated marketplace</a>:
+        For production-ready system prompts optimized for specific use cases, explore our <a href="/#browse" style="color: #007BFF; text-decoration: none; font-weight: 500;">curated marketplace</a>:
       </p>
 
       <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-        <a href="/prompts/fullstack-security-sentinel" style="display: block; padding: 1.25rem; background: #F9FAFB; border-radius: 4px; border-left: 4px solid #007BFF; text-decoration: none; transition: background 0.2s;">
+        <a href="/#browse" style="display: block; padding: 1.25rem; background: #F9FAFB; border-radius: 4px; border-left: 4px solid #007BFF; text-decoration: none; transition: background 0.2s;">
           <div style="font-weight: 600; color: #1F2937; margin-bottom: 0.25rem;">FullStack Security Sentinel</div>
           <div style="color: #6B7280; font-size: 0.9rem;">Comprehensive code security auditing and vulnerability detection</div>
         </a>
-        <div style="padding: 1.25rem; background: #F9FAFB; border-radius: 4px; border-left: 4px solid #28A745;">
+        <a href="/#browse" style="display: block; padding: 1.25rem; background: #F9FAFB; border-radius: 4px; border-left: 4px solid #28A745; text-decoration: none; transition: background 0.2s;">
           <div style="font-weight: 600; color: #1F2937; margin-bottom: 0.25rem;">Marketing Campaign Strategist</div>
           <div style="color: #6B7280; font-size: 0.9rem;">B2B/B2C campaign development and optimization</div>
-        </div>
-        <div style="padding: 1.25rem; background: #F9FAFB; border-radius: 4px; border-left: 4px solid #FFC107;">
+        </a>
+        <a href="/#browse" style="display: block; padding: 1.25rem; background: #F9FAFB; border-radius: 4px; border-left: 4px solid #FFC107; text-decoration: none; transition: background 0.2s;">
           <div style="font-weight: 600; color: #1F2937; margin-bottom: 0.25rem;">Data Science Code Reviewer</div>
           <div style="color: #6B7280; font-size: 0.9rem;">Python data analysis and statistical code optimization</div>
-        </div>
+        </a>
       </div>
 
       <h2 style="font-size: 1.875rem; font-weight: 600; color: #1F2937; margin-top: 3rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #E5E7EB;">Conclusion</h2>

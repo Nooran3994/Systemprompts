@@ -35,13 +35,15 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
       // Navigate to home page and reset state
       onLogoClick(); // Reset any selected prompt
       navigate('/');
-      // Wait for the page to fully render, then scroll
+      // Scroll to top instantly, then to the section
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      // Wait for the page to fully render, then scroll to section
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 300);
+      }, 100);
     } else {
       // Already on home page, just scroll
       const element = document.getElementById(sectionId);
@@ -131,11 +133,11 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
           {/* Logo */}
           <button 
             onClick={handleLogoClickInternal}
-            className="flex items-center space-x-2 hover:opacity-80 transition-opacity mr-4 md:mr-8"
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity flex-shrink-0"
             aria-label="Home"
           >
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#007BFF]">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#007BFF]">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-6 sm:h-6">
                 <path 
                   d="M8 6C8 6 10 4 12 4C14 4 16 6 16 6M12 4V12M12 12L8 16M12 12L16 16" 
                   stroke="white" 
@@ -153,7 +155,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
               </svg>
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-bold text-[#343A40]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              <span className="text-lg sm:text-xl font-bold text-[#343A40]" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 SystemPrompts
               </span>
             </div>

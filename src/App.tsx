@@ -10,6 +10,7 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import { PromptCardData } from './components/PromptCard';
 import { SEO } from './components/SEO';
+import { ScrollToTop } from './components/ScrollToTop';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
 function App() {
@@ -152,6 +153,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen">
           <SEO />
           <Header 

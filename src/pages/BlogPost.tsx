@@ -51,7 +51,7 @@ const blogPosts: Record<string, BlogPostData> = {
         <li>Enhance decision-making processes</li>
       </ul>
       <p>Subscribe to our newsletter below to be notified when this article is published!</p>
-      <p>In the meantime, check out our <a href="/prompts">available prompts</a> to get started.</p>
+      <p>In the meantime, check out our <a href="/#browse">available prompts</a> to get started.</p>
     `
   },
   'claude-vs-chatgpt-prompts-comparison': {
@@ -74,7 +74,7 @@ const blogPosts: Record<string, BlogPostData> = {
         <li>Performance benchmarks</li>
         <li>Cost-effectiveness analysis</li>
       </ul>
-      <p>Subscribe to stay updated! Browse our <a href="/prompts">current prompts</a> in the meantime.</p>
+      <p>Subscribe to stay updated! Browse our <a href="/#browse">current prompts</a> in the meantime.</p>
     `
   },
   'custom-prompts-github-copilot': {
@@ -97,7 +97,7 @@ const blogPosts: Record<string, BlogPostData> = {
         <li>Integrate with your existing workflows</li>
         <li>Optimize for your tech stack</li>
       </ul>
-      <p>While you wait, explore our <a href="/prompts/fullstack-security-sentinel">FullStack Security Sentinel</a> for code security best practices.</p>
+      <p>While you wait, explore our <a href="/#browse">available prompts</a> for code security best practices.</p>
     `
   },
   'prompt-engineering-best-practices-developers': {
