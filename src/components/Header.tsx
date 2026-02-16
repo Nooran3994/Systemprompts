@@ -167,6 +167,15 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
             <a href="#why-prompts" onClick={(e) => handleNavClick(e, 'why-prompts')} className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               About
             </a>
+            <button 
+              onClick={() => {
+                navigate('/blog');
+                setMobileMenuOpen(false);
+              }}
+              className="text-[#343A40] hover:text-[#007BFF] transition-colors"
+            >
+              Blog
+            </button>
             <a href="#get-started" onClick={(e) => handleNavClick(e, 'get-started')} className="text-[#343A40] hover:text-[#007BFF] transition-colors">
               Contact
             </a>
@@ -281,6 +290,15 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
               >
                 About
               </a>
+              <button 
+                onClick={() => {
+                  navigate('/blog');
+                  setMobileMenuOpen(false);
+                }}
+                className="text-[#343A40] hover:text-[#007BFF] transition-colors py-2 text-left"
+              >
+                Blog
+              </button>
               <a 
                 href="#get-started" 
                 onClick={(e) => handleNavClick(e, 'get-started')}

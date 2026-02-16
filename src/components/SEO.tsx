@@ -6,13 +6,17 @@ interface SEOProps {
   description?: string;
   image?: string;
   url?: string;
+  keywords?: string;
+  type?: 'website' | 'article' | 'product';
 }
 
 export function SEO({ 
   title = 'SystemPrompts - Premium AI System Prompts Marketplace',
   description = 'Discover and download specialized system prompts for ChatGPT, Claude, Gemini, GitHub Copilot, Cursor, Perplexity, Grok, DeepSeek, and other leading AI platforms. Transform your AI interactions with professional prompt engineering.',
   image = 'https://systemprompts.site/og-image.png',
-  url = 'https://systemprompts.site'
+  url = 'https://systemprompts.site',
+  keywords = 'AI prompts, system prompts, ChatGPT prompts, Claude prompts, Gemini prompts, GitHub Copilot prompts, Cursor AI prompts, Perplexity prompts, Grok prompts, DeepSeek prompts, prompt engineering, AI marketplace, premium prompts, custom AI prompts, AI assistant prompts, prompt templates, professional prompts, download AI prompts, buy system prompts',
+  type = 'website'
 }: SEOProps) {
   // Inline SVG favicon as data URI - bypasses static file serving issues
   const faviconSvg = `data:image/svg+xml,${encodeURIComponent(
@@ -24,7 +28,7 @@ export function SEO({
   )}`;
 
   // Inline ICO as data URI for older browser support
-  const faviconIco = 'data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwABP8cAAT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAAAAAAAAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAAAAAAB4ABv8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/AAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x4ABv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+  const faviconIco = 'data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwABP8cAAT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAAAAAAAAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAAAAAAB4ABv8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/AAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAHgAG/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HgAG/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdAAX/HQAF/x0ABf8dAAX/HQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAF/x0ABf8dAAX/HQAF/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
   
   return (
     <Helmet>
@@ -40,7 +44,7 @@ export function SEO({
       <meta name="theme-color" content="#007BFF" />
       
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -60,7 +64,10 @@ export function SEO({
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
       <meta name="author" content="SystemPrompts" />
-      <meta name="keywords" content="AI prompts, system prompts, ChatGPT prompts, Claude prompts, Gemini prompts, GitHub Copilot, Cursor AI, prompt engineering, AI marketplace, premium prompts" />
+      <meta name="keywords" content={keywords} />
+      <link rel="canonical" href={url} />
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       
       {/* Structured Data for Logo */}
       <script type="application/ld+json">
