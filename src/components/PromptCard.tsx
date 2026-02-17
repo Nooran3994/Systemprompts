@@ -31,8 +31,10 @@ export function PromptCard({ prompt, onViewDocs, onDownload }: PromptCardProps) 
   const isAvailable = prompt.id === '1';
   // Check if this is the Data/Analyst System (free access)
   const isFreeAccess = prompt.id === '7';
-  // Check if this is the FullStack Security Sentinel (available for download)
+  // Check if this is the FullStack Security Sentinel (free access)
   const isSecuritySentinel = prompt.id === '8';
+  // Check if this is TrendPulse Architect (free access)
+  const isTrendPulse = prompt.id === '10';
 
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group border border-gray-100">
@@ -81,7 +83,7 @@ export function PromptCard({ prompt, onViewDocs, onDownload }: PromptCardProps) 
             className="flex-1 px-4 py-2 bg-[#28A745] text-white rounded-lg hover:bg-[#1e7e34] transition-colors text-sm font-medium"
             aria-label={`Download ${prompt.title}`}
           >
-            {isAvailable ? `Download • ${prompt.price}` : isFreeAccess ? 'Free Access' : isSecuritySentinel ? `Download • ${prompt.price}` : 'Coming Soon'}
+            {isAvailable ? `Download • ${prompt.price}` : isFreeAccess ? 'Free Access' : isSecuritySentinel ? 'Free Access' : isTrendPulse ? 'Free Access' : 'Coming Soon'}
           </button>
         </div>
       </div>

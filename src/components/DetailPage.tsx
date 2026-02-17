@@ -21,6 +21,426 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
   }
 
   // Show the comprehensive page for Python Learning Guardrail System or Data/Analyst System
+  if (prompt.id === '10') {
+    // TrendPulse Architect comprehensive page
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-12 md:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Back Button */}
+            <a
+              href="#browse"
+              onClick={onBack}
+              className="inline-flex items-center text-white/90 hover:text-white mb-6 md:mb-8 transition-colors cursor-pointer"
+            >
+              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+              Back to Browse
+            </a>
+
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
+                Free System • No Sign-up Required
+              </div>
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                TrendPulse Architect
+              </h1>
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-white/95 mb-3 md:mb-4"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 500 }}
+              >
+                Your Smart Guide to Trending Content That Fits Your Brand
+              </p>
+              <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8">
+                Spot viral trends before they fade, tailor them perfectly to your brand's voice, and turn them into content that drives engagement—all in minutes.
+              </p>
+              <button
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Access Free System
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Value Proposition */}
+        <div className="py-12 md:py-16 lg:py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Unlock the Power of Trends Without the Guesswork
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                The AI-powered digital strategist that validates trends across time and anchors them to your unique brand identity.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border-l-4 border-[#007BFF]">
+                <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-[#28A745] mb-4" />
+                <h3
+                  className="text-lg md:text-xl font-bold text-[#343A40] mb-3"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Save Time & Reduce Risk
+                </h3>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  Get data-backed insights on what's hot now and what's built to last. Invest in content that pays off instead of chasing fleeting fads.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border-l-4 border-[#FFC107]">
+                <Lightbulb className="w-8 h-8 md:w-10 md:h-10 text-[#FFC107] mb-4" />
+                <h3
+                  className="text-lg md:text-xl font-bold text-[#343A40] mb-3"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Brand-First Customization
+                </h3>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  Upload your brand guide once, and every suggestion aligns with your tone, audience, and style—making your content stand out authentically.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border-l-4 border-[#28A745]">
+                <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF] mb-4" />
+                <h3
+                  className="text-lg md:text-xl font-bold text-[#343A40] mb-3"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Proven Results
+                </h3>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  Users report 2x faster content planning and up to 30% higher engagement by focusing on "Gold Opportunities" over risky virals.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border-l-4 border-[#007BFF]">
+                <Rocket className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF] mb-4" />
+                <h3
+                  className="text-lg md:text-xl font-bold text-[#343A40] mb-3"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  For Marketers & Brands
+                </h3>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  Whether you're in fashion, tech, or wellness, spot gaps competitors miss and dominate your niche with strategic content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Key Benefits */}
+        <div className="py-12 md:py-16 lg:py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Key Benefits That Make a Difference
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto">
+                Your strategic partner that combines real-time data with your brand's DNA for smarter, faster decisions.
+              </p>
+            </div>
+
+            <div className="space-y-8 md:space-y-12">
+              {/* Benefit 1 */}
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#007BFF] to-[#28A745] rounded-lg flex items-center justify-center">
+                  <Search className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3
+                    className="text-xl md:text-2xl font-bold text-[#343A40] mb-3"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                  >
+                    1. Spot Trends That Matter
+                  </h3>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Value:</strong> Analyze trends across short bursts (72 hours for quick wins) to longer cycles (30 days for evergreen authority), so you know what's worth your effort.
+                  </p>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Benefit:</strong> Avoid burnout on flops—label trends as "Viral/High-Risk" or "Gold Opportunity/Sustained" to prioritize high-ROI ideas.
+                  </p>
+                  <p className="text-gray-600 italic text-sm">
+                    Real-World Win: A sustainable fashion brand used it to jump on "zero-waste patterns" (a 7-day sustained trend), resulting in a 25% spike in social shares.
+                  </p>
+                </div>
+              </div>
+
+              {/* Benefit 2 */}
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#FFC107] to-[#28A745] rounded-lg flex items-center justify-center">
+                  <Lightbulb className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3
+                    className="text-xl md:text-2xl font-bold text-[#343A40] mb-3"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                  >
+                    2. Make It Yours
+                  </h3>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Value:</strong> Grounds every insight in your uploaded brand files (like guides or personas), ensuring suggestions match your voice and audience.
+                  </p>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Benefit:</strong> Identify unique gaps—what your competitors ignore that you can own—based on your expertise.
+                  </p>
+                  <p className="text-gray-600 italic text-sm">
+                    Real-World Win: A tech gadget startup spotted a gap in "eco-friendly accessories," creating content that boosted website traffic by 40%.
+                  </p>
+                </div>
+              </div>
+
+              {/* Benefit 3 */}
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#28A745] to-[#007BFF] rounded-lg flex items-center justify-center">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3
+                    className="text-xl md:text-2xl font-bold text-[#343A40] mb-3"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                  >
+                    3. Execute with Ease
+                  </h3>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Value:</strong> Get ready-to-use plans, like 7-day schedules with platforms, formats, and hashtags, plus refined drafts in your brand's tone.
+                  </p>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Benefit:</strong> Go from idea to post in hours, with built-in metrics to track success.
+                  </p>
+                  <p className="text-gray-600 italic text-sm">
+                    Real-World Win: A wellness coach generated a week's worth of Instagram Reels on "mindful tech," leading to 15% more followers in a month.
+                  </p>
+                </div>
+              </div>
+
+              {/* Benefit 4 */}
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#FFC107] to-[#007BFF] rounded-lg flex items-center justify-center">
+                  <Play className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3
+                    className="text-xl md:text-2xl font-bold text-[#343A40] mb-3"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                  >
+                    4. Stay Ahead Proactively
+                  </h3>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Value:</strong> Every response ends with tailored "next steps" prompts to keep the momentum going.
+                  </p>
+                  <p className="text-gray-700 mb-3 leading-relaxed">
+                    <strong>Benefit:</strong> No dead ends—get ideas for drafting, deep dives, or distribution without starting from scratch.
+                  </p>
+                  <p className="text-gray-600 italic text-sm">
+                    Real-World Win: Brands using this loop report cutting content creation time by half while staying agile.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* How It Works */}
+        <div className="py-12 md:py-16 lg:py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                How It Works: Simple & Effective
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto">
+                No tech expertise needed. Get started in minutes.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-12 h-12 bg-[#007BFF] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  1
+                </div>
+                <h3
+                  className="text-lg font-bold text-[#343A40] mb-2"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Get Started
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  Upload your brand file (PDF, doc, etc.) or describe your niche/voice.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-12 h-12 bg-[#28A745] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  2
+                </div>
+                <h3
+                  className="text-lg font-bold text-[#343A40] mb-2"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Ask Away
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  Query like "What's trending in sustainable fashion?" or "Build a 7-day plan."
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-12 h-12 bg-[#FFC107] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  3
+                </div>
+                <h3
+                  className="text-lg font-bold text-[#343A40] mb-2"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Get Insights
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  Receive trend breakdowns, gap ideas, and strategies—all tied to your brand.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-12 h-12 bg-[#6C757D] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  4
+                </div>
+                <h3
+                  className="text-lg font-bold text-[#343A40] mb-2"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Act & Iterate
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  Use the output directly, then follow the "What's Next?" prompts for more.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 p-6 bg-white border-l-4 border-[#007BFF] rounded-lg shadow-md">
+              <p className="text-gray-700 leading-relaxed">
+                <strong className="text-[#007BFF]">Pro Tip:</strong> For best results, update your brand file as your strategy evolves—the AI adapts instantly to provide even more relevant insights.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Who It's For */}
+        <div className="py-12 md:py-16 lg:py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Who It's For
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+              <div className="bg-gradient-to-br from-[#007BFF]/10 to-[#28A745]/10 p-6 rounded-lg">
+                <h3
+                  className="text-xl font-bold text-[#343A40] mb-3"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Social Media Managers
+                </h3>
+                <p className="text-gray-700">
+                  Stay ahead of trends and create content that resonates with your audience while maintaining brand consistency.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#FFC107]/10 to-[#007BFF]/10 p-6 rounded-lg">
+                <h3
+                  className="text-xl font-bold text-[#343A40] mb-3"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Content Creators
+                </h3>
+                <p className="text-gray-700">
+                  Transform trend research into actionable content strategies that grow your following and engagement.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#28A745]/10 to-[#007BFF]/10 p-6 rounded-lg">
+                <h3
+                  className="text-xl font-bold text-[#343A40] mb-3"
+                  style={{ fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Brand Strategists
+                </h3>
+                <p className="text-gray-700">
+                  Discover unique market gaps and position your brand as a thought leader in fast-moving niches.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 p-6 md:p-8 rounded-lg">
+              <h3
+                className="text-xl md:text-2xl font-bold text-[#343A40] mb-6 text-center"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Success Stories
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <p className="text-gray-700 italic mb-3">
+                    "TrendPulse transformed my chaotic trend-hunting into a streamlined strategy. My engagement soared!"
+                  </p>
+                  <p className="text-[#007BFF] font-semibold">— Sarah, Fashion Marketer</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <p className="text-gray-700 italic mb-3">
+                    "Finally, a tool that gets my brand's voice. Gaps I never saw before are now my secret weapon."
+                  </p>
+                  <p className="text-[#007BFF] font-semibold">— Mike, Tech Entrepreneur</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-12 md:py-16 lg:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Ready to Market Smarter?
+            </h2>
+            <p className="text-white/90 mb-6 md:mb-8 text-base md:text-lg max-w-2xl mx-auto">
+              Transform trends into triumphs with TrendPulse Architect. Deploy on your AI platform and watch your content strategy level up.
+            </p>
+            <button
+              onClick={() => onDownload(prompt.id)}
+              className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base mb-4"
+              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+            >
+              <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+              Access TrendPulse Architect - Free
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (prompt.id === '7') {
     // Data/Analyst System comprehensive page
     return (
@@ -1126,19 +1546,21 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
               Secure Your Code Today
             </h3>
             <p className="text-white/90 mb-2 text-base md:text-lg max-w-2xl mx-auto px-4">
-              Get the FullStack Security Sentinel for just $3 and start scanning for 35+ vulnerability types instantly.
+              Get the FullStack Security Sentinel for free and start scanning for 35+ vulnerability types instantly.
             </p>
             <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
               Professional security reports with non-breaking fixes that preserve your code's functionality. 🔒
             </p>
-            <button
-              onClick={() => onDownload(prompt.id)}
+            <a
+              href="https://gemini.google.com/gem/1eHwVLFyQClOzXaiGj6FJUMe1xCUTWbEe?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
               style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
             >
               <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-              Get for $3
-            </button>
+              Access for Free
+            </a>
           </section>
         </div>
       </div>
