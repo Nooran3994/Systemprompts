@@ -73,7 +73,7 @@ function App() {
       description: 'Expert security auditor and code remediation specialist that analyzes code for 35+ vulnerabilities, generates professional reports, and provides non-breaking fixes.',
       category: 'Agents',
       thumbnail: 'https://images.unsplash.com/photo-1610758758876-0680d8c2247c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZyUyMGNvZGUlMjBzZWN1cml0eSUyMHZ1bG5lcmFiaWxpdHklMjBhdWRpdCUyMHNjcmVlbnxlbnwxfHx8fDE3NzExMDIyMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      price: '$3'
+      price: 'Free'
     },
     {
       id: '9',
@@ -82,6 +82,14 @@ function App() {
       category: 'Social Media Systems',
       thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
       price: '$36'
+    },
+    {
+      id: '10',
+      title: 'TrendPulse Architect',
+      description: 'Smart AI strategist that validates trends across time, anchors them to your brand identity, and creates data-backed content strategies.',
+      category: 'Content Creation',
+      thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmVuZGluZyUyMGRhdGElMjBhbmFseXRpY3MlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzM5ODI2NDAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+      price: 'Free'
     }
   ];
 
@@ -104,8 +112,11 @@ function App() {
       // Redirect to Gemini Gem for Data/Analyst System
       window.open('https://gemini.google.com/gem/1-RRD545WaOHgM_jmjDaxsAwrbtnIawqG?usp=sharing', '_blank');
     } else if (id === '8') {
-      // Redirect to Payhip for FullStack Security Sentinel
-      window.open('https://payhip.com/b/WP4Om', '_blank');
+      // Redirect to Gemini Gem for FullStack Security Sentinel
+      window.open('https://gemini.google.com/gem/1eHwVLFyQClOzXaiGj6FJUMe1xCUTWbEe?usp=sharing', '_blank');
+    } else if (id === '10') {
+      // Redirect to Gemini Gem for TrendPulse Architect
+      window.open('https://gemini.google.com/gem/1v90M2ApTHhxW1Zl3eNyqD_Ljg0hSNMsq?usp=sharing', '_blank');
     } else {
       // Coming soon message for other prompts
       alert('Coming Soon!\n\nThis prompt will be available for download soon. Stay tuned!');

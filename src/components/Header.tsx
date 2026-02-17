@@ -18,8 +18,10 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [showSearchDropdown, setShowSearchDropdown] = React.useState(false);
   const [showMobileSearchDropdown, setShowMobileSearchDropdown] = React.useState(false);
+  const [mobileSearchExpanded, setMobileSearchExpanded] = React.useState(false);
   const searchRef = React.useRef<HTMLDivElement>(null);
   const mobileSearchRef = React.useRef<HTMLDivElement>(null);
+  const mobileSearchInputRef = React.useRef<HTMLInputElement>(null);
 
   const handleLogoClickInternal = () => {
     navigate('/');
@@ -118,12 +120,46 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
 
   const filteredPrompts = filterPrompts(searchQuery);
 
+  // Get trending/popular prompts (based on availability and pricing)
+  const getTrendingPrompts = () => {
+    // Prioritize: Free prompts, paid prompts, then coming soon
+    // IDs: 1 (paid), 7 (free), 8 (paid), others (coming soon)
+    return prompts
+      .map(prompt => ({
+        ...prompt,
+        priority: prompt.id === '7' ? 1 : // Free - highest priority
+                  (prompt.id === '1' || prompt.id === '8') ? 2 : // Paid - medium priority
+                  3 // Coming soon - lowest priority
+      }))
+      .sort((a, b) => a.priority - b.priority)
+      .slice(0, 6); // Show top 6 trending prompts
+  };
+
+  const trendingPrompts = getTrendingPrompts();
+
   const handlePromptSelect = (id: string) => {
     setShowSearchDropdown(false);
     setShowMobileSearchDropdown(false);
     setMobileMenuOpen(false);
+    setMobileSearchExpanded(false);
     onSearchChange(''); // Clear search
     onPromptClick(id);
+  };
+
+  // Handle mobile search icon click
+  const handleMobileSearchClick = () => {
+    setMobileSearchExpanded(true);
+    // Focus the input after state update
+    setTimeout(() => {
+      mobileSearchInputRef.current?.focus();
+    }, 100);
+  };
+
+  // Handle closing mobile search
+  const handleCloseMobileSearch = () => {
+    setMobileSearchExpanded(false);
+    setShowMobileSearchDropdown(false);
+    onSearchChange('');
   };
 
   return (
@@ -229,7 +265,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                                 {prompt.category}
                               </span>
                               <span className="text-xs font-semibold text-[#28A745]">
-                                {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : 'Coming Soon'}
+                                {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : prompt.id === '10' ? 'Free' : 'Coming Soon'}
                               </span>
                             </div>
                           </div>
@@ -237,10 +273,52 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                       ))}
                     </div>
                   ) : (
-                    <div className="p-6 text-center text-gray-500">
-                      <Search className="w-8 h-8 mx-auto mb-2 opacity-50" />
-                      <p className="text-sm">No prompts found for "{searchQuery}"</p>
-                      <p className="text-xs mt-1">Try searching for keywords like "python", "social media", or "learning"</p>
+                    <div className="p-4">
+                      {/* Trending Header */}
+                      <div className="mb-4">
+                        <h3 className="text-xl font-bold text-[#343A40] mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                          🔥 Trending Prompts
+                        </h3>
+                        <p className="text-sm text-gray-600">Popular system prompts used by our community</p>
+                      </div>
+
+                      {/* Trending Prompts */}
+                      <div className="space-y-3">
+                        {trendingPrompts.map((prompt) => (
+                          <div
+                            key={prompt.id}
+                            onClick={() => handlePromptSelect(prompt.id)}
+                            className="flex items-start gap-3 p-3 rounded-lg bg-white border border-gray-200 cursor-pointer hover:border-[#007BFF] hover:shadow-md transition-all group"
+                          >
+                            {/* Thumbnail */}
+                            <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-gray-100">
+                              <img
+                                src={prompt.thumbnail}
+                                alt={prompt.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                              />
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-semibold text-sm text-gray-900 mb-1 line-clamp-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                {prompt.title}
+                              </h4>
+                              <p className="text-xs text-gray-600 line-clamp-2 mb-2">
+                                {prompt.description}
+                              </p>
+                              <div className="flex items-center gap-2">
+                                <span className="text-xs px-2 py-0.5 bg-[#007BFF]/10 text-[#007BFF] rounded-full">
+                                  {prompt.category}
+                                </span>
+                                <span className="text-xs font-semibold text-[#28A745]">
+                                  {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : prompt.id === '10' ? 'Free' : 'Coming Soon'}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -257,6 +335,16 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
           >
             Subscribe
           </a>
+
+          {/* Mobile/Tablet Search Icon */}
+          <button
+            onClick={handleMobileSearchClick}
+            className="lg:hidden flex items-center gap-2 px-3 py-2 text-[#343A40] hover:text-[#007BFF] hover:bg-gray-50 rounded-lg transition-colors"
+            aria-label="Search"
+          >
+            <Search width="20" height="20" />
+            <span className="text-sm font-medium">Search</span>
+          </button>
 
           {/* Mobile Menu Button */}
           <button 
@@ -321,28 +409,46 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
         )}
 
         {/* Mobile Search Bar */}
-        <div className="lg:hidden pb-4">
-          <div className="relative w-full" ref={mobileSearchRef}>
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search for system prompts..."
-              value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-[#F8F9FA] border border-gray-200 rounded-[86px] focus:outline-none focus:ring-2 focus:ring-[#007BFF] focus:border-transparent"
-              aria-label="Search system prompts"
-            />
-            
-            {/* Search Dropdown */}
-            {showMobileSearchDropdown && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl max-h-[500px] overflow-y-auto z-50">
-                {filteredPrompts.length > 0 ? (
-                  <div className="p-2">
+        {mobileSearchExpanded && (
+          <div className="lg:hidden fixed inset-0 bg-white z-50 animate-fade-in">
+            <div className="flex items-center px-4 h-16 border-b border-gray-200">
+              {/* Back Button */}
+              <button
+                onClick={handleCloseMobileSearch}
+                className="p-2 text-[#343A40] hover:text-[#007BFF] transition-colors mr-2"
+                aria-label="Close search"
+              >
+                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+              </button>
+
+              {/* Search Input */}
+              <div className="relative flex-1" ref={mobileSearchRef}>
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search for system prompts..."
+                  value={searchQuery}
+                  onChange={(e) => onSearchChange(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 bg-[#F8F9FA] border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#007BFF] focus:border-transparent"
+                  aria-label="Search system prompts"
+                  ref={mobileSearchInputRef}
+                  autoFocus
+                />
+              </div>
+            </div>
+
+            {/* Search Results */}
+            <div className="overflow-y-auto h-[calc(100vh-64px)]">
+              {searchQuery.trim().length > 0 ? (
+                filteredPrompts.length > 0 ? (
+                  <div className="p-4 space-y-3">
                     {filteredPrompts.map((prompt) => (
                       <div
                         key={prompt.id}
                         onClick={() => handlePromptSelect(prompt.id)}
-                        className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors group"
+                        className="flex items-start gap-3 p-3 rounded-lg bg-white border border-gray-200 cursor-pointer hover:border-[#007BFF] hover:shadow-md transition-all group"
                       >
                         {/* Thumbnail */}
                         <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-gray-100">
@@ -358,7 +464,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                           <h4 className="font-semibold text-sm text-gray-900 mb-1 line-clamp-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
                             {prompt.title}
                           </h4>
-                          <p className="text-xs text-gray-600 line-clamp-2 mb-1">
+                          <p className="text-xs text-gray-600 line-clamp-2 mb-2">
                             {prompt.description}
                           </p>
                           <div className="flex items-center gap-2">
@@ -366,7 +472,7 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                               {prompt.category}
                             </span>
                             <span className="text-xs font-semibold text-[#28A745]">
-                              {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : 'Coming Soon'}
+                              {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : prompt.id === '10' ? 'Free' : 'Coming Soon'}
                             </span>
                           </div>
                         </div>
@@ -374,16 +480,22 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                     ))}
                   </div>
                 ) : (
-                  <div className="p-6 text-center text-gray-500">
-                    <Search className="w-8 h-8 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm">No prompts found for "{searchQuery}"</p>
-                    <p className="text-xs mt-1">Try searching for keywords like "python", "social media", or "learning"</p>
+                  <div className="flex flex-col items-center justify-center py-20 px-6 text-center">
+                    <Search className="w-16 h-16 text-gray-300 mb-4" />
+                    <p className="text-lg font-semibold text-gray-700 mb-2">No prompts found for "{searchQuery}"</p>
+                    <p className="text-sm text-gray-500">Try searching for keywords like "python", "social media", or "learning"</p>
                   </div>
-                )}
-              </div>
-            )}
+                )
+              ) : (
+                <div className="flex flex-col items-center justify-center py-20 px-6 text-center">
+                  <Search className="w-16 h-16 text-gray-300 mb-4" />
+                  <p className="text-lg font-semibold text-gray-700 mb-2">Search System Prompts</p>
+                  <p className="text-sm text-gray-500">Type to search through our collection of AI prompts</p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
