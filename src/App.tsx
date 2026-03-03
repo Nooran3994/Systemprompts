@@ -33,7 +33,7 @@ function AppContent() {
       description: 'High-autonomy interrogation engine that transforms raw data into strategic intelligence with visual-first methodology and zero-friction analysis.',
       category: 'Agents',
       thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzJTIwZGFzaGJvYXJkJTIwY2hhcnRzJTIwZ3JhcGhzfGVufDF8fHx8MTc3MDk3MDI4NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      price: 'Free'
+      price: '$3'
     },
     {
       id: '8',
@@ -41,7 +41,7 @@ function AppContent() {
       description: 'Expert security auditor and code remediation specialist that analyzes code for 35+ vulnerabilities, generates professional reports, and provides non-breaking fixes.',
       category: 'Agents',
       thumbnail: 'https://images.unsplash.com/photo-1610758758876-0680d8c2247c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZyUyMGNvZGUlMjBzZWN1cml0eSUyMHZ1bG5lcmFiaWxpdHklMjBhdWRpdCUyMHNjcmVlbnxlbnwxfHx8fDE3NzExMDIyMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      price: 'Free'
+      price: '$8'
     },
     {
       id: '10',
@@ -49,7 +49,7 @@ function AppContent() {
       description: 'Smart AI strategist that validates trends across time, anchors them to your brand identity, and creates data-backed content strategies.',
       category: 'Content Creation',
       thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmVuZGluZyUyMGRhdGElMjBhbmFseXRpY3MlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzM5ODI2NDAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      price: 'Free'
+      price: '$2'
     }
   ];
 
@@ -81,7 +81,16 @@ function AppContent() {
 
   const handleDownloadInstructions = (id: string) => {
     // Handler for downloading instruction files
-    alert('Download Instructions\n\nYou will receive .md instruction files that can be used with any AI model (ChatGPT, Claude, Grok, etc.).\n\nComing Soon!');
+    if (id === '7') {
+      // Data/Analyst System - $3
+      window.open('https://payhip.com/b/gurUl', '_blank');
+    } else if (id === '8') {
+      // FullStack Security Sentinel - $8
+      window.open('https://payhip.com/b/IWEe8', '_blank');
+    } else if (id === '10') {
+      // TrendPulse Architect - $2
+      window.open('https://payhip.com/b/xgK10', '_blank');
+    }
   };
 
   const handleBackToHome = () => {

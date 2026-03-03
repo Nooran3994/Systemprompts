@@ -41,7 +41,7 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
 
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
-                Free System • No Sign-up Required
+                Premium System • $2 One-Time Purchase
               </div>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
@@ -483,7 +483,7 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
 
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
-                Free System • No Sign-up Required
+                Premium System • $3 One-Time Purchase
               </div>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
@@ -998,7 +998,7 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
 
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
-                Premium System • $3 One-Time Purchase
+                Premium System • $8 One-Time Purchase
               </div>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
