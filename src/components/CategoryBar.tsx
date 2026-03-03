@@ -10,7 +10,7 @@ export function CategoryBar({ categories, selectedCategory, onSelectCategory }: 
   return (
     <div className="bg-white border-b border-gray-200 sticky top-16 md:top-20 z-40 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex overflow-x-auto py-4 gap-3 scrollbar-hide">
+        <div className="flex overflow-x-auto gap-3 scrollbar-hide px-[24px] py-[9px]">
           {categories.map((category) => (
             <button
               key={category}

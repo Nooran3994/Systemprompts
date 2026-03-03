@@ -1,4 +1,5 @@
 import React from 'react';
+import { FileDown } from 'lucide-react';
 
 export interface PromptCardData {
   id: string;
@@ -13,9 +14,10 @@ interface PromptCardProps {
   prompt: PromptCardData;
   onViewDocs: (id: string) => void;
   onDownload: (id: string) => void;
+  onDownloadInstructions?: (id: string) => void;
 }
 
-export function PromptCard({ prompt, onViewDocs, onDownload }: PromptCardProps) {
+export function PromptCard({ prompt, onViewDocs, onDownload, onDownloadInstructions }: PromptCardProps) {
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
       'Learning Systems': '#28A745',
@@ -27,64 +29,94 @@ export function PromptCard({ prompt, onViewDocs, onDownload }: PromptCardProps) 
     return colors[category] || '#6C757D';
   };
 
-  // Check if this is the Python Learning Guardrail System (available for download)
-  const isAvailable = prompt.id === '1';
-  // Check if this is the Data/Analyst System (free access)
-  const isFreeAccess = prompt.id === '7';
-  // Check if this is the FullStack Security Sentinel (free access)
-  const isSecuritySentinel = prompt.id === '8';
-  // Check if this is TrendPulse Architect (free access)
-  const isTrendPulse = prompt.id === '10';
+  // Check if this is the Python Learning Guardrail System (paid download)
+  const isPaidDownload = prompt.id === '1';
+  // Check if this is a free access prompt (IDs: 7, 8, 10)
+  const isFreeAccess = prompt.id === '7' || prompt.id === '8' || prompt.id === '10';
+  
+  // Don't show download instructions button for Python card (id === '1')
+  const showInstructionsButton = prompt.id !== '1' && onDownloadInstructions;
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group border border-gray-100">
-      {/* Thumbnail */}
-      <div className="relative overflow-hidden bg-gray-100 h-48">
+    <div className="group cursor-pointer">
+      {/* Thumbnail with overlay */}
+      <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3] mb-4">
         <img
           src={prompt.thumbnail}
           alt={prompt.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
-        {/* Category Badge */}
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        
+        {/* Category Badge - repositioned to bottom left */}
         <div
-          className="absolute top-3 right-3 px-3 py-1 rounded-full text-white text-sm font-medium shadow-lg"
+          className="absolute bottom-3 left-3 px-3 py-1.5 rounded-full text-white text-xs font-semibold backdrop-blur-sm shadow-lg"
           style={{ backgroundColor: getCategoryColor(prompt.category) }}
         >
           {prompt.category}
         </div>
+
+        {/* Price tag - top right */}
+        <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm shadow-lg">
+          <span className="text-sm font-bold" style={{ color: isPaidDownload ? '#007BFF' : '#28A745' }}>
+            {isPaidDownload ? prompt.price : 'FREE'}
+          </span>
+        </div>
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="space-y-3">
         {/* Title */}
         <h3
-          className="text-[#343A40] mb-3 line-clamp-2"
+          className="text-[#343A40] text-lg leading-tight line-clamp-2 group-hover:text-[#007BFF] transition-colors"
           style={{ fontFamily: 'Poppins, sans-serif' }}
         >
           {prompt.title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 mb-6 line-clamp-3 text-sm leading-relaxed">
+        <p className="text-gray-600 line-clamp-2 text-sm leading-relaxed">
           {prompt.description}
         </p>
 
         {/* Actions */}
-        <div className="flex gap-3">
-          <button
-            onClick={() => onViewDocs(prompt.id)}
-            className="flex-1 px-4 py-2 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-colors text-sm font-medium"
-            aria-label={`View documentation for ${prompt.title}`}
-          >
-            View Docs
-          </button>
-          <button
-            onClick={() => onDownload(prompt.id)}
-            className="flex-1 px-4 py-2 bg-[#28A745] text-white rounded-lg hover:bg-[#1e7e34] transition-colors text-sm font-medium"
-            aria-label={`Download ${prompt.title}`}
-          >
-            {isAvailable ? `Download • ${prompt.price}` : isFreeAccess ? 'Free Access' : isSecuritySentinel ? 'Free Access' : isTrendPulse ? 'Free Access' : 'Coming Soon'}
-          </button>
+        <div className="flex flex-col gap-2 pt-2">
+          <div className="flex gap-2">
+            <button
+              onClick={() => onViewDocs(prompt.id)}
+              className="flex-1 px-4 py-2.5 border-2 border-[#007BFF] text-[#007BFF] rounded-xl hover:bg-[#007BFF] hover:text-white transition-all text-sm font-semibold"
+              aria-label={`View documentation for ${prompt.title}`}
+            >
+              View Docs
+            </button>
+            <button
+              onClick={() => onDownload(prompt.id)}
+              className="flex-1 px-4 py-2.5 bg-[#28A745] text-white rounded-xl hover:bg-[#1e7e34] hover:shadow-lg transition-all text-sm font-semibold"
+              aria-label={`Download ${prompt.title}`}
+            >
+              {isPaidDownload ? 'Buy Now' : 'Get Free'}
+            </button>
+          </div>
+          {showInstructionsButton && (
+            <div className="relative group/tooltip">
+              <button
+                onClick={() => onDownloadInstructions(prompt.id)}
+                className="w-full px-4 py-2.5 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-xl hover:from-[#FFB300] hover:to-[#F57C00] transition-all text-sm font-bold shadow-sm hover:shadow-md flex items-center justify-center gap-2"
+                aria-label={`Download instructions for ${prompt.title}`}
+              >
+                <FileDown className="w-4 h-4" />
+                Get Instructions
+              </button>
+              {/* Tooltip */}
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-lg z-10">
+                <div className="font-semibold">Claim Full Ownership</div>
+                <div className="text-gray-300">Get .md files • Use with any AI model</div>
+                {/* Arrow */}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
