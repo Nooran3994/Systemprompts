@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Search } from 'lucide-react';
+import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Search, FileDown } from 'lucide-react';
 import { PromptCardData } from './PromptCard';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
@@ -7,9 +7,10 @@ interface DetailPageProps {
   prompt: PromptCardData | null;
   onBack: () => void;
   onDownload: (id: string) => void;
+  onDownloadInstructions?: (id: string) => void;
 }
 
-export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
+export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions }: DetailPageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   if (!prompt) {
@@ -57,14 +58,25 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
               <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8">
                 Spot viral trends before they fade, tailor them perfectly to your brand's voice, and turn them into content that drives engagement—all in minutes.
               </p>
-              <button
-                onClick={() => onDownload(prompt.id)}
-                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
-                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
-              >
-                <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                Access Free System
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <button
+                  onClick={() => onDownload(prompt.id)}
+                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                  style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+                >
+                  <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  Access Free System
+                </button>
+                {onDownloadInstructions && (
+                  <button
+                    onClick={() => onDownloadInstructions(prompt.id)}
+                    className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base font-bold"
+                  >
+                    <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                    Download Instructions
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -427,14 +439,25 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
             <p className="text-white/90 mb-6 md:mb-8 text-base md:text-lg max-w-2xl mx-auto">
               Transform trends into triumphs with TrendPulse Architect. Deploy on your AI platform and watch your content strategy level up.
             </p>
-            <button
-              onClick={() => onDownload(prompt.id)}
-              className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base mb-4"
-              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
-            >
-              <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-              Access TrendPulse Architect - Free
-            </button>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-4">
+              <button
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Access TrendPulse Architect - Free
+              </button>
+              {onDownloadInstructions && (
+                <button
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg shadow-lg hover:bg-white hover:text-[#007BFF] transform hover:scale-105 transition-all text-sm md:text-base font-bold"
+                >
+                  <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  Download Instructions
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -478,14 +501,25 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
                 Transform raw artifacts into immediate strategic intelligence with visual-first methodology. 
                 Zero configuration, zero friction — just upload and get insights.
               </p>
-              <button
-                onClick={() => onDownload(prompt.id)}
-                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
-                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
-              >
-                <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                Access Free System
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <button
+                  onClick={() => onDownload(prompt.id)}
+                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                  style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+                >
+                  <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  Access Free System
+                </button>
+                {onDownloadInstructions && (
+                  <button
+                    onClick={() => onDownloadInstructions(prompt.id)}
+                    className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base font-bold"
+                  >
+                    <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                    Download Instructions
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -922,14 +956,25 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
             <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
               Upload your data and get instant strategic insights with zero friction. 🚀
             </p>
-            <button
-              onClick={() => onDownload(prompt.id)}
-              className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
-              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
-            >
-              <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-              Access Free System
-            </button>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <button
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Access Free System
+              </button>
+              {onDownloadInstructions && (
+                <button
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg shadow-lg hover:bg-white hover:text-[#007BFF] transform hover:scale-105 transition-all text-sm md:text-base font-bold"
+                >
+                  <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  Download Instructions
+                </button>
+              )}
+            </div>
           </section>
         </div>
       </div>
@@ -970,14 +1015,25 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
               <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8">
                 AI-powered security auditor that scans code for 35+ vulnerability types, generates professional reports, and provides non-breaking fixes that preserve original functionality.
               </p>
-              <button
-                onClick={() => onDownload(prompt.id)}
-                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
-                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
-              >
-                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                Get System for $3
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <button
+                  onClick={() => onDownload(prompt.id)}
+                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                  style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+                >
+                  <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  Get Free Access
+                </button>
+                {onDownloadInstructions && (
+                  <button
+                    onClick={() => onDownloadInstructions(prompt.id)}
+                    className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base font-bold"
+                  >
+                    <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                    Download Instructions
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -1551,16 +1607,27 @@ export function DetailPage({ prompt, onBack, onDownload }: DetailPageProps) {
             <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
               Professional security reports with non-breaking fixes that preserve your code's functionality. 🔒
             </p>
-            <a
-              href="https://gemini.google.com/gem/1eHwVLFyQClOzXaiGj6FJUMe1xCUTWbEe?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
-              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
-            >
-              <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-              Access for Free
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <a
+                href="https://gemini.google.com/gem/1eHwVLFyQClOzXaiGj6FJUMe1xCUTWbEe?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Access for Free
+              </a>
+              {onDownloadInstructions && (
+                <button
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg shadow-lg hover:bg-white hover:text-[#007BFF] transform hover:scale-105 transition-all text-sm md:text-base font-bold"
+                >
+                  <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  Download Instructions
+                </button>
+              )}
+            </div>
           </section>
         </div>
       </div>

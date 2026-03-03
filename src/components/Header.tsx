@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search, X } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router';
 import { PromptCardData } from './PromptCard';
 
 interface HeaderProps {
@@ -122,17 +122,17 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
 
   // Get trending/popular prompts (based on availability and pricing)
   const getTrendingPrompts = () => {
-    // Prioritize: Free prompts, paid prompts, then coming soon
-    // IDs: 1 (paid), 7 (free), 8 (paid), others (coming soon)
+    // Prioritize: Free prompts first, then paid prompts
+    // IDs: 1 (paid), 7, 8, 10 (free)
     return prompts
       .map(prompt => ({
         ...prompt,
-        priority: prompt.id === '7' ? 1 : // Free - highest priority
-                  (prompt.id === '1' || prompt.id === '8') ? 2 : // Paid - medium priority
-                  3 // Coming soon - lowest priority
+        priority: (prompt.id === '7' || prompt.id === '8' || prompt.id === '10') ? 1 : // Free - highest priority
+                  prompt.id === '1' ? 2 : // Paid - lower priority
+                  3
       }))
       .sort((a, b) => a.priority - b.priority)
-      .slice(0, 6); // Show top 6 trending prompts
+      .slice(0, 4); // Show all 4 available prompts
   };
 
   const trendingPrompts = getTrendingPrompts();

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router';
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -13,7 +13,7 @@ import { SEO } from './components/SEO';
 import { ScrollToTop } from './components/ScrollToTop';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
-function App() {
+function AppContent() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPromptId, setSelectedPromptId] = useState<string | null>(null);
 
@@ -26,38 +26,6 @@ function App() {
       category: 'Learning Systems',
       thumbnail: 'https://images.unsplash.com/photo-1667372531881-6f975b1c86db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxweXRob24lMjBwcm9ncmFtbWluZyUyMGNvZGV8ZW58MXx8fHwxNzY5MzQyMzgzfDA&ixlib=rb-4.1.0&q=80&w=1080',
       price: '$2'
-    },
-    {
-      id: '3',
-      title: 'Social Media Content Generator',
-      description: 'Automated content creation system for social platforms with brand voice consistency, hashtag optimization, and engagement strategies.',
-      category: 'Social Media Systems',
-      thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-      price: '$24'
-    },
-    {
-      id: '4',
-      title: 'Code Review Assistant',
-      description: 'AI-powered code reviewer that provides constructive feedback, identifies bugs, and suggests best practices across multiple languages.',
-      category: 'Productivity',
-      thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop',
-      price: '$34'
-    },
-    {
-      id: '5',
-      title: 'Research Paper Analyzer',
-      description: 'Advanced system for analyzing academic papers, extracting key insights, and generating comprehensive summaries.',
-      category: 'Productivity',
-      thumbnail: 'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=600&fit=crop',
-      price: '$44'
-    },
-    {
-      id: '6',
-      title: 'Creative Writing Coach',
-      description: 'Interactive writing assistant that helps develop stories, characters, and plots with professional creative writing techniques.',
-      category: 'Content Creation',
-      thumbnail: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop',
-      price: '$27'
     },
     {
       id: '7',
@@ -74,14 +42,6 @@ function App() {
       category: 'Agents',
       thumbnail: 'https://images.unsplash.com/photo-1610758758876-0680d8c2247c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZyUyMGNvZGUlMjBzZWN1cml0eSUyMHZ1bG5lcmFiaWxpdHklMjBhdWRpdCUyMHNjcmVlbnxlbnwxfHx8fDE3NzExMDIyMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       price: 'Free'
-    },
-    {
-      id: '9',
-      title: 'Email Marketing Assistant',
-      description: 'AI system for crafting compelling email campaigns with A/B testing suggestions and conversion optimization.',
-      category: 'Social Media Systems',
-      thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
-      price: '$36'
     },
     {
       id: '10',
@@ -104,9 +64,8 @@ function App() {
   };
 
   const handleDownload = (id: string) => {
-    // Check if this is the Python Learning Guardrail System
     if (id === '1') {
-      // Redirect to Payhip download page
+      // Redirect to Payhip for Python Learning Guardrail System
       window.open('https://payhip.com/b/V5PBw', '_blank');
     } else if (id === '7') {
       // Redirect to Gemini Gem for Data/Analyst System
@@ -117,10 +76,12 @@ function App() {
     } else if (id === '10') {
       // Redirect to Gemini Gem for TrendPulse Architect
       window.open('https://gemini.google.com/gem/1v90M2ApTHhxW1Zl3eNyqD_Ljg0hSNMsq?usp=sharing', '_blank');
-    } else {
-      // Coming soon message for other prompts
-      alert('Coming Soon!\n\nThis prompt will be available for download soon. Stay tuned!');
     }
+  };
+
+  const handleDownloadInstructions = (id: string) => {
+    // Handler for downloading instruction files
+    alert('Download Instructions\n\nYou will receive .md instruction files that can be used with any AI model (ChatGPT, Claude, Grok, etc.).\n\nComing Soon!');
   };
 
   const handleBackToHome = () => {
@@ -133,87 +94,96 @@ function App() {
   // Detail page view
   if (selectedPromptId) {
     return (
-      <HelmetProvider>
-        <Router>
-          <SEO 
-            title={`${selectedPrompt?.title} - SystemPrompts`}
-            description={selectedPrompt?.description}
+      <>
+        <SEO 
+          title={`${selectedPrompt?.title} - SystemPrompts`}
+          description={selectedPrompt?.description}
+        />
+        <Header 
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          onLogoClick={handleLogoClick}
+          prompts={prompts}
+          onPromptClick={handleViewDocs}
+          isDetailView={true}
+        />
+        <div className="pt-16 md:pt-20">
+          <DetailPage
+            prompt={selectedPrompt}
+            onBack={handleBackToHome}
+            onDownload={handleDownload}
+            onDownloadInstructions={handleDownloadInstructions}
           />
-          <Header 
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            onLogoClick={handleLogoClick}
-            prompts={prompts}
-            onPromptClick={handleViewDocs}
-            isDetailView={true}
-          />
-          <div className="pt-16 md:pt-20">
-            <DetailPage
-              prompt={selectedPrompt}
-              onBack={handleBackToHome}
-              onDownload={handleDownload}
-            />
-          </div>
-          <Footer onNavigateHome={handleBackToHome} />
-        </Router>
-      </HelmetProvider>
+        </div>
+        <Footer onNavigateHome={handleBackToHome} />
+      </>
     );
   }
 
   // Main routing
   return (
+    <>
+      <ScrollToTop />
+      <div className="min-h-screen">
+        <SEO />
+        <Header 
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          onLogoClick={handleLogoClick}
+          prompts={prompts}
+          onPromptClick={handleViewDocs}
+        />
+        
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <HomePage 
+                prompts={prompts}
+                searchQuery={searchQuery}
+                onViewDocs={handleViewDocs}
+                onDownload={handleDownload}
+                onDownloadInstructions={handleDownloadInstructions}
+              />
+            } 
+          />
+          <Route 
+            path="/prompts" 
+            element={
+              <AllPromptsPage 
+                prompts={prompts}
+                searchQuery={searchQuery}
+                onViewDocs={handleViewDocs}
+                onDownload={handleDownload}
+                onDownloadInstructions={handleDownloadInstructions}
+              />
+            } 
+          />
+          <Route 
+            path="/blog" 
+            element={
+              <Blog />
+            } 
+          />
+          <Route 
+            path="/blog/:slug" 
+            element={
+              <BlogPost />
+            } 
+          />
+        </Routes>
+
+        <Footer />
+      </div>
+    </>
+  );
+}
+
+function App() {
+  return (
     <HelmetProvider>
       <Router>
-        <ScrollToTop />
-        <div className="min-h-screen">
-          <SEO />
-          <Header 
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            onLogoClick={handleLogoClick}
-            prompts={prompts}
-            onPromptClick={handleViewDocs}
-          />
-          
-          <Routes>
-            <Route 
-              path="/" 
-              element={
-                <HomePage 
-                  prompts={prompts}
-                  searchQuery={searchQuery}
-                  onViewDocs={handleViewDocs}
-                  onDownload={handleDownload}
-                />
-              } 
-            />
-            <Route 
-              path="/prompts" 
-              element={
-                <AllPromptsPage 
-                  prompts={prompts}
-                  searchQuery={searchQuery}
-                  onViewDocs={handleViewDocs}
-                  onDownload={handleDownload}
-                />
-              } 
-            />
-            <Route 
-              path="/blog" 
-              element={
-                <Blog />
-              } 
-            />
-            <Route 
-              path="/blog/:slug" 
-              element={
-                <BlogPost />
-              } 
-            />
-          </Routes>
-
-          <Footer />
-        </div>
+        <AppContent />
       </Router>
     </HelmetProvider>
   );

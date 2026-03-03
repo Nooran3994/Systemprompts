@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { HeroSection } from '../components/HeroSection';
 import { VisionMissionSection } from '../components/VisionMissionSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -13,9 +13,10 @@ interface HomePageProps {
   searchQuery: string;
   onViewDocs: (id: string) => void;
   onDownload: (id: string) => void;
+  onDownloadInstructions?: (id: string) => void;
 }
 
-export function HomePage({ prompts, searchQuery, onViewDocs, onDownload }: HomePageProps) {
+export function HomePage({ prompts, searchQuery, onViewDocs, onDownload, onDownloadInstructions }: HomePageProps) {
   const navigate = useNavigate();
 
   const handleBrowseClick = () => {
@@ -32,6 +33,7 @@ export function HomePage({ prompts, searchQuery, onViewDocs, onDownload }: HomeP
         searchQuery={searchQuery}
         onViewDocs={onViewDocs}
         onDownload={onDownload}
+        onDownloadInstructions={onDownloadInstructions}
       />
       <CustomOptimizationSection />
       <SubscriptionSection />

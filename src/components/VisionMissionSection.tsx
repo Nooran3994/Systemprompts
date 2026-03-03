@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Settings, Rocket } from 'lucide-react';
+import { Zap, Settings, Rocket, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function VisionMissionSection() {
@@ -112,6 +112,104 @@ export function VisionMissionSection() {
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             From AI tutors to social media agents, our system prompts power applications across industries. Start building smarter AI solutions today.
           </p>
+        </motion.div>
+
+        {/* Download vs Free Access Section */}
+        <motion.div 
+          className="mt-12 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-xl p-8 md:p-12 border border-indigo-100"
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+        >
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#007BFF] to-[#28A745] mb-4">
+              <Download className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-[#343A40] mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              Free Access vs. Download Instructions
+            </h3>
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              Experience our systems for free on Gemini, or download the instructions for complete ownership and flexibility
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {/* Free Access */}
+            <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-[#28A745]" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Free Access on Gemini
+                </h4>
+              </div>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#28A745] mt-1">✓</span>
+                  <span>Try systems instantly without payment</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#28A745] mt-1">✓</span>
+                  <span>Pre-configured for optimal performance</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500 mt-1">⚠</span>
+                  <span>Instructions may be updated over time</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500 mt-1">⚠</span>
+                  <span>Limited to Gemini platform only</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Download Instructions */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border-2 border-[#007BFF]">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                  <Download className="w-5 h-5 text-[#007BFF]" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Download Instructions
+                </h4>
+              </div>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#007BFF] mt-1 font-bold">✓</span>
+                  <span className="font-medium">Full ownership of .md instruction files</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#007BFF] mt-1 font-bold">✓</span>
+                  <span className="font-medium">Use with ANY AI model (ChatGPT, Claude, Grok, etc.)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#007BFF] mt-1 font-bold">✓</span>
+                  <span className="font-medium">Deploy in custom projects & workflows</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#007BFF] mt-1 font-bold">✓</span>
+                  <span className="font-medium">Stable version that won't change</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#007BFF] mt-1 font-bold">✓</span>
+                  <span className="font-medium">Access to updated versions as they release</span>
+                </li>
+              </ul>
+              <div className="mt-4 pt-4 border-t border-indigo-200">
+                <p className="text-sm text-gray-600 text-center">
+                  💎 Perfect for developers building production systems
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-gray-700 font-medium text-lg">
+              Get exact results across all major AI platforms. Download once, deploy everywhere.
+            </p>
+          </div>
         </motion.div>
       </div>
     </motion.section>

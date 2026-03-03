@@ -1,6 +1,6 @@
 import React from 'react';
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 interface FooterProps {
   onNavigateHome?: () => void;

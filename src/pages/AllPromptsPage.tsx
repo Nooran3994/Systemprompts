@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { PromptCard, PromptCardData } from '../components/PromptCard';
 import { CategoryBar } from '../components/CategoryBar';
 import { LayoutGrid, LayoutList, ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import Masonry from 'react-responsive-masonry';
 
 interface AllPromptsPageProps {
@@ -11,9 +11,10 @@ interface AllPromptsPageProps {
   searchQuery: string;
   onViewDocs: (id: string) => void;
   onDownload: (id: string) => void;
+  onDownloadInstructions?: (id: string) => void;
 }
 
-export function AllPromptsPage({ prompts, searchQuery, onViewDocs, onDownload }: AllPromptsPageProps) {
+export function AllPromptsPage({ prompts, searchQuery, onViewDocs, onDownload, onDownloadInstructions }: AllPromptsPageProps) {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showMasonry, setShowMasonry] = useState(false);
@@ -127,6 +128,7 @@ export function AllPromptsPage({ prompts, searchQuery, onViewDocs, onDownload }:
                 prompt={prompt}
                 onViewDocs={onViewDocs}
                 onDownload={onDownload}
+                onDownloadInstructions={onDownloadInstructions}
               />
             ))}
           </Masonry>
@@ -138,6 +140,7 @@ export function AllPromptsPage({ prompts, searchQuery, onViewDocs, onDownload }:
                 prompt={prompt}
                 onViewDocs={onViewDocs}
                 onDownload={onDownload}
+                onDownloadInstructions={onDownloadInstructions}
               />
             ))}
           </div>

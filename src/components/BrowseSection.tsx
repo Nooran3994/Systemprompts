@@ -3,17 +3,18 @@ import { PromptCard, PromptCardData } from './PromptCard';
 import { CategoryBar } from './CategoryBar';
 import { ChevronLeft, LayoutGrid, LayoutList } from 'lucide-react';
 import Masonry from 'react-responsive-masonry';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 interface BrowseSectionProps {
   prompts: PromptCardData[];
   searchQuery: string;
   onViewDocs: (id: string) => void;
   onDownload: (id: string) => void;
+  onDownloadInstructions?: (id: string) => void;
   resetCategoryTrigger?: number;
 }
 
-export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, resetCategoryTrigger }: BrowseSectionProps) {
+export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, onDownloadInstructions, resetCategoryTrigger }: BrowseSectionProps) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showMasonry, setShowMasonry] = useState(false);
   const [expandedView, setExpandedView] = useState(false);
@@ -116,6 +117,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, re
                 prompt={prompt}
                 onViewDocs={onViewDocs}
                 onDownload={onDownload}
+                onDownloadInstructions={onDownloadInstructions}
               />
             ))}
           </div>
@@ -127,6 +129,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, re
                 prompt={prompt}
                 onViewDocs={onViewDocs}
                 onDownload={onDownload}
+                onDownloadInstructions={onDownloadInstructions}
               />
             ))}
           </Masonry>
@@ -138,6 +141,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, re
                 prompt={prompt}
                 onViewDocs={onViewDocs}
                 onDownload={onDownload}
+                onDownloadInstructions={onDownloadInstructions}
               />
             ))}
           </div>
