@@ -64,7 +64,7 @@ function AppContent() {
       title: 'CodeCollab Coach',
       description: 'Expert AI coach that transforms code collaboration into a deliberate practice skill. Master code review comments, feedback delivery, and team communication for career-defining impact.',
       category: 'Learning Systems',
-      thumbnail: 'https://images.unsplash.com/photo-1564931768730-7e4d8e240044?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RlJTIwcmV2aWV3JTIwY29sbGFib3JhdGlvbiUyMHByb2dyYW1taW5nJTIwdGVhbXxlbnwxfHx8fDE3NzI3MTk4Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      thumbnail: 'https://images.unsplash.com/photo-1637073849667-91120a924221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXJzJTIwcGFpciUyMHByb2dyYW1taW5nJTIwY29sbGFib3JhdGlvbnxlbnwxfHx8fDE3NzI3Mjc5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       price: 'Free'
     }
   ];

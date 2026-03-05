@@ -51,7 +51,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, on
   }, [prompts, searchQuery, selectedCategory]);
 
   // Display limited or all prompts
-  const displayedPrompts = expandedView ? filteredPrompts : filteredPrompts.slice(0, 6);
+  const displayedPrompts = expandedView ? filteredPrompts : filteredPrompts.slice(0, 3);
 
   const handleSeeMore = () => {
     setExpandedView(true);
@@ -148,14 +148,14 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, on
         )}
 
         {/* See More Button */}
-        {!expandedView && filteredPrompts.length > 6 && (
+        {!expandedView && filteredPrompts.length > 3 && (
           <div className="text-center mt-12">
             <button
               onClick={() => navigate('/prompts')}
-              className="px-8 py-3 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-all shadow-md hover:shadow-lg transform hover:scale-105"
+              className="px-8 py-4 bg-[#007BFF] text-white rounded-xl hover:bg-[#0056b3] transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
               style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
             >
-              See More
+              See More Prompts
             </button>
           </div>
         )}
