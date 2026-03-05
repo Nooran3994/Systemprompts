@@ -5,5 +5,9 @@
 /og-image.svg /og-image.svg 200
 /logo.png.svg /logo.png.svg 200
 
+# Critical: serve these static files directly — never let the SPA catch them
+/sitemap.xml /sitemap.xml 200
+/robots.txt /robots.txt 200
+
 # SPA fallback - serve index.html for all other routes
 /* /index.html 200
