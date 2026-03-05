@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Search, FileDown, Users, Globe, TrendingUp } from 'lucide-react';
+import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Search, FileDown, Users, Globe, TrendingUp, Sparkles } from 'lucide-react';
 import { PromptCardData } from './PromptCard';
 import { DownloadInstructionsButton } from './DownloadInstructionsButton';
 import { CodeCollabPage } from './DetailPageCodeCollab';
@@ -1930,6 +1930,722 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
     return <CVStructurePage prompt={prompt} onDownload={onDownload} onDownloadInstructions={onDownloadInstructions} onBack={onBack} />;
   }
 
+  // OutlineForge: Blog Architect comprehensive page
+  if (prompt.id === '17') {
+    const howItWorks = [
+      {
+        icon: <FileText className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF]" />,
+        title: 'Topic Analysis',
+        description: 'Analyzes your topic, audience, and platform to create a strategic content foundation that resonates and ranks.'
+      },
+      {
+        icon: <Code className="w-8 h-8 md:w-10 md:h-10 text-[#28A745]" />,
+        title: 'Structure Generation',
+        description: 'Builds scroll-stopping hooks, optimized H2/H3 architecture, and strategic keyword placement throughout.'
+      },
+      {
+        icon: <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-[#FFC107]" />,
+        title: 'Engagement Mapping',
+        description: 'Embeds psychological triggers, visual cues, and conversion-focused CTAs at optimal positions.'
+      },
+      {
+        icon: <Rocket className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF]" />,
+        title: 'Creative Amplification',
+        description: 'Delivers A/B headline options and multi-platform repurposing ideas to maximize content ROI.'
+      }
+    ];
+
+    const features = [
+      {
+        icon: <Globe className="w-6 h-6" />,
+        title: 'Platform-Optimized',
+        description: 'Tailored for blogs, Medium, LinkedIn, Substack, and content marketing platforms worldwide.'
+      },
+      {
+        icon: <Users className="w-6 h-6" />,
+        title: 'Multi-Industry Support',
+        description: 'Built for content creators, marketers, SEO specialists, agencies, and solopreneurs.'
+      },
+      {
+        icon: <TrendingUp className="w-6 h-6" />,
+        title: 'SEO Intelligence',
+        description: 'Integrates 2026 SEO best practices, SERP analysis, and search intent optimization.'
+      },
+      {
+        icon: <Shield className="w-6 h-6" />,
+        title: 'Storytelling Craft',
+        description: 'Blends psychological triggers with narrative flow for content that ranks and converts.'
+      }
+    ];
+
+    const starterPrompts = [
+      '"Create a blog outline for [topic] targeting [audience] with [word count] words"',
+      '"I need an SEO-optimized structure for a post about [subject] that ranks for [keywords]"',
+      '"Build an outline with 5 high-converting CTAs for [product/service]"',
+      '"Generate A/B headline options and repurposing ideas for [topic]"',
+      '"What\'s the best content structure for [goal] on [platform]?"'
+    ];
+
+    const faqs = [
+      {
+        question: 'How is OutlineForge different from generic AI writing tools?',
+        answer: 'OutlineForge thinks like a senior content strategist with 10,000+ posts of experience. It doesn\'t just create bullet lists—it delivers strategic architectures with storytelling craft, psychological triggers, SEO intelligence, and conversion optimization built into every outline.'
+      },
+      {
+        question: 'What information do I need to provide?',
+        answer: 'For best results, provide: (1) Clear topic and content goal, (2) Target audience and platform, (3) Desired word count or depth, (4) Primary keywords or SEO focus, (5) Tone and emotional direction you want.'
+      },
+      {
+        question: 'Can it handle different types of blog content?',
+        answer: 'Yes! OutlineForge supports all blog formats including listicles, how-to guides, thought leadership, case studies, product reviews, comparison posts, and long-form pillar content across all industries.'
+      },
+      {
+        question: 'Does it include SEO optimization?',
+        answer: 'Absolutely. Every outline includes keyword strategy, H2/H3 semantic structuring, search intent alignment, SERP-friendly formatting, and 2026 SEO best practices for maximum organic visibility.'
+      },
+      {
+        question: 'Can I use this for client work?',
+        answer: 'Yes! The full system purchase includes commercial rights. Use it for unlimited client projects, agency deliverables, and team workflows without attribution requirements.'
+      }
+    ];
+
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 md:py-12 px-4 md:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          {/* Back button */}
+          <button
+            onClick={onBack}
+            className="mb-6 md:mb-8 flex items-center gap-2 text-gray-700 hover:text-[#007BFF] transition-colors text-sm md:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+            Back to all prompts
+          </button>
+
+          {/* Hero Section */}
+          <section className="bg-gradient-to-br from-[#007BFF] to-[#28A745] rounded-xl md:rounded-2xl p-8 md:p-12 text-white mb-8 md:mb-12 text-center">
+            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4 md:mb-6 text-xs md:text-sm font-semibold">
+              {prompt.category}
+            </div>
+            <h1
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              {prompt.title}
+            </h1>
+            <p className="text-white/90 text-base md:text-lg lg:text-xl mb-2 md:mb-3 max-w-3xl mx-auto px-4">
+              A precision outlining engine that produces publication-ready blog structures faster than you can brew coffee.
+            </p>
+            <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
+              Strategic content architecture • 10,000+ posts of intelligence • SEO & conversion optimized
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <a
+                href="https://gemini.google.com/gem/1SoIKhGIM3v-RtM0tLYRUM8jF6oyV1-BB?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Try Free Now
+              </a>
+              {onDownloadInstructions && (
+                <DownloadInstructionsButton
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="sm:w-auto"
+                  href="https://payhip.com/b/FaPvE"
+                />
+              )}
+            </div>
+          </section>
+
+          {/* What You Get */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              What You'll Get
+            </h2>
+            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                {[
+                  'Scroll-stopping hooks that capture attention',
+                  'Optimized H2/H3 semantic architecture',
+                  'Strategic keyword placement & SEO structure',
+                  'Psychological engagement triggers',
+                  'Visual cues and formatting markers',
+                  'Word-count estimates per section',
+                  'High-converting CTA positioning',
+                  'A/B headline testing options',
+                  'Multi-platform repurposing ideas',
+                  'SERP-friendly content structure'
+                ].map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#28A745] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700 text-sm md:text-base">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* How It Works */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              How It Works
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {howItWorks.map((step, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">{step.icon}</div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-700 text-sm md:text-base leading-relaxed">{step.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Key Features */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              What Makes OutlineForge Different
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {features.map((feature, index) => (
+                <div key={index} className="flex gap-4 items-start bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-200">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-lg flex items-center justify-center text-white">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm md:text-base leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Starter Prompts */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              How to Get the Best Results
+            </h2>
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-6 md:p-8 border border-blue-200">
+              <p className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed">
+                Feed OutlineForge a clear topic + audience + goal + platform. The more specific you are (keywords, tone, target length, desired emotion), the sharper the output. Try starting with:
+              </p>
+              <div className="space-y-3">
+                {starterPrompts.map((prompt, index) => (
+                  <div key={index} className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm">
+                    <Sparkles className="w-5 h-5 text-[#FFC107] flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-800 text-sm md:text-base font-medium">{prompt}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-gray-600 mt-6 text-xs md:text-sm italic">
+                💡 Pro tip: Always review the outline before drafting—it's designed to spark creativity, not replace it.
+              </p>
+            </div>
+          </section>
+
+          {/* Who It's For */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Who It's For
+            </h2>
+            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  'Content Creators & Bloggers',
+                  'Digital Marketing Teams',
+                  'SEO Specialists',
+                  'Solopreneurs & Founders',
+                  'Content Agencies',
+                  'Social Media Managers',
+                  'Newsletter Writers',
+                  'Copywriters',
+                  'Growth Marketers'
+                ].map((audience, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#28A745] flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">{audience}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition-colors"
+                  >
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 pr-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {faq.question}
+                    </h3>
+                    {openFaq === index ? (
+                      <ChevronUp className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-5 md:px-6 pb-5 md:pb-6">
+                      <p className="text-gray-700 leading-relaxed text-sm md:text-base">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-xl md:rounded-2xl p-6 md:p-12 text-center text-white">
+            <Rocket className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-white" />
+            <h3
+              className="text-2xl md:text-3xl font-bold mb-3 md:mb-4"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Ready to Create Content That Ranks & Converts?
+            </h3>
+            <p className="text-white/90 mb-2 text-base md:text-lg max-w-2xl mx-auto px-4">
+              Start building publication-ready blog outlines with OutlineForge today.
+            </p>
+            <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
+              Strategic architecture • SEO intelligence • Conversion optimization built-in
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <a
+                href="https://gemini.google.com/gem/1SoIKhGIM3v-RtM0tLYRUM8jF6oyV1-BB?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Try Free Now
+              </a>
+              {onDownloadInstructions && (
+                <DownloadInstructionsButton
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="sm:w-auto"
+                  href="https://payhip.com/b/FaPvE"
+                />
+              )}
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
+
+  // GrantForge AI comprehensive page
+  if (prompt.id === '16') {
+    const howItWorks = [
+      {
+        icon: <FileText className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF]" />,
+        title: 'Strategic Alignment',
+        description: 'Analyzes funder priorities, outcomes focus, and DEI requirements to align your proposal with current funding trends.'
+      },
+      {
+        icon: <Code className="w-8 h-8 md:w-10 md:h-10 text-[#28A745]" />,
+        title: 'Narrative Development',
+        description: 'Creates persuasive, data-driven narratives that are emotionally resonant while maintaining professional standards.'
+      },
+      {
+        icon: <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-[#FFC107]" />,
+        title: 'Budget Rigor',
+        description: 'Develops realistic, compliance-ready budgets with detailed justifications and narrative alignment.'
+      },
+      {
+        icon: <Rocket className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF]" />,
+        title: 'Iterative Refinement',
+        description: 'Provides feedback rounds to polish proposals into submission-ready documents that reflect your authentic mission.'
+      }
+    ];
+
+    const features = [
+      {
+        icon: <Globe className="w-6 h-6" />,
+        title: 'Global Funding Ecosystem',
+        description: 'Supports foundations, corporations, bilateral donors, governments, and African funding ecosystems worldwide.'
+      },
+      {
+        icon: <Users className="w-6 h-6" />,
+        title: 'Multi-Sector Expertise',
+        description: 'Tailored for nonprofits, researchers, educators, social enterprises, and community organizations.'
+      },
+      {
+        icon: <TrendingUp className="w-6 h-6" />,
+        title: 'Adapts to All Trends',
+        description: 'Integrates current priorities: outcomes focus, equity & inclusion, sustainability, and AI ethics.'
+      },
+      {
+        icon: <Shield className="w-6 h-6" />,
+        title: 'Compliance & Standards',
+        description: 'Maintains rigorous compliance requirements and professional grant-writing standards.'
+      }
+    ];
+
+    const starterPrompts = [
+      '"I need a full proposal for [funder name] - my project is [brief description]"',
+      '"Review my draft executive summary for [foundation] and suggest improvements"',
+      '"Create a budget template for a $250K education program over 3 years"',
+      '"What are the key trends in [sector] funding for 2026?"',
+      '"Help me align my project outcomes with this RFP\'s requirements"'
+    ];
+
+    const faqs = [
+      {
+        question: 'How is GrantForge different from generic AI writing tools?',
+        answer: 'GrantForge acts as a strategic funding advisor, not just a writer. It adapts to all grant trends, understands global funding ecosystems, delivers data-driven yet emotionally resonant narratives, and maintains rigorous compliance and budget realism in one seamless experience.'
+      },
+      {
+        question: 'What information do I need to provide?',
+        answer: 'For best results, provide: (1) Clear project details and objectives, (2) Your organization\'s background and mission, (3) Specific RFP or funder guidelines, (4) Any existing impact data or success metrics, (5) Budget parameters or constraints.'
+      },
+      {
+        question: 'Can it handle different types of grants?',
+        answer: 'Yes! GrantForge supports all grant types including foundation grants, corporate sponsorships, government contracts, bilateral donor funding, research grants, and community-based funding across all sectors and regions.'
+      },
+      {
+        question: 'How do I get the best results?',
+        answer: 'Use starter prompts for speed, provide detailed project context, iterate with feedback rounds, review all outputs for voice and accuracy, and combine GrantForge\'s strategy with your own impact data and organizational voice for strongest results.'
+      },
+      {
+        question: 'Does it replace human grant writers?',
+        answer: 'GrantForge is a collaborative partner that enhances your grant-writing process. It handles research, structure, compliance, and first drafts, allowing you to focus on authentic storytelling, relationship-building, and final review for accuracy and voice.'
+      }
+    ];
+
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-12 md:py-16 lg:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Back Button */}
+            <a
+              href="#browse"
+              onClick={(e) => {
+                e.preventDefault();
+                onBack();
+              }}
+              className="inline-flex items-center gap-2 text-white hover:text-white/90 transition-colors mb-6 md:mb-8 group"
+            >
+              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:-translate-x-1" />
+              <span className="text-sm md:text-base font-medium">Back to Browse</span>
+            </a>
+
+            <div className="text-center max-w-5xl mx-auto">
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white leading-tight"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                GrantForge AI
+              </h1>
+              <p
+                className="text-base sm:text-lg md:text-xl text-white/95 mb-3 md:mb-4"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                Your Expert Grant-Writing Strategist & Collaborative AI Partner
+              </p>
+              <p className="text-sm sm:text-base md:text-lg text-white/85 mb-6 md:mb-8 max-w-4xl mx-auto">
+                End-to-end support for persuasive narratives and rigorous budgets. Turn your mission into funded reality with strategic alignment, current trends, and submission-ready proposals.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+                <a
+                  href="https://gemini.google.com/gem/1hjK3mC9isepEcmTG_hI3-1lBGNklgxQP?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => onDownload(prompt.id)}
+                  className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden"
+                >
+                  <Download className="w-4 h-4 md:w-5 md:h-5" />
+                  <span className="text-sm md:text-base">Try Free Now</span>
+                </a>
+
+                {onDownloadInstructions && (
+                  <DownloadInstructionsButton
+                    onClick={() => onDownloadInstructions(prompt.id)}
+                    className="w-full sm:w-auto"
+                    href="https://payhip.com/b/zLSyF"
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          
+          {/* What You Get */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              What You Get
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200 hover:shadow-xl transition-shadow">
+                <CheckCircle className="w-8 h-8 text-[#28A745] mb-4" />
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Submission-Ready Proposals
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Tailored sections or full proposals that increase competitiveness with professional formatting and persuasive narratives.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200 hover:shadow-xl transition-shadow">
+                <TrendingUp className="w-8 h-8 text-[#007BFF] mb-4" />
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Strategic Alignment
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Alignment with current funder priorities including outcomes focus, equity & inclusion, and sustainability trends.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200 hover:shadow-xl transition-shadow">
+                <Rocket className="w-8 h-8 text-[#FFC107] mb-4" />
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Time-Efficient Process
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Fast drafts, reviews, and optimizations grounded in real-world best practices, saving you weeks of work.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200 hover:shadow-xl transition-shadow">
+                <Shield className="w-8 h-8 text-[#28A745] mb-4" />
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Authentic Voice
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Confidence that every proposal reflects your organization's authentic mission while meeting professional standards.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* How It Works */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              How It Works
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {howItWorks.map((step, index) => (
+                <div key={index} className="flex gap-4 bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+                  <div className="flex-shrink-0">{step.icon}</div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-sm md:text-base">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Key Features */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              What Makes GrantForge Different
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {features.map((feature, index) => (
+                <div key={index} className="flex gap-4 items-start bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-200">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-lg flex items-center justify-center text-white">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm md:text-base leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Starter Prompts */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              How to Get Started
+            </h2>
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+              <p className="text-gray-800 mb-6 text-center text-sm md:text-base">
+                Start with any of these prompts to unlock GrantForge's full capabilities:
+              </p>
+              <div className="space-y-3">
+                {starterPrompts.map((prompt, index) => (
+                  <div key={index} className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                    <p className="text-gray-700 text-sm md:text-base italic">{prompt}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-gray-600 text-xs md:text-sm mt-6 text-center">
+                <strong>Pro Tip:</strong> Provide clear project details, funder guidelines, and organizational background for best results. Iterate with feedback rounds to polish your proposal.
+              </p>
+            </div>
+          </section>
+
+          {/* Who It's For */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Who It's For
+            </h2>
+            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  'Nonprofit Organizations',
+                  'Research Institutions',
+                  'Educational Programs',
+                  'Social Enterprises',
+                  'Community Organizations',
+                  'Individual Grant Seekers',
+                  'Foundation Applicants',
+                  'Government Grant Teams',
+                  'International NGOs'
+                ].map((audience, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#28A745] flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">{audience}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section className="mb-12 md:mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition-colors"
+                  >
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 pr-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {faq.question}
+                    </h3>
+                    {openFaq === index ? (
+                      <ChevronUp className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-5 md:px-6 pb-5 md:pb-6">
+                      <p className="text-gray-700 leading-relaxed text-sm md:text-base">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-xl md:rounded-2xl p-6 md:p-12 text-center text-white">
+            <Rocket className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-white" />
+            <h3
+              className="text-2xl md:text-3xl font-bold mb-3 md:mb-4"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              Ready to Win Your Next Grant?
+            </h3>
+            <p className="text-white/90 mb-2 text-base md:text-lg max-w-2xl mx-auto px-4">
+              Start creating submission-ready proposals with GrantForge AI today.
+            </p>
+            <p className="text-white/80 mb-6 md:mb-8 text-xs md:text-sm px-4">
+              Strategic funding advice • Global ecosystem support • Adapts to all trends
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <a
+                href="https://gemini.google.com/gem/1hjK3mC9isepEcmTG_hI3-1lBGNklgxQP?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => onDownload(prompt.id)}
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+              >
+                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Try Free Now
+              </a>
+              {onDownloadInstructions && (
+                <DownloadInstructionsButton
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="sm:w-auto"
+                  href="https://payhip.com/b/zLSyF"
+                />
+              )}
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
+
   // Comprehensive Python Learning Guardrail System page
   const roadmapStages = [
     {
@@ -2126,20 +2842,13 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
               A complete, structured learning system that combines expert curriculum design with AI validation to ensure you master Python fundamentals through advanced concepts.
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
-              <button
-                onClick={() => onDownload(prompt.id)}
-                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden"
-              >
-                <Download className="w-4 h-4 md:w-5 md:h-5" />
-                <span className="text-sm md:text-base">Start Learning Free</span>
-              </button>
-
+            {/* Action Button */}
+            <div className="flex justify-center">
               {onDownloadInstructions && (
                 <DownloadInstructionsButton
                   onClick={() => onDownloadInstructions(prompt.id)}
                   className="w-full sm:w-auto"
+                  href="https://payhip.com/b/V5PBw"
                 />
               )}
             </div>
@@ -2158,10 +2867,13 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
             Your Python Learning Roadmap
           </h2>
           <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
-            <img
-              src={pythonRoadmap}
-              alt="Python Learning Roadmap"
+            <video
+              src="https://i.imgur.com/vw2DYIH.mp4"
               className="w-full h-auto rounded-lg"
+              controls
+              autoPlay
+              loop
+              muted
             />
           </div>
         </section>

@@ -23,6 +23,8 @@ export const promptSlugMap: Record<string, string> = {
   '13': 'codecollab-coach',
   '14': 'resume-strategist-ai',
   '15': 'cv-structure-architect',
+  '16': 'grantforge-ai',
+  '17': 'outlineforge-blog-architect',
 };
 
 export const slugToPromptId: Record<string, string> = Object.fromEntries(
@@ -94,6 +96,22 @@ export const ALL_PROMPTS: PromptCardData[] = [
     category: 'Career Tools',
     thumbnail: 'https://images.unsplash.com/photo-1693045181676-57199422ee66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMENWJTIwcHJvZmVzc2lvbmFsJTIwcmVzdW1lJTIwZG9jdW1lbnQlMjBzdHJ1Y3R1cmV8ZW58MXx8fHwxNzcyNzI5OTUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     price: 'Free'
+  },
+  {
+    id: '16',
+    title: 'GrantForge AI',
+    description: 'Expert grant-writing strategist and collaborative AI partner that delivers end-to-end support for persuasive narratives and rigorous budgets. Strategic funding advisor for nonprofits, researchers, and social enterprises.',
+    category: 'Career Tools',
+    thumbnail: 'https://images.unsplash.com/photo-1763739532737-f24dc5dd1325?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHdyaXRpbmclMjBjYXJlZXIlMjBkb2N1bWVudHxlbnwxfHx8fDE3NzI3MzMyMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    price: 'Free'
+  },
+  {
+    id: '17',
+    title: 'OutlineForge: Blog Architect',
+    description: 'A precision outlining engine that produces publication-ready blog structures faster than you can brew coffee. Blends storytelling craft, psychological triggers, and SEO intelligence into every outline.',
+    category: 'Content Creation',
+    thumbnail: 'https://images.unsplash.com/photo-1745151485547-8d428247c1ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibG9nJTIwd3JpdGluZyUyMGNvbnRlbnQlMjBjcmVhdGlvbiUyMGxhcHRvcHxlbnwxfHx8fDE3NzI3MzQwNzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    price: 'Free'
   }
 ];
 
@@ -108,6 +126,8 @@ export function handleDownloadFn(id: string) {
     '13': 'https://gemini.google.com/gem/1uY6di1Ps7JDt2ZIuJwWfMHc5uPZNQs7T?usp=sharing',
     '14': 'https://gemini.google.com/gem/1QF-TvM3H9Oiwc1UqX_aN3mhesZ4vUDjE?usp=sharing',
     '15': 'https://gemini.google.com/gem/1Zx_w0lsSX2ihaTGqMv_3ZHsol6nsbjo4?usp=sharing',
+    '16': 'https://gemini.google.com/gem/1SoIKhGIM3v-RtM0tLYRUM8jF6oyV1-BB?usp=sharing',
+    '17': 'https://gemini.google.com/gem/1SoIKhGIM3v-RtM0tLYRUM8jF6oyV1-BB?usp=sharing',
   };
   if (links[id]) window.open(links[id], '_blank');
 }
@@ -121,6 +141,8 @@ export function handleDownloadInstructionsFn(id: string) {
     '13': 'https://payhip.com/b/sNPQ8',
     '14': 'https://payhip.com/b/GuED4',
     '15': 'https://payhip.com/b/Encrm',
+    '16': 'https://payhip.com/b/fPaIl',
+    '17': 'https://payhip.com/b/FaPvE',
   };
   if (links[id]) window.open(links[id], '_blank');
 }
