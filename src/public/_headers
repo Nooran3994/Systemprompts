@@ -4,8 +4,25 @@
 /favicon.svg
   Cache-Control: public, max-age=86400, must-revalidate
 
+/favicon-48.png
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: image/png
+
+/favicon-192.png
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: image/png
+
+/favicon-512.png
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: image/png
+
 /apple-touch-icon.svg
   Cache-Control: public, max-age=86400, must-revalidate
+
+/BingSiteAuth.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
 
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
@@ -15,8 +32,3 @@
 /robots.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600, must-revalidate
-
-/BingSiteAuth.xml
-  Content-Type: application/xml; charset=utf-8
-  Cache-Control: public, max-age=3600, must-revalidate
-  X-Content-Type-Options: nosniff

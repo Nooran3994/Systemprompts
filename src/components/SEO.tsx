@@ -44,15 +44,6 @@ export function SEO({
   noIndex = false,
 }: SEOProps) {
 
-  // ── Inline SVG favicon ────────────────────────────────────────────────────────
-  const faviconSvg = `data:image/svg+xml,${encodeURIComponent(
-    `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#007BFF"/>
-      <path d="M10.67 9.33C10.67 9.33 13.33 6.67 16 6.67C18.67 6.67 21.33 9.33 21.33 9.33M16 6.67V18.67M16 18.67L10.67 24M16 18.67L21.33 24" stroke="white" stroke-width="2.67" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M24 16V25.33C24 26.8 22.8 28 21.33 28H10.67C9.2 28 8 26.8 8 25.33V16" stroke="white" stroke-width="2.67" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>`
-  )}`;
-
   // ── Pre-compute all JSON-LD strings OUTSIDE JSX ───────────────────────────────
   const organizationJson = JSON.stringify({
     '@context': 'https://schema.org',
@@ -62,9 +53,9 @@ export function SEO({
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
-      url: `${SITE_URL}/og-image.svg`,
-      width: 1200,
-      height: 630,
+      url: `${SITE_URL}/favicon-512.png`,
+      width: 512,
+      height: 512,
     },
     description: 'A marketplace for expert-crafted AI system prompts compatible with ChatGPT, Claude, Gemini, GitHub Copilot, Cursor, Perplexity, Grok, and DeepSeek.',
     sameAs: [],
@@ -262,11 +253,16 @@ export function SEO({
       <link rel="alternate" hrefLang="en" href={url} />
       <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
 
-      {/* ── Favicon ──────────────────────────────────────────────────────── */}
-      <link rel="icon" href={faviconSvg} type="image/svg+xml" />
-      <link rel="apple-touch-icon" href={faviconSvg} />
+      {/* ── Favicon — real file paths so Google/Bing can crawl them ─────── */}
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="icon" type="image/png" sizes="48x48"   href="/favicon-48.png" />
+      <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+      <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+      <link rel="apple-touch-icon" href="/favicon-192.png" />
       <meta name="theme-color" content="#007BFF" />
       <meta name="msapplication-TileColor" content="#007BFF" />
+      <meta name="msapplication-TileImage" content="/favicon-192.png" />
 
       {/* ── Performance: Preconnect ───────────────────────────────────────── */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
