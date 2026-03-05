@@ -4,6 +4,7 @@ import { PromptCardData } from './PromptCard';
 import { DownloadInstructionsButton } from './DownloadInstructionsButton';
 import { CodeCollabPage } from './DetailPageCodeCollab';
 import { ResumeStrategistPage } from './DetailPageResumeStrategist';
+import { CVStructurePage } from './DetailPageCVStructure';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
 interface DetailPageProps {
@@ -1922,6 +1923,11 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
   if (prompt.id === '14') {
     // Resume Strategist AI - Clean custom page
     return <ResumeStrategistPage prompt={prompt} onDownload={onDownload} onDownloadInstructions={onDownloadInstructions} onBack={onBack} />;
+  }
+
+  if (prompt.id === '15') {
+    // CV Structure Architect - Clean custom page
+    return <CVStructurePage prompt={prompt} onDownload={onDownload} onDownloadInstructions={onDownloadInstructions} onBack={onBack} />;
   }
 
   // Comprehensive Python Learning Guardrail System page

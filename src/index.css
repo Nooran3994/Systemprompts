@@ -554,6 +554,10 @@
     right: calc(var(--spacing) * 10);
   }
 
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+
   .bottom-3 {
     bottom: calc(var(--spacing) * 3);
   }
@@ -1208,6 +1212,10 @@
     border-color: #007bff;
   }
 
+  .border-\[\#007BFF\]\/10 {
+    border-color: oklab(60.4814% -.0479283 -.211188 / .1);
+  }
+
   .border-\[\#007BFF\]\/20 {
     border-color: oklab(60.4814% -.0479283 -.211188 / .2);
   }
@@ -1368,6 +1376,16 @@
     background-color: var(--color-white);
   }
 
+  .bg-white\/10 {
+    background-color: #ffffff1a;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-white\/10 {
+      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    }
+  }
+
   .bg-white\/20 {
     background-color: #fff3;
   }
@@ -1428,6 +1446,11 @@
 
   .from-\[\#28A745\] {
     --tw-gradient-from: #28a745;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .from-\[\#28A745\]\/5 {
+    --tw-gradient-from: oklab(64.0128% -.146402 .0960123 / .05);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
@@ -1532,6 +1555,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
 
+  .to-\[\#1e7a32\] {
+    --tw-gradient-to: #1e7a32;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
   .to-\[\#1e7e34\] {
     --tw-gradient-to: #1e7e34;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1539,6 +1567,11 @@
 
   .to-\[\#007BFF\] {
     --tw-gradient-to: #007bff;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .to-\[\#007BFF\]\/5 {
+    --tw-gradient-to: oklab(60.4814% -.0479283 -.211188 / .05);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
