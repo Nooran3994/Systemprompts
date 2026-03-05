@@ -51,7 +51,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, on
   }, [prompts, searchQuery, selectedCategory]);
 
   // Display limited or all prompts
-  const displayedPrompts = expandedView ? filteredPrompts : filteredPrompts.slice(0, 3);
+  const displayedPrompts = expandedView ? filteredPrompts : filteredPrompts.slice(0, 4);
 
   const handleSeeMore = () => {
     setExpandedView(true);
@@ -110,7 +110,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, on
 
         {/* Cards Grid or Masonry */}
         {!expandedView ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 items-start">
             {displayedPrompts.map((prompt) => (
               <PromptCard
                 key={prompt.id}
@@ -148,7 +148,7 @@ export function BrowseSection({ prompts, searchQuery, onViewDocs, onDownload, on
         )}
 
         {/* See More Button */}
-        {!expandedView && filteredPrompts.length > 3 && (
+        {!expandedView && filteredPrompts.length > 4 && (
           <div className="text-center mt-12">
             <button
               onClick={() => navigate('/prompts')}

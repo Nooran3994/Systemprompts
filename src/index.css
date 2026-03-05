@@ -3018,6 +3018,12 @@
       line-height: var(--tw-leading, var(--text-6xl--line-height));
     }
   }
+
+  @media (width >= 80rem) {
+    .xl\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
 }
 
 
