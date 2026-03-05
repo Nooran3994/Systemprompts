@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Search, FileDown } from 'lucide-react';
+import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, BookOpen, FolderTree, GitBranch, Play, Terminal, ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Search, FileDown, Users, Globe, TrendingUp } from 'lucide-react';
 import { PromptCardData } from './PromptCard';
+import { DownloadInstructionsButton } from './DownloadInstructionsButton';
+import { CodeCollabPage } from './DetailPageCodeCollab';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
 interface DetailPageProps {
@@ -40,9 +42,6 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
             </a>
 
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
-                Premium System • $2 One-Time Purchase
-              </div>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
                 style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -68,13 +67,10 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
                   Access Free System
                 </button>
                 {onDownloadInstructions && (
-                  <button
+                  <DownloadInstructionsButton
                     onClick={() => onDownloadInstructions(prompt.id)}
-                    className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base font-bold"
-                  >
-                    <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    Download Instructions
-                  </button>
+                    className="sm:w-auto"
+                  />
                 )}
               </div>
             </div>
@@ -449,13 +445,10 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
                 Access TrendPulse Architect - Free
               </button>
               {onDownloadInstructions && (
-                <button
+                <DownloadInstructionsButton
                   onClick={() => onDownloadInstructions(prompt.id)}
-                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg shadow-lg hover:bg-white hover:text-[#007BFF] transform hover:scale-105 transition-all text-sm md:text-base font-bold"
-                >
-                  <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                  Download Instructions
-                </button>
+                  className="sm:w-auto"
+                />
               )}
             </div>
           </div>
@@ -482,9 +475,6 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
             </a>
 
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
-                Premium System • $3 One-Time Purchase
-              </div>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
                 style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -511,13 +501,10 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
                   Access Free System
                 </button>
                 {onDownloadInstructions && (
-                  <button
+                  <DownloadInstructionsButton
                     onClick={() => onDownloadInstructions(prompt.id)}
-                    className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base font-bold"
-                  >
-                    <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    Download Instructions
-                  </button>
+                    className="sm:w-auto"
+                  />
                 )}
               </div>
             </div>
@@ -966,13 +953,10 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
                 Access Free System
               </button>
               {onDownloadInstructions && (
-                <button
+                <DownloadInstructionsButton
                   onClick={() => onDownloadInstructions(prompt.id)}
-                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg shadow-lg hover:bg-white hover:text-[#007BFF] transform hover:scale-105 transition-all text-sm md:text-base font-bold"
-                >
-                  <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                  Download Instructions
-                </button>
+                  className="sm:w-auto"
+                />
               )}
             </div>
           </section>
@@ -997,9 +981,6 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
             </a>
 
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
-                Premium System • $8 One-Time Purchase
-              </div>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
                 style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -1025,13 +1006,10 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
                   Get Free Access
                 </button>
                 {onDownloadInstructions && (
-                  <button
+                  <DownloadInstructionsButton
                     onClick={() => onDownloadInstructions(prompt.id)}
-                    className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base font-bold"
-                  >
-                    <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    Download Instructions
-                  </button>
+                    className="sm:w-auto"
+                  />
                 )}
               </div>
             </div>
@@ -1619,217 +1597,325 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
                 Access for Free
               </a>
               {onDownloadInstructions && (
-                <button
+                <DownloadInstructionsButton
                   onClick={() => onDownloadInstructions(prompt.id)}
-                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg shadow-lg hover:bg-white hover:text-[#007BFF] transform hover:scale-105 transition-all text-sm md:text-base font-bold"
-                >
-                  <FileDown className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                  Download Instructions
-                </button>
+                  className="sm:w-auto"
+                />
               )}
             </div>
           </section>
         </div>
       </div>
     );
-  } else if (prompt.id !== '1') {
-    // Default view for other prompts
-    const features = [
-      'Compatible with ChatGPT, Claude, Gemini, GPT-4 & all major AI models',
-      'Pre-validated and tested across multiple platforms',
-      'Easy integration with any AI assistant or API',
-      'Regular updates for new model versions',
-      'Full documentation with model-specific tips',
-      'Commercial usage license included'
-    ];
-
-    const files = [
-      { name: 'system-prompt.txt', size: '4.2 KB', description: 'Main system prompt file' },
-      { name: 'configuration.json', size: '1.8 KB', description: 'Configuration settings' },
-      { name: 'README.md', size: '8.5 KB', description: 'Complete documentation' },
-      { name: 'examples.txt', size: '6.1 KB', description: 'Usage examples' }
-    ];
-
+  } else if (prompt.id === '11') {
+    // DevAlign Coach comprehensive page
     return (
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-16 md:py-24">
+        <div className="bg-gradient-to-r from-[#007BFF] to-[#28A745] text-white py-12 md:py-16 lg:py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Back Button */}
             <a
               href="#browse"
-              onClick={onBack}
-              className="inline-flex items-center text-white/90 hover:text-white mb-8 transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                onBack();
+              }}
+              className="inline-flex items-center gap-2 text-white hover:text-white/90 transition-colors mb-6 md:mb-8 group"
             >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Browse
+              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:-translate-x-1" />
+              <span className="text-sm md:text-base font-medium">Back to Browse</span>
             </a>
 
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Left - Info */}
-              <div>
-                <div
-                  className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4"
-                >
-                  {prompt.category}
-                </div>
-                <h1
-                  className="text-white mb-6"
-                  style={{ fontFamily: 'Poppins, sans-serif' }}
-                >
-                  {prompt.title}
-                </h1>
-                <p className="text-white/90 text-lg mb-6 leading-relaxed">
-                  {prompt.description}
-                </p>
+            <div className="text-center max-w-4xl mx-auto">
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                DevAlign Coach: Team Alignment Mastery
+              </h1>
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-white/95 mb-3 md:mb-4"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                Intelligent Collaboration Coach for Software Teams
+              </p>
+              <p className="text-sm sm:text-base md:text-lg text-white/80 mb-6 md:mb-8">
+                Specialized in software development contexts with personalized advice, skill-building exercises, and ready-to-use templates
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <button
                   onClick={() => onDownload(prompt.id)}
-                  className="inline-flex items-center px-8 py-4 bg-[#007BFF] text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+                  className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
                   style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
                 >
-                  <Download className="w-5 h-5 mr-2" />
-                  Coming Soon
+                  <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  Try Free Now
                 </button>
-              </div>
-
-              {/* Right - Image */}
-              <div className="rounded-xl overflow-hidden shadow-2xl">
-                <img
-                  src={prompt.thumbnail}
-                  alt={prompt.title}
-                  className="w-full h-auto"
-                />
+                {onDownloadInstructions && (
+                  <DownloadInstructionsButton
+                    onClick={() => onDownloadInstructions(prompt.id)}
+                    className="sm:w-auto"
+                  />
+                )}
               </div>
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Features */}
-          <section className="mb-16">
-            <h2
-              className="text-[#343A40] mb-8"
-              style={{ fontFamily: 'Poppins, sans-serif' }}
-            >
-              What's Included
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#28A745] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Usage Documentation */}
-          <section className="mb-16">
-            <h2
-              className="text-[#343A40] mb-6"
-              style={{ fontFamily: 'Poppins, sans-serif' }}
-            >
-              Usage & Documentation
-            </h2>
-            <div className="bg-[#F8F9FA] rounded-xl p-8">
-              <h3
-                className="text-[#343A40] mb-4"
-                style={{ fontFamily: 'Poppins, sans-serif', fontSize: '20px' }}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+          {/* What it is */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
               >
-                How to Use with Any AI Model
-              </h3>
-              <ol className="space-y-4 text-gray-700">
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-semibold">
-                    1
-                  </span>
+                What DevAlign Coach Does
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                An intelligent collaboration specialist tailored exclusively for software development teams
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-blue-50 to-white p-6 md:p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-8 h-8 text-[#007BFF] flex-shrink-0" />
                   <div>
-                    <strong>Download the package:</strong> After purchase, you'll receive a secure download link 
-                    containing all files compatible with ChatGPT, Claude, Gemini, and more.
+                    <h4 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Personalized Coaching
+                    </h4>
+                    <p className="text-gray-700 text-sm md:text-base">
+                      Get context-aware advice that understands your team size, remote/hybrid setup, tech stack, and specific pain points to deliver actionable guidance.
+                    </p>
                   </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-semibold">
-                    2
-                  </span>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-white p-6 md:p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-8 h-8 text-[#28A745] flex-shrink-0" />
                   <div>
-                    <strong>Review the documentation:</strong> Read the README.md file for setup instructions 
-                    and platform-specific integration tips for each AI model.
+                    <h4 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Ready-to-Use Templates
+                    </h4>
+                    <p className="text-gray-700 text-sm md:text-base">
+                      Access professional agendas, meeting frameworks, and communication templates designed specifically for software teams.
+                    </p>
                   </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-semibold">
-                    3
-                  </span>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-yellow-50 to-white p-6 md:p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-8 h-8 text-[#FFC107] flex-shrink-0" />
                   <div>
-                    <strong>Integrate with your AI:</strong> Copy the system prompt into your preferred AI model's 
-                    settings, API configuration, or chat interface (works with OpenAI, Anthropic, Google, and more).
+                    <h4 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Role-Playing Practice
+                    </h4>
+                    <p className="text-gray-700 text-sm md:text-base">
+                      Build confidence with interactive scenarios for difficult conversations, code reviews, and stakeholder communication.
+                    </p>
                   </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-semibold">
-                    4
-                  </span>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-50 to-white p-6 md:p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-8 h-8 text-[#6F42C1] flex-shrink-0" />
                   <div>
-                    <strong>Customize as needed:</strong> Adjust parameters and settings to optimize performance 
-                    for your specific AI model and use case.
+                    <h4 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Measurement Frameworks
+                    </h4>
+                    <p className="text-gray-700 text-sm md:text-base">
+                      Track team alignment and collaboration health with practical metrics that matter to software delivery.
+                    </p>
                   </div>
-                </li>
-              </ol>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* Files List */}
-          <section className="mb-16">
-            <h2
-              className="text-[#343A40] mb-6"
-              style={{ fontFamily: 'Poppins, sans-serif' }}
-            >
-              Included Files
-            </h2>
-            <div className="space-y-3">
-              {files.map((file, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow flex items-center gap-4"
-                >
-                  <div className="w-12 h-12 bg-[#007BFF]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-6 h-6 text-[#007BFF]" />
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* Who it's for */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Perfect For
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                Anyone who ships software as part of a team
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                'Software Engineers',
+                'Tech Leads',
+                'Engineering Managers',
+                'Scrum Masters',
+                'DevOps Practitioners',
+                'Pair Programmers'
+              ].map((role, idx) => (
+                <div key={idx} className="flex items-center gap-3 bg-gradient-to-r from-[#007BFF]/5 to-[#28A745]/5 p-4 rounded-lg border border-gray-200">
+                  <div className="w-8 h-8 bg-[#007BFF] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    ✓
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-[#343A40]">{file.name}</h4>
-                    <p className="text-sm text-gray-600">{file.description}</p>
-                  </div>
-                  <div className="text-sm text-gray-500">{file.size}</div>
+                  <span className="font-medium text-[#343A40]">{role}</span>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* CTA */}
-          <section className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8 md:p-12 text-center">
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* What makes it different */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                What Makes DevAlign Different
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                Deep expertise meets practical, jargon-aware guidance
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-white border-l-4 border-[#007BFF] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Software-First Approach
+                </h3>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Combines deep expertise in agile methodologies, team psychology, and hands-on software delivery—never generic leadership advice.
+                </p>
+              </div>
+
+              <div className="bg-white border-l-4 border-[#28A745] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Outcome-Focused
+                </h3>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Every recommendation focuses on outcomes that matter: shipping software faster, happier teams, and reduced friction in collaboration.
+                </p>
+              </div>
+
+              <div className="bg-white border-l-4 border-[#FFC107] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-[#343A40] mb-2 text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  Practical & Actionable
+                </h3>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Real templates, scripts, and exercises you can use immediately—not theoretical frameworks that gather dust.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 mb-12 md:mb-16 lg:mb-20"></div>
+
+          {/* How to get the best out of it */}
+          <section className="mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-8 md:mb-12">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Usage Guidelines
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg px-4 max-w-3xl mx-auto">
+                Maximize your team's collaboration effectiveness
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-6 md:p-8 border border-gray-200">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#007BFF] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    1
+                  </div>
+                  <p className="text-gray-700"><strong>Provide Rich Context:</strong> Share team size, remote/hybrid setup, tech stack, and specific pain points for targeted advice</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#28A745] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    2
+                  </div>
+                  <p className="text-gray-700"><strong>Use Proactively:</strong> Prepare for important meetings, retrospectives, or difficult conversations before they happen</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#FFC107] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    3
+                  </div>
+                  <p className="text-gray-700"><strong>Debrief After Events:</strong> Analyze what worked and what didn't to continuously improve team dynamics</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#DC3545] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    4
+                  </div>
+                  <p className="text-gray-700"><strong>Reference Previous Conversations:</strong> Build ongoing coaching relationships by referencing past discussions</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-[#6F42C1] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                    5
+                  </div>
+                  <p className="text-gray-700"><strong>Experiment & Adapt:</strong> Try starter prompts, then customize them for your unique team culture and challenges</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="bg-gradient-to-r from-[#007BFF] to-[#28A745] rounded-xl md:rounded-2xl p-6 md:p-12 text-center text-white">
+            <Rocket className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-white" />
             <h3
-              className="text-[#343A40] mb-4"
+              className="text-2xl md:text-3xl font-bold mb-3 md:mb-4"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
-              Ready to Get Started?
+              Start Building Stronger Teams Today
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Download this system prompt and start building better AI applications today.
+            <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
+              Navigate the interpersonal side of technical work with confidence. Ship software faster with happier, more aligned teams.
             </p>
-            <button
-              onClick={() => onDownload(prompt.id)}
-              className="inline-flex items-center px-8 py-4 bg-[#007BFF] text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
-              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Coming Soon
-            </button>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+              <button
+                onClick={() => onDownload(prompt.id)}
+                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-[#007BFF]/10 to-[#28A745]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                <Download className="w-4 h-4 md:w-5 md:h-5 relative z-10" />
+                <span className="relative z-10 text-sm md:text-base">Try Free Now</span>
+              </button>
+
+              {onDownloadInstructions && (
+                <DownloadInstructionsButton
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="w-full sm:w-auto"
+                />
+              )}
+            </div>
           </section>
         </div>
       </div>
     );
+  }
+
+  if (prompt.id === '13') {
+    // CodeCollab Coach - Clean custom page
+    return <CodeCollabPage prompt={prompt} onDownload={onDownload} onDownloadInstructions={onDownloadInstructions} onBack={onBack} />;
   }
 
   // Comprehensive Python Learning Guardrail System page
@@ -1852,15 +1938,7 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
     },
     {
       title: 'Object-Oriented Programming',
-      items: ['Classes', 'Inheritance', 'Methods', 'Dunder Methods']
-    },
-    {
-      title: 'Package Managers',
-      items: ['PyPI', 'Pip', 'Conda', 'Poetry', 'uv', 'Common Packages', 'pyproject.toml']
-    },
-    {
-      title: 'Frameworks',
-      items: ['Sync: Pyramid, Dash', 'Async: gevent, aiohttp, Tornado, Sanic', 'Both: FastAPI, Django, Flask']
+      items: ['Classes', 'Inheritance', '@dataclass', 'Encapsulation', 'Polymorphism', 'Abstraction']
     },
     {
       title: 'Concurrency',
@@ -1911,31 +1989,59 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
     }
   ];
 
+  const faqs = [
+    {
+      question: 'What makes this different from regular Python tutorials?',
+      answer: 'Unlike passive tutorials, this system provides active learning with AI-powered validation, personalized feedback, and deliberate practice exercises. It adapts to your learning style while maintaining rigorous standards.'
+    },
+    {
+      question: 'Do I need prior programming experience?',
+      answer: 'No prior experience required! The system starts with fundamentals and progresses systematically. However, having basic computer literacy (file management, text editing) will be helpful.'
+    },
+    {
+      question: 'How long does it take to complete?',
+      answer: 'The comprehensive curriculum typically takes 4-6 months when dedicating 10-15 hours per week. The modular structure lets you progress at your own pace while ensuring mastery of each concept.'
+    },
+    {
+      question: 'Which AI platforms does this work with?',
+      answer: 'The system is optimized for Claude, ChatGPT, and Gemini. It works with any AI assistant that supports custom instructions and file uploads.'
+    },
+    {
+      question: 'Can I customize the learning path?',
+      answer: 'The curriculum follows a fixed structure for optimal learning progression. However, you can theme your projects around personal interests while still meeting the learning objectives for each prompt.'
+    }
+  ];
+
   const howItWorksSteps = [
     {
-      title: 'Stateful Progress',
-      description: 'Your learning progress is saved in .gemini/ directory. Resume exactly where you left off.',
-      icon: <CheckCircle className="w-8 h-8 text-[#28A745]" />
+      icon: <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF]" />,
+      title: 'Guided Teaching',
+      description: 'The AI teaches each concept with clear explanations, examples, and context before practice.'
     },
     {
-      title: 'Multi-Turn Interactions',
-      description: '10-15+ interactions per topic covering sub-concepts, code examples, error handling, and real applications.',
-      icon: <GitBranch className="w-8 h-8 text-[#007BFF]" />
+      icon: <Code className="w-8 h-8 md:w-10 md:h-10 text-[#28A745]" />,
+      title: 'Hands-On Practice',
+      description: 'Complete coding exercises and mini-projects that reinforce each concept immediately.'
     },
     {
-      title: 'Validation System',
-      description: 'Say "Proceed" to trigger a 5-step mastery check. Must demonstrate understanding before advancing.',
-      icon: <CheckCircle className="w-8 h-8 text-[#28A745]" />
+      icon: <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-[#FFC107]" />,
+      title: 'Smart Validation',
+      description: 'AI validates your code against learning objectives and provides constructive feedback.'
     },
     {
-      title: 'Evolving Project',
-      description: 'Build and enhance main.py throughout the course, applying learned concepts in practice.',
-      icon: <Code className="w-8 h-8 text-[#FFC107]" />
+      icon: <Rocket className="w-8 h-8 md:w-10 md:h-10 text-[#007BFF]" />,
+      title: 'Progressive Mastery',
+      description: 'Only advance when concepts are mastered, building a solid foundation for complex topics.'
     },
     {
-      title: 'Focused Learning',
-      description: 'AI redirects off-topic questions and defers future topics to maintain structured progression.',
-      icon: <Lightbulb className="w-8 h-8 text-[#007BFF]" />
+      icon: <FolderTree className="w-8 h-8 md:w-10 md:h-10 text-[#28A745]" />,
+      title: 'State Tracking',
+      description: 'Your progress, notes, and projects are automatically saved and organized.'
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8 md:w-10 md:h-10 text-[#FFC107]" />,
+      title: 'Adaptive Learning',
+      description: 'The system adjusts explanations based on your questions and understanding level.'
     }
   ];
 
@@ -1943,55 +2049,34 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
     {
       number: 1,
       title: 'Download & Extract',
-      description: 'Download the ZIP file from the website link and extract it to your preferred location.'
+      description: 'Download the system files and extract them to your preferred location.'
     },
     {
       number: 2,
-      title: 'Install Gemini Extension',
-      description: 'In VSCode, search for and install the Gemini extension. Configure it with your API key.'
+      title: 'Upload to AI Assistant',
+      description: 'Upload all files to your preferred AI assistant (Claude, ChatGPT, or Gemini).'
     },
     {
       number: 3,
-      title: 'Initialize the System',
-      description: 'Open GEMINI.md and chat: "Initialize Python Learning Guardrail from GEMINI.md". The AI will set everything up.'
+      title: 'Set Up Environment',
+      description: 'Install Python, VSCode, and create your .gemini/ directory for state persistence.'
     },
     {
       number: 4,
       title: 'Start Learning',
-      description: 'Begin the course by selecting your first prompt. Engage with the AI, practice coding, and use "Proceed" to validate.'
-    },
-    {
-      number: 5,
-      title: 'Run Your Code',
-      description: 'Use the terminal to run "python main.py" and install dependencies as needed throughout your journey.'
+      description: 'Begin with "Let\'s start with Prompt 1" and follow the AI\'s structured guidance.'
     }
   ];
 
   const bestPractices = [
-    'Experiment freely in practice.py before integrating into main.py',
-    'Reflect on concepts during chats - ask "why" and "how" questions',
-    'Troubleshoot errors within scope before asking the AI for help',
-    'Complete validation checks honestly to ensure true mastery',
-    'Build incrementally - don\'t skip ahead without solid foundations'
-  ];
-
-  const faqs = [
-    {
-      question: 'Why use VSCode with Gemini?',
-      answer: 'The integrated environment allows you to edit code and chat with the AI simultaneously, providing real-time guidance while you code. This creates a seamless learning experience where theory and practice happen side-by-side.'
-    },
-    {
-      question: 'Can I skip prompts if I already know a topic?',
-      answer: 'Yes, it\'s possible to skip ahead, though not recommended. The curriculum builds progressively, and each prompt includes validation checks to ensure mastery. Skipping may leave gaps in your knowledge.'
-    },
-    {
-      question: 'Where is my progress saved?',
-      answer: 'All progress is saved in the .gemini/ directory, including your notes, completed prompts, and project files. This allows you to resume your learning journey at any time without losing context.'
-    },
-    {
-      question: 'Can I customize the curriculum or projects?',
-      answer: 'The curriculum follows a fixed structure for optimal learning progression. However, you can theme your projects around personal interests while still meeting the learning objectives for each prompt.'
-    }
+    'Code along actively - type every example yourself rather than copy-pasting',
+    'Review Notes/ regularly to reinforce concepts and track your progress',
+    'Complete all exercises before moving to the next prompt',
+    'Ask clarifying questions when concepts are unclear',
+    'Build real projects/ to apply multiple concepts together',
+    'Use the AI\'s validation to understand mistakes and correct misconceptions',
+    'Take breaks between prompts to let concepts solidify',
+    'Revisit earlier topics when building on foundational concepts'
   ];
 
   return (
@@ -2002,111 +2087,70 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
           {/* Back Button */}
           <a
             href="#browse"
-            onClick={onBack}
-            className="inline-flex items-center text-white/90 hover:text-white mb-6 md:mb-8 transition-colors cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              onBack();
+            }}
+            className="inline-flex items-center gap-2 text-white hover:text-white/90 transition-colors mb-6 md:mb-8 group"
           >
-            <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-            Back to Browse
+            <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:-translate-x-1" />
+            <span className="text-sm md:text-base font-medium">Back to Browse</span>
           </a>
 
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-5xl mx-auto">
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white leading-tight"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
-              Python Learning Guardrail System
+              Comprehensive Python Learning Guardrail System
             </h1>
             <p
-              className="text-lg sm:text-xl md:text-2xl text-white/95 mb-3 md:mb-4"
-              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 500 }}
+              className="text-base sm:text-lg md:text-xl text-white/95 mb-3 md:mb-4"
+              style={{ fontFamily: 'Inter, sans-serif' }}
             >
-              A Structured AI-Powered Platform for Mastering Python from Beginner to Pro
+              Master Python from Zero to Production-Ready with AI-Powered Guardrails
             </p>
-            <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-              An AI platform guiding users through a comprehensive roadmap with interactive prompts, hands-on projects, 
-              and rigorous validation. Powered by GEMINI.md and Python_prompts_guardrail.md for a stateful, 
-              personalized learning experience.
+            <p className="text-sm sm:text-base md:text-lg text-white/85 mb-6 md:mb-8 max-w-4xl mx-auto">
+              A complete, structured learning system that combines expert curriculum design with AI validation to ensure you master Python fundamentals through advanced concepts.
             </p>
-            <div className="mt-6 md:mt-8">
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
               <button
                 onClick={() => onDownload(prompt.id)}
-                className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all text-sm md:text-base"
-                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}
+                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-[#007BFF] rounded-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden"
               >
-                <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                Download Now • $2
+                <Download className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-sm md:text-base">Start Learning Free</span>
               </button>
+
+              {onDownloadInstructions && (
+                <DownloadInstructionsButton
+                  onClick={() => onDownloadInstructions(prompt.id)}
+                  className="w-full sm:w-auto"
+                />
+              )}
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
-        
-        {/* Roadmap Overview Section */}
-        <section className="mb-12 md:mb-16 lg:mb-20">
-          <div className="text-center mb-8 md:mb-12">
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-3 md:mb-4 px-4"
-              style={{ fontFamily: 'Poppins, sans-serif' }}
-            >
-              Comprehensive Learning Roadmap
-            </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-4">
-              Follow a carefully structured path from Python basics to advanced professional concepts, 
-              covering everything you need to become a proficient Python developer.
-            </p>
-          </div>
-
-          {/* Roadmap Image */}
-          <div className="mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden shadow-2xl bg-white border border-gray-100">
-            <video
-              src="https://i.imgur.com/vw2DYIH.mp4"
-              className="w-full h-auto"
-              controls
-              loop
-              muted
-              autoPlay
-              playsInline
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+        {/* Learning Roadmap */}
+        <section className="mb-16 md:mb-20">
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#343A40] mb-8 md:mb-12 text-center"
+            style={{ fontFamily: 'Poppins, sans-serif' }}
+          >
+            Your Python Learning Roadmap
+          </h2>
+          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
+            <img
+              src={pythonRoadmap}
+              alt="Python Learning Roadmap"
+              className="w-full h-auto rounded-lg"
             />
-          </div>
-
-          {/* Roadmap Stages Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {roadmapStages.map((stage, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all"
-              >
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-[#007BFF] text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm">
-                    {index + 1}
-                  </div>
-                  <h3
-                    className="font-bold text-[#343A40] text-base md:text-lg"
-                    style={{ fontFamily: 'Poppins, sans-serif' }}
-                  >
-                    {stage.title}
-                  </h3>
-                </div>
-                <ul className="space-y-2">
-                  {stage.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-2 text-gray-700 text-xs md:text-sm">
-                      <span className="text-[#28A745] mt-1">▸</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 md:mt-8 p-4 bg-blue-50 border-l-4 border-[#007BFF] rounded-r-lg">
-            <p className="text-gray-700 text-sm md:text-base">
-              <strong className="text-[#007BFF]">Note:</strong> This roadmap aligns with Beginner, Intermediate, 
-              and Advanced learning stages, ensuring a smooth progression through Python mastery.
-            </p>
           </div>
         </section>
 

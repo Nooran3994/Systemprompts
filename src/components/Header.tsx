@@ -264,9 +264,6 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                               <span className="text-xs px-2 py-0.5 bg-[#007BFF]/10 text-[#007BFF] rounded-full">
                                 {prompt.category}
                               </span>
-                              <span className="text-xs font-semibold text-[#28A745]">
-                                {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : prompt.id === '10' ? 'Free' : 'Coming Soon'}
-                              </span>
                             </div>
                           </div>
                         </div>
@@ -310,9 +307,6 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                               <div className="flex items-center gap-2">
                                 <span className="text-xs px-2 py-0.5 bg-[#007BFF]/10 text-[#007BFF] rounded-full">
                                   {prompt.category}
-                                </span>
-                                <span className="text-xs font-semibold text-[#28A745]">
-                                  {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : prompt.id === '10' ? 'Free' : 'Coming Soon'}
                                 </span>
                               </div>
                             </div>
@@ -470,9 +464,6 @@ export function Header({ searchQuery, onSearchChange, onLogoClick, prompts, onPr
                           <div className="flex items-center gap-2">
                             <span className="text-xs px-2 py-0.5 bg-[#007BFF]/10 text-[#007BFF] rounded-full">
                               {prompt.category}
-                            </span>
-                            <span className="text-xs font-semibold text-[#28A745]">
-                              {prompt.id === '1' ? prompt.price : prompt.id === '7' ? 'Free' : prompt.id === '8' ? prompt.price : prompt.id === '10' ? 'Free' : 'Coming Soon'}
                             </span>
                           </div>
                         </div>

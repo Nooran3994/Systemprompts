@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileDown } from 'lucide-react';
+import { DownloadInstructionsButton } from './DownloadInstructionsButton';
 
 export interface PromptCardData {
   id: string;
@@ -56,13 +57,6 @@ export function PromptCard({ prompt, onViewDocs, onDownload, onDownloadInstructi
         >
           {prompt.category}
         </div>
-
-        {/* Price tag - top right */}
-        <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm shadow-lg">
-          <span className="text-sm font-bold" style={{ color: isPaidDownload ? '#007BFF' : '#28A745' }}>
-            {isPaidDownload ? prompt.price : 'FREE'}
-          </span>
-        </div>
       </div>
 
       {/* Content */}
@@ -99,23 +93,12 @@ export function PromptCard({ prompt, onViewDocs, onDownload, onDownloadInstructi
             </button>
           </div>
           {showInstructionsButton && (
-            <div className="relative group/tooltip">
-              <button
-                onClick={() => onDownloadInstructions(prompt.id)}
-                className="w-full px-4 py-2.5 bg-gradient-to-r from-[#FFC107] to-[#FF9800] text-gray-900 rounded-xl hover:from-[#FFB300] hover:to-[#F57C00] transition-all text-sm font-bold shadow-sm hover:shadow-md flex items-center justify-center gap-2"
-                aria-label={`Download instructions for ${prompt.title}`}
-              >
-                <FileDown className="w-4 h-4" />
-                Get Instructions
-              </button>
-              {/* Tooltip */}
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-lg z-10">
-                <div className="font-semibold">Claim Full Ownership</div>
-                <div className="text-gray-300">Get .md files • Use with any AI model</div>
-                {/* Arrow */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></div>
-              </div>
-            </div>
+            <DownloadInstructionsButton
+              onClick={() => onDownloadInstructions(prompt.id)}
+              label="Get Instructions"
+              paddingClass="px-4 py-2.5"
+              iconSize="w-4 h-4"
+            />
           )}
         </div>
       </div>
