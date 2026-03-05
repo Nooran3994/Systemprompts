@@ -1,0 +1,17 @@
+# Serve static assets first, then fall back to index.html for SPA routing
+/favicon.ico      /favicon.ico      200
+/favicon.svg      /favicon.svg      200
+/favicon-48.png   /favicon-48.png   200
+/favicon-192.png  /favicon-192.png  200
+/favicon-512.png  /favicon-512.png  200
+/apple-touch-icon.svg /apple-touch-icon.svg 200
+/og-image.svg     /og-image.svg     200
+/logo.png.svg     /logo.png.svg     200
+/BingSiteAuth.xml /BingSiteAuth.xml 200
+
+# Critical: serve these static files directly
+/sitemap.xml /sitemap.xml 200
+/robots.txt  /robots.txt  200
+
+# SPA fallback
+/* /index.html 200
