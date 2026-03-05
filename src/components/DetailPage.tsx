@@ -3,6 +3,7 @@ import { ArrowLeft, Download, CheckCircle, FileText, Code, Lightbulb, Rocket, Bo
 import { PromptCardData } from './PromptCard';
 import { DownloadInstructionsButton } from './DownloadInstructionsButton';
 import { CodeCollabPage } from './DetailPageCodeCollab';
+import { ResumeStrategistPage } from './DetailPageResumeStrategist';
 import pythonRoadmap from 'figma:asset/bec09281486d709b585555bb617316a95cad5032.png';
 
 interface DetailPageProps {
@@ -1916,6 +1917,11 @@ export function DetailPage({ prompt, onBack, onDownload, onDownloadInstructions 
   if (prompt.id === '13') {
     // CodeCollab Coach - Clean custom page
     return <CodeCollabPage prompt={prompt} onDownload={onDownload} onDownloadInstructions={onDownloadInstructions} onBack={onBack} />;
+  }
+
+  if (prompt.id === '14') {
+    // Resume Strategist AI - Clean custom page
+    return <ResumeStrategistPage prompt={prompt} onDownload={onDownload} onDownloadInstructions={onDownloadInstructions} onBack={onBack} />;
   }
 
   // Comprehensive Python Learning Guardrail System page

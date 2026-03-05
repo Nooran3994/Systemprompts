@@ -66,6 +66,14 @@ function AppContent() {
       category: 'Learning Systems',
       thumbnail: 'https://images.unsplash.com/photo-1637073849667-91120a924221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXJzJTIwcGFpciUyMHByb2dyYW1taW5nJTIwY29sbGFib3JhdGlvbnxlbnwxfHx8fDE3NzI3Mjc5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       price: 'Free'
+    },
+    {
+      id: '14',
+      title: 'Resume Strategist AI',
+      description: 'Dedicated AI career strategist that transforms your experience into ATS-optimized, compelling resume content. Get job-specific sections, before/after examples, and ethical, authentic career storytelling.',
+      category: 'Career Tools',
+      thumbnail: 'https://images.unsplash.com/photo-1653038417332-6db0ff9d4bfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN1bWUlMjB3cml0aW5nJTIwY2FyZWVyJTIwc3RyYXRlZ3klMjBqb2IlMjBhcHBsaWNhdGlvbnxlbnwxfHx8fDE3NzI3Mjk1NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      price: 'Free'
     }
   ];
 
@@ -98,6 +106,9 @@ function AppContent() {
     } else if (id === '13') {
       // Redirect to Gemini Gem for CodeCollab Coach
       window.open('https://gemini.google.com/gem/1uY6di1Ps7JDt2ZIuJwWfMHc5uPZNQs7T?usp=sharing', '_blank');
+    } else if (id === '14') {
+      // Redirect to Gemini Gem for Resume Strategist AI
+      window.open('https://gemini.google.com/gem/1QF-TvM3H9Oiwc1UqX_aN3mhesZ4vUDjE?usp=sharing', '_blank');
     }
   };
 
@@ -118,6 +129,9 @@ function AppContent() {
     } else if (id === '13') {
       // CodeCollab Coach - Free
       window.open('https://payhip.com/b/sNPQ8', '_blank');
+    } else if (id === '14') {
+      // Resume Strategist AI - Free
+      window.open('https://payhip.com/b/GuED4', '_blank');
     }
   };
 
