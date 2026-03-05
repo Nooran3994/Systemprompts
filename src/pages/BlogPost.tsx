@@ -182,11 +182,18 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title={`${post.title} | SystemPrompts Blog`}
+        title={`${post.title} | SystemPrompts.site Blog`}
         description={post.excerpt}
         url={`https://systemprompts.site/blog/${post.slug}`}
         keywords={post.keywords}
         type="article"
+        publishedTime={post.date}
+        author={post.author}
+        breadcrumbs={[
+          { name: 'Home', url: 'https://systemprompts.site/' },
+          { name: 'Blog', url: 'https://systemprompts.site/blog' },
+          { name: post.title, url: `https://systemprompts.site/blog/${post.slug}` },
+        ]}
       />
       
       {/* Back to Blog Link */}

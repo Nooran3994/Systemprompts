@@ -76,10 +76,14 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Blog - AI Prompt Engineering Tips & Guides | SystemPrompts"
-        description="Learn prompt engineering best practices, AI tips, and system prompt optimization techniques for ChatGPT, Claude, Gemini, GitHub Copilot, and Cursor AI."
+        title="AI Prompt Engineering Blog — Tips, Guides & Best Practices | SystemPrompts.site"
+        description="Learn prompt engineering best practices, AI tips, and system prompt optimization techniques for ChatGPT, Claude, Gemini, GitHub Copilot, and Cursor AI. Expert guides updated weekly."
         url="https://systemprompts.site/blog"
-        keywords="AI blog, prompt engineering tips, ChatGPT tutorials, AI guides, system prompt best practices, prompt optimization"
+        keywords="AI blog, prompt engineering tips, ChatGPT tutorials, AI guides, system prompt best practices, prompt optimization, Claude prompt tips, Gemini prompt guide, AI productivity blog, prompt engineering 2026"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://systemprompts.site/' },
+          { name: 'Blog', url: 'https://systemprompts.site/blog' },
+        ]}
       />
       
       {/* Header */}

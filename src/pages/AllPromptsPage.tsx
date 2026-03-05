@@ -5,6 +5,7 @@ import { CategoryBar } from '../components/CategoryBar';
 import { LayoutGrid, LayoutList, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import Masonry from 'react-responsive-masonry';
+import { SEO } from '../components/SEO';
 
 interface AllPromptsPageProps {
   prompts: PromptCardData[];
@@ -44,6 +45,16 @@ export function AllPromptsPage({ prompts, searchQuery, onViewDocs, onDownload, o
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] pt-24 pb-16">
+      <SEO
+        title="Browse AI System Prompts — ChatGPT, Claude & Gemini | SystemPrompts.site"
+        description="Browse and download 8+ expert-crafted AI system prompts for ChatGPT, Claude, Gemini, Cursor, GitHub Copilot and more. Categories: Learning Systems, Agents, Career Tools, Content Creation."
+        url="https://systemprompts.site/prompts"
+        keywords="browse AI prompts, download system prompts, ChatGPT system prompts, Claude prompts library, Gemini prompts, AI prompt marketplace, learning system prompts, AI agent prompts, career AI prompts, code review prompts, resume AI prompt, data analysis prompt"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://systemprompts.site/' },
+          { name: 'Browse Prompts', url: 'https://systemprompts.site/prompts' },
+        ]}
+      />
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <button
