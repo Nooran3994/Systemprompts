@@ -24,51 +24,6 @@ const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     category: 'Guide',
     slug: 'complete-guide-ai-system-prompts-2026'
-  },
-  {
-    id: '2',
-    title: '10 ChatGPT System Prompts That Will 10x Your Productivity',
-    excerpt: 'Discover the most effective system prompts used by top professionals. Includes real examples and templates you can use immediately.',
-    date: '2025-02-15',
-    readTime: '6 min read',
-    category: 'Tutorial',
-    slug: '10-chatgpt-prompts-10x-productivity'
-  },
-  {
-    id: '3',
-    title: 'Claude vs ChatGPT: Which System Prompts Work Best?',
-    excerpt: 'A comprehensive comparison of prompt engineering techniques across different AI platforms. Learn which prompts excel on each platform.',
-    date: '2025-02-14',
-    readTime: '10 min read',
-    category: 'Comparison',
-    slug: 'claude-vs-chatgpt-prompts-comparison'
-  },
-  {
-    id: '4',
-    title: 'How to Write Custom Prompts for GitHub Copilot',
-    excerpt: 'Step-by-step guide to creating custom system prompts that make GitHub Copilot work better for your coding style and projects.',
-    date: '2025-02-13',
-    readTime: '7 min read',
-    category: 'Development',
-    slug: 'custom-prompts-github-copilot'
-  },
-  {
-    id: '5',
-    title: 'Prompt Engineering Best Practices: A Developer\'s Guide',
-    excerpt: 'Advanced techniques for crafting effective prompts. Covers context management, output formatting, and optimization strategies.',
-    date: '2025-02-12',
-    readTime: '12 min read',
-    category: 'Advanced',
-    slug: 'prompt-engineering-best-practices-developers'
-  },
-  {
-    id: '6',
-    title: 'Optimizing Cursor AI with Custom System Prompts',
-    excerpt: 'Transform your Cursor AI experience with specialized prompts. Learn how to customize AI behavior for maximum coding efficiency.',
-    date: '2025-02-11',
-    readTime: '5 min read',
-    category: 'Tutorial',
-    slug: 'optimizing-cursor-ai-custom-prompts'
   }
 ];
 
@@ -159,23 +114,6 @@ export default function Blog() {
             ))}
           </div>
 
-          {/* Coming Soon Note */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-16 text-center"
-          >
-            <div className="bg-gradient-to-r from-[#007BFF]/10 to-[#28A745]/10 rounded-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-[#343A40]">
-                More Content Coming Soon! 🚀
-              </h3>
-              <p className="text-gray-600">
-                We're working on comprehensive guides and tutorials to help you master prompt engineering. 
-                Subscribe to our newsletter below to get notified when new articles are published.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
