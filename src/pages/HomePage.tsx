@@ -7,6 +7,7 @@ import { BrowseSection } from '../components/BrowseSection';
 import { CustomOptimizationSection } from '../components/CustomOptimizationSection';
 import { SubscriptionSection } from '../components/SubscriptionSection';
 import { PromptCardData } from '../components/PromptCard';
+import { SEO } from '../components/SEO';
 
 interface HomePageProps {
   prompts: PromptCardData[];
@@ -25,6 +26,12 @@ export function HomePage({ prompts, searchQuery, onViewDocs, onDownload, onDownl
 
   return (
     <main>
+      <SEO
+        title="SystemPrompts.site — Download Expert AI System Prompts for ChatGPT, Claude & Gemini"
+        description="The #1 marketplace for professional AI system prompts. Download expert-crafted prompts for ChatGPT, Claude, Gemini, GitHub Copilot, Cursor & more. Start free — upgrade anytime."
+        url="https://systemprompts.site/"
+        keywords="buy AI system prompts, download ChatGPT prompts, Claude system prompt templates, Gemini prompts, AI prompt marketplace, free AI prompts, professional system prompts, prompt engineering templates, AI productivity tools, best AI prompts 2026"
+      />
       <HeroSection onBrowseClick={handleBrowseClick} />
       <VisionMissionSection />
       <TestimonialsSection />
