@@ -92,17 +92,17 @@ export const ALL_PROMPTS: PromptCardData[] = [
   {
     id: '15',
     title: 'CV Structure Architect',
-    description: 'An expert-level AI structural engineer exclusively for CVs and academic vitae. Transform career data into tailored CV architectures with before/after outlines, ATS-readiness scores, and export-ready templates.',
+    description: 'An expert-level AI structural engineer exclusively for CVs and academic vitae.',
     category: 'Career Tools',
-    thumbnail: 'https://images.unsplash.com/photo-1693045181676-57199422ee66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMENWJTIwcHJvZmVzc2lvbmFsJTIwcmVzdW1lJTIwZG9jdW1lbnQlMjBzdHJ1Y3R1cmV8ZW58MXx8fHwxNzcyNzI5OTUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    thumbnail: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdiUyMHJlc3VtZSUyMGNhcmVlciUyMGRvY3VtZW50fGVufDF8fHx8MTc3MjczMDAwMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     price: 'Free'
   },
   {
     id: '16',
     title: 'GrantForge AI',
-    description: 'Expert grant-writing strategist and collaborative AI partner that delivers end-to-end support for persuasive narratives and rigorous budgets. Strategic funding advisor for nonprofits, researchers, and social enterprises.',
-    category: 'Career Tools',
-    thumbnail: 'https://images.unsplash.com/photo-1763739532737-f24dc5dd1325?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHdyaXRpbmclMjBjYXJlZXIlMjBkb2N1bWVudHxlbnwxfHx8fDE3NzI3MzMyMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    description: 'Your Expert Grant-Writing Strategist & Collaborative AI Partner. End-to-end support for persuasive narratives and rigorous budgets.',
+    category: 'Content Creation',
+    thumbnail: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFudCUyMHdyaXRpbmclMjBmdW5kaW5nJTIwcHJvcG9zYWx8ZW58MXx8fHwxNzcyNzMxMDAwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     price: 'Free'
   },
   {
@@ -202,7 +202,7 @@ function PromptDetailRoute() {
       <div className="pt-16 md:pt-20">
         <DetailPage
           prompt={prompt}
-          onBack={() => navigate('/')}
+          onBack={() => navigate('/prompts')}  // ← Fixed: go to /prompts not /
           onDownload={handleDownloadFn}
           onDownloadInstructions={handleDownloadInstructionsFn}
         />
